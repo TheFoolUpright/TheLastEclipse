@@ -1,8 +1,16 @@
 fileFormatVersion: 2
-guid: 61074ed72251f814b9fae8f2f9d3cc08
+guid: 6b911390c5825014e8377183a7837d3f
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 0
+  mainObjectFileID: 2100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 196526
+  packageName: Starter Assets - ThirdPerson | Updates in new CharacterController
+    package
+  packageVersion: 1.1.5
+  assetPath: Assets/StarterAssets/Environment/Art/Materials/GreyBlue_Mat.mat
+  uploadId: 691128
