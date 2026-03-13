@@ -12,6 +12,7 @@ namespace StarterAssets
 		public Vector2 look;
 		public bool jump;
 		public bool sprint;
+		public bool changeVisual;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -26,7 +27,14 @@ namespace StarterAssets
 			MoveInput(value.Get<Vector2>());
 		}
 
-		public void OnLook(InputValue value)
+		public void OnChangeVisual(InputValue value)
+		{
+			Debug.Log(value.isPressed);
+			ChangeVisual(value.isPressed);
+		}
+
+
+        public void OnLook(InputValue value)
 		{
 			if(cursorInputForLook)
 			{
@@ -50,6 +58,11 @@ namespace StarterAssets
 		{
 			move = newMoveDirection;
 		} 
+
+		public void ChangeVisual(bool isPressed)
+		{
+			changeVisual = isPressed;
+		}
 
 		public void LookInput(Vector2 newLookDirection)
 		{

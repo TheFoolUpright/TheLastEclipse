@@ -1,4 +1,4 @@
-﻿ using UnityEngine;
+﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
@@ -109,6 +109,9 @@ namespace StarterAssets
         private const float _threshold = 0.01f;
 
         private bool _hasAnimator;
+        private bool canDoubleJump = true;
+        private float _doubleJumpTimer = 0.1f;
+        [SerializeField][Range(0.1f, 1.5f)] private float doubleJumpTimer;
 
         private bool IsCurrentDeviceMouse
         {
@@ -130,12 +133,13 @@ namespace StarterAssets
             {
                 _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
             }
+            _doubleJumpTimer = doubleJumpTimer;
         }
 
         private void Start()
         {
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
-            
+
             _hasAnimator = TryGetComponent(out _animator);
             _controller = GetComponent<CharacterController>();
             _input = GetComponent<StarterAssetsInputs>();
@@ -182,6 +186,11 @@ namespace StarterAssets
                 transform.position.z);
             Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers,
                 QueryTriggerInteraction.Ignore);
+            if (Grounded)
+                canDoubleJump = true;
+
+            if (Grounded)
+                _input.jump = false;
 
             // update animator if using character
             if (_hasAnimator)
@@ -281,7 +290,16 @@ namespace StarterAssets
 
         private void JumpAndGravity()
         {
-            if (Grounded)
+            if (!Grounded && canDoubleJump && _doubleJumpTimer > 0)
+                _doubleJumpTimer -= Time.deltaTime;
+
+            if (!Grounded && _input.jump && canDoubleJump && _doubleJumpTimer <= 0f)
+            {
+                // the square root of H * -2 * G = how much velocity needed to reach desired height
+                _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+                canDoubleJump = false;
+            }
+            else if (Grounded)
             {
                 // reset the fall timeout timer
                 _fallTimeoutDelta = FallTimeout;
@@ -317,6 +335,8 @@ namespace StarterAssets
                 {
                     _jumpTimeoutDelta -= Time.deltaTime;
                 }
+
+                _doubleJumpTimer = doubleJumpTimer;
             }
             else
             {
@@ -338,7 +358,7 @@ namespace StarterAssets
                 }
 
                 // if we are not grounded, do not jump
-                _input.jump = false;
+                //_input.jump = false;
             }
 
             // apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)

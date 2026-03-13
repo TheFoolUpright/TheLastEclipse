@@ -1,3 +1,4 @@
+using StarterAssets;
 using System;
 using System.Runtime.CompilerServices;
 using UnityEditorInternal;
@@ -6,81 +7,43 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float jumpForce = 5f;
-    [SerializeField] private LayerMask groundMask;
-    [SerializeField] private Transform groundCheck;
-    
-    private Vector2 moveInput;
-    private PlayerInput playerInput;
-    private InputAction moveAction;
-    private InputAction jumpAction;
-    private Rigidbody rb;
-    private bool jumpRequested;
-    private float groundDistance = 0.1f;
-    private int remaingJumps = 2;
-    private readonly int maxJumps = 2;
 
-    private void OnEnable()
-    {
-        jumpAction.performed += OnJumpRequest;
-    }
+    private StarterAssetsInputs inputs;
 
-    private void OnDisable()
-    {
-        jumpAction.performed -= OnJumpRequest;
-    }
 
-    private void OnJumpRequest(InputAction.CallbackContext context)
-    {
-        jumpRequested = true;
-    }
+    [SerializeField] private GameObject moonVisual;
+    [SerializeField] private GameObject sunVisual;
+    [SerializeField] [Range(0.1f, 2f)] float delayBetweenChanges;
+    private float timer = 0f;
 
     private void Awake()
     {
-        playerInput = GetComponent<PlayerInput>();
-        moveAction = playerInput.actions["Move"];
-        jumpAction = playerInput.actions["Jump"];
-        rb = GetComponent<Rigidbody>(); 
+        inputs = GetComponent<StarterAssetsInputs>();
+        timer = delayBetweenChanges;
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        moveInput = moveAction.ReadValue<Vector2>();
-
-    }
-
-    //Targetted Fps
-    private void FixedUpdate()
-    {
-        if (IsGrounded() && rb.linearVelocity.y <= 0)
+        if (timer  > 0f)
         {
-            remaingJumps = maxJumps;
+            timer -= Time.deltaTime;
+            return;
         }
-        rb.linearVelocity = new Vector3(moveInput.x * moveSpeed, rb.linearVelocity.y , moveInput.y * moveSpeed);
 
-        if (jumpRequested)
+
+        if (inputs.changeVisual)
         {
-            jumpRequested = false;
-            if (remaingJumps > 0)
+            if (moonVisual.activeInHierarchy)
             {
-                //rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-                rb.linearVelocity = new Vector3 (rb.linearVelocity.x, jumpForce, rb.linearVelocity.y );
-                remaingJumps--;
-            } 
+                moonVisual.SetActive(false);
+                sunVisual.SetActive(true);
+            }else
+            {
+                moonVisual.SetActive(true);
+                sunVisual.SetActive(false);
+            }
+            timer = delayBetweenChanges;
         }
     }
 
-    private bool IsGrounded()
-    {
-        bool isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        return isGrounded;
-    }
 }
