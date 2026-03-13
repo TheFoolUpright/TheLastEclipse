@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
@@ -16,7 +17,10 @@ public class MovingPlatform : MonoBehaviour
 
     private float _timeToWaypoint;
     private float _elapsedTime;
+
     
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,18 +30,26 @@ public class MovingPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _elapsedTime += Time.deltaTime;
+        //if (isSun)
+        //{
+            _elapsedTime += Time.deltaTime;
 
-        float elapsedPercentage = _elapsedTime / _timeToWaypoint;
-        elapsedPercentage = Mathf.SmoothStep(0, 1, elapsedPercentage);
-        transform.position = Vector3.Lerp(_previousWaypoint.position, _targetWaypoint.position, elapsedPercentage);
+            float elapsedPercentage = _elapsedTime / _timeToWaypoint;
+            elapsedPercentage = Mathf.SmoothStep(0, 1, elapsedPercentage);
+            transform.position = Vector3.Lerp(_previousWaypoint.position, _targetWaypoint.position, elapsedPercentage);
 
-        if (elapsedPercentage >= 1)
-        {
-            TargetNextWaypoint();
-        }
+            if (elapsedPercentage >= 1)
+            {
+                TargetNextWaypoint();
+            }
 
+        //}
 
+        //else
+        //{
+            //Break;
+        //}
+ 
     }
 
     private void TargetNextWaypoint()
