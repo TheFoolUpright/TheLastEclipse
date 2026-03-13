@@ -109,6 +109,8 @@ namespace StarterAssets
         private const float _threshold = 0.01f;
 
         private bool _hasAnimator;
+
+        [Header("DoubleJump")]
         private bool canDoubleJump = true;
         private float _doubleJumpTimer = 0.1f;
         [SerializeField][Range(0.1f, 1.5f)] private float doubleJumpTimer;
