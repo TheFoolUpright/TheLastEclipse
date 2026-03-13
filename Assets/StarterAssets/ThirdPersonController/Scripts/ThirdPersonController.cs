@@ -75,6 +75,11 @@ namespace StarterAssets
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
+        [Header("DoubleJump")]
+        [Tooltip("For restricting how long the player need to wait before double jumping")]
+        [SerializeField][Range(0.1f, 1.5f)] 
+        private float doubleJumpTimer;
+
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
@@ -87,6 +92,10 @@ namespace StarterAssets
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
 
+        // double jump
+        private bool canDoubleJump = true;
+        private float _doubleJumpTimer = 0.1f;
+
         // timeout deltatime
         private float _jumpTimeoutDelta;
         private float _fallTimeoutDelta;
@@ -97,6 +106,7 @@ namespace StarterAssets
         private int _animIDJump;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
+
 
 #if ENABLE_INPUT_SYSTEM 
         private PlayerInput _playerInput;
@@ -109,11 +119,6 @@ namespace StarterAssets
         private const float _threshold = 0.01f;
 
         private bool _hasAnimator;
-
-        [Header("DoubleJump")]
-        private bool canDoubleJump = true;
-        private float _doubleJumpTimer = 0.1f;
-        [SerializeField][Range(0.1f, 1.5f)] private float doubleJumpTimer;
 
         private bool IsCurrentDeviceMouse
         {
@@ -298,7 +303,7 @@ namespace StarterAssets
             if (!Grounded && _input.jump && canDoubleJump && _doubleJumpTimer <= 0f)
             {
                 // the square root of H * -2 * G = how much velocity needed to reach desired height
-                _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+                _verticalVelocity = Mathf.Sqrt(JumpHeight/1.5f * -2f * Gravity);
                 canDoubleJump = false;
             }
             else if (Grounded)
