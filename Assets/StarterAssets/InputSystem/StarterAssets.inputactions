@@ -220,6 +220,28 @@
                 },
                 {
                     "name": "",
+                    "id": "695d779c-1ad1-4e27-b525-a8e8a8644957",
+                    "path": "<Pointer>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KeyboardMouse",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9505ec95-51be-43ee-8386-5697ce5e170e",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;Xbox Controller;PS4 Controller",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2907ee33-460a-4c3b-bff1-c540851e3030",
                     "path": "<Keyboard>/q",
                     "interactions": "",
