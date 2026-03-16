@@ -29,7 +29,6 @@ namespace StarterAssets
 
 		public void OnChangeVisual(InputValue value)
 		{
-			Debug.Log(value.isPressed);
 			ChangeVisual(value.isPressed);
 		}
 
