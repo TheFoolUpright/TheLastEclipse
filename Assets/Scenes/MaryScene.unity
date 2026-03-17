@@ -246,6 +246,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!143 &369414746 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 6556313778882047170, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
+  m_PrefabInstance: {fileID: 2019934216}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1133816616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -389,8 +394,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994678818}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.018172812, y: 0, z: 0, w: 0.9998349}
-  m_LocalPosition: {x: 1.83703, y: 1.775, z: -10.00184}
+  m_LocalRotation: {x: -0.0047289063, y: 0, z: 0, w: 0.99998885}
+  m_LocalPosition: {x: 1.83703, y: 1.775, z: -14.00184}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -480,6 +485,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8566397466763661757, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
+      propertyPath: coyoteMax
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584021865794721866, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
+      propertyPath: characterController
+      value: 
+      objectReference: {fileID: 369414746}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -559,6 +572,14 @@ PrefabInstance:
       propertyPath: Target.TrackingTarget
       value: 
       objectReference: {fileID: 2019934217}
+    - target: {fileID: 998543417348812237, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
+      propertyPath: LookAtOffset.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 998543417348812237, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
+      propertyPath: LookAtOffset.z
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 4446570716515696387, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_Name
       value: PlayerCamera
@@ -573,15 +594,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7085709587800296204, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.00184
+      value: -14.00184
       objectReference: {fileID: 0}
     - target: {fileID: 7085709587800296204, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9998349
+      value: 0.99998885
       objectReference: {fileID: 0}
     - target: {fileID: 7085709587800296204, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.018172812
+      value: -0.0047289063
       objectReference: {fileID: 0}
     - target: {fileID: 7085709587800296204, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_LocalRotation.y
