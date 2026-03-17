@@ -98,7 +98,7 @@ public class FallingPlatform : MonoBehaviour
         if (animating) return;
         animating = true;
         animationStatus = 1;
-        animationDuration = 5;
+        animationDuration = 2;
         animationTimer = 0;
     }
     private void OnTriggerEnter(Collider other)
