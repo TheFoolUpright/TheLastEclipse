@@ -14,15 +14,23 @@ namespace StarterAssets
 		public bool sprint;
 		public bool changeVisual;
 
-		[Header("Movement Settings")]
+        // True only on the exact frame the jump button is pressed
+        // (used for jump buffering so we don't miss input)
+        public bool jumpPressedThisFrame;
+        // Tracks the previous frame's sprint button state
+        // (used to detect a button press instead of a hold)
+        public bool sprintPressedThisFrame;
+
+        [Header("Movement Settings")]
 		public bool analogMovement;
 
 		[Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
+        
 
 #if ENABLE_INPUT_SYSTEM
-		public void OnMove(InputValue value)
+        public void OnMove(InputValue value)
 		{
 			MoveInput(value.Get<Vector2>());
 		}
@@ -70,13 +78,27 @@ namespace StarterAssets
 
 		public void JumpInput(bool newJumpState)
 		{
-			jump = newJumpState;
+            // Detect the exact frame the jump button is pressed
+            // (button was NOT pressed before, but IS pressed now)
+            if (newJumpState && !jump)
+                // Store a one-frame "jump pressed" event
+                // This lets us buffer the jump even if we aren't grounded yet
+                jumpPressedThisFrame = true;
+
+            // Store whether the button is currently being held down
+            jump = newJumpState;
 		}
 
 		public void SprintInput(bool newSprintState)
 		{
-			sprint = newSprintState;
-		}
+            // Detect the exact moment the sprint button is pressed
+            if (newSprintState && !sprintPressedThisFrame)
+                // Toggle sprint on/off each time the button is pressed
+                sprint = !sprint;
+
+            // Store the current button state for the next frame
+            sprintPressedThisFrame = newSprintState;
+        }
 
 		private void OnApplicationFocus(bool hasFocus)
 		{
@@ -87,6 +109,13 @@ namespace StarterAssets
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}
-	}
+
+        private void LateUpdate()
+        {
+            // Reset the one-frame jump press so it only lasts a single frame
+            // This prevents the jump from triggering multiple times
+            jumpPressedThisFrame = false;
+        }
+    }
 	
 }

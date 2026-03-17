@@ -84,6 +84,10 @@ namespace StarterAssets
         [Tooltip("Time (in seconds) you can still jump after leaving ground")]
         public float coyoteMax = .5f;
 
+        [Header("Jump Buffering")]
+        [Tooltip("Time (in seconds) you can press jump BEFORE landing and still jump")]
+        public float jumpBufferMax = .5f;
+
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
@@ -102,6 +106,9 @@ namespace StarterAssets
 
         // coyote time
         private float coyoteCounter = 0;
+
+        // jump buffering
+        private float jumpBufferCounter = 0;
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -316,6 +323,16 @@ namespace StarterAssets
                 coyoteCounter -= Time.deltaTime;
 
             // ========================
+            // JUMP BUFFERING 
+            // ========================
+            // If the player pressed jump THIS FRAME, start the buffer timer
+            if (_input.jumpPressedThisFrame)
+                jumpBufferCounter = jumpBufferMax;
+            // Otherwise, count the buffer down over time
+            else
+                jumpBufferCounter -= Time.deltaTime;
+
+            // ========================
             // DOUBLE JUMP TIMER
             // ========================
             // This creates a small delay before the player is allowed to double jump
@@ -334,19 +351,16 @@ namespace StarterAssets
             // ========================
             // JUMP INPUT HANDLING
             // ========================
-            // Only allow jump if:
-            // - player pressed jump
-            // - cooldown has finished
-            if (_input.jump && _jumpTimeoutDelta <= 0.0f)
+            // Allow jump if:
+            // - player pressed jump recently (buffer > 0)
+            // - jump cooldown is finished
+            if (jumpBufferCounter > 0 && _jumpTimeoutDelta <= 0.0f)
             {
                 // ------------------------
                 // NORMAL JUMP (ground OR coyote time)
                 // ------------------------
                 if (Grounded || coyoteCounter > 0)
                 {
-
-                    // negate coyote time so it can't be reused
-                    coyoteCounter = 0;
 
                     // Calculate jump velocity based on desired jump height
                     // (this uses physics formula)
@@ -356,6 +370,11 @@ namespace StarterAssets
                     // Reset jump cooldown
                     _jumpTimeoutDelta = JumpTimeout;
 
+                    // Clear the jump buffer so it doesn't trigger another jump
+                    jumpBufferCounter = 0;
+
+                    // negate coyote time so it can't be reused
+                    coyoteCounter = 0;
 
                     // Trigger jump animation
                     if (_hasAnimator)
@@ -374,12 +393,16 @@ namespace StarterAssets
                 // ------------------------
                 else if (!Grounded && canDoubleJump && _doubleJumpTimer <= 0f)
                 {
+
                     // Slightly weaker jump than the first jump
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
                     _verticalVelocity = Mathf.Sqrt(JumpHeight / 1.5f * -2f * Gravity);
 
                     // Disable further double jumps until grounded again
                     canDoubleJump = false;
+
+                    // negate the jump buffer
+                    jumpBufferCounter = 0;
 
                     // Clear input so holding the button doesn't retrigger jump
                     _input.jump = false;
@@ -484,5 +507,7 @@ namespace StarterAssets
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
         }
+
+        
     }
 }
