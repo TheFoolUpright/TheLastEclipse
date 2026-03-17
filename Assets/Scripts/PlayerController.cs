@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool IsMoonActive => moonVisual.activeInHierarchy;
 
     private StarterAssetsInputs inputs;
 

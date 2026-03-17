@@ -75,10 +75,18 @@ namespace StarterAssets
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
-        [Header("DoubleJump")]
+        [Header("Double Jump")]
         [Tooltip("For restricting how long the player need to wait before double jumping")]
         [SerializeField][Range(0.1f, 1.5f)] 
         private float doubleJumpTimer;
+
+        [Header("Coyote Time")]
+        [Tooltip("Time (in seconds) you can still jump after leaving ground")]
+        public float coyoteMax = .5f;
+
+        [Header("Jump Buffering")]
+        [Tooltip("Time (in seconds) you can press jump BEFORE landing and still jump")]
+        public float jumpBufferMax = .5f;
 
         // cinemachine
         private float _cinemachineTargetYaw;
@@ -95,6 +103,12 @@ namespace StarterAssets
         // double jump
         private bool canDoubleJump = true;
         private float _doubleJumpTimer = 0.1f;
+
+        // coyote time
+        private float coyoteCounter = 0;
+
+        // jump buffering
+        private float jumpBufferCounter = 0;
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -191,13 +205,14 @@ namespace StarterAssets
             // set sphere position, with offset
             Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset,
                 transform.position.z);
+            // Check if player is touching the ground using a small sphere
             Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers,
                 QueryTriggerInteraction.Ignore);
             if (Grounded)
                 canDoubleJump = true;
 
-            if (Grounded)
-                _input.jump = false;
+            //if (Grounded)
+            //    _input.jump = false;
 
             // update animator if using character
             if (_hasAnimator)
@@ -297,21 +312,113 @@ namespace StarterAssets
 
         private void JumpAndGravity()
         {
+            // ========================
+            // COYOTE TIME (grace period after leaving ground)
+            // ========================
+            // If grounded, reset the coyote timer
+            if (Grounded)
+                coyoteCounter = coyoteMax;
+            // If in air, count it down
+            else
+                coyoteCounter -= Time.deltaTime;
+
+            // ========================
+            // JUMP BUFFERING 
+            // ========================
+            // If the player pressed jump THIS FRAME, start the buffer timer
+            if (_input.jumpPressedThisFrame)
+                jumpBufferCounter = jumpBufferMax;
+            // Otherwise, count the buffer down over time
+            else
+                jumpBufferCounter -= Time.deltaTime;
+
+            // ========================
+            // DOUBLE JUMP TIMER
+            // ========================
+            // This creates a small delay before the player is allowed to double jump
             if (!Grounded && canDoubleJump && _doubleJumpTimer > 0)
                 _doubleJumpTimer -= Time.deltaTime;
 
-            if (!Grounded && _input.jump && canDoubleJump && _doubleJumpTimer <= 0f)
+            // ========================
+            // JUMP COOLDOWN TIMER
+            // ========================
+            // Prevents spamming the jump button
+            if (_jumpTimeoutDelta >= 0.0f)
             {
-                // the square root of H * -2 * G = how much velocity needed to reach desired height
-                _verticalVelocity = Mathf.Sqrt(JumpHeight/1.5f * -2f * Gravity);
-                canDoubleJump = false;
+                _jumpTimeoutDelta -= Time.deltaTime;
             }
-            else if (Grounded)
+
+            // ========================
+            // JUMP INPUT HANDLING
+            // ========================
+            // Allow jump if:
+            // - player pressed jump recently (buffer > 0)
+            // - jump cooldown is finished
+            if (jumpBufferCounter > 0 && _jumpTimeoutDelta <= 0.0f)
             {
-                // reset the fall timeout timer
+                // ------------------------
+                // NORMAL JUMP (ground OR coyote time)
+                // ------------------------
+                if (Grounded || coyoteCounter > 0)
+                {
+
+                    // Calculate jump velocity based on desired jump height
+                    // (this uses physics formula)
+                    // the square root of H * -2 * G = how much velocity needed to reach desired height
+                    _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+
+                    // Reset jump cooldown
+                    _jumpTimeoutDelta = JumpTimeout;
+
+                    // Clear the jump buffer so it doesn't trigger another jump
+                    jumpBufferCounter = 0;
+
+                    // negate coyote time so it can't be reused
+                    coyoteCounter = 0;
+
+                    // Trigger jump animation
+                    if (_hasAnimator)
+                    {
+                        _animator.SetBool(_animIDJump, true);
+                    }
+
+                    // Reset double jump delay timer
+                    _doubleJumpTimer = doubleJumpTimer;
+
+                    // Clear input so holding the button doesn't retrigger jump
+                    _input.jump = false;
+                }
+                // ------------------------
+                // DOUBLE JUMP (mid-air)
+                // ------------------------
+                else if (!Grounded && canDoubleJump && _doubleJumpTimer <= 0f)
+                {
+
+                    // Slightly weaker jump than the first jump
+                    // the square root of H * -2 * G = how much velocity needed to reach desired height
+                    _verticalVelocity = Mathf.Sqrt(JumpHeight / 1.5f * -2f * Gravity);
+
+                    // Disable further double jumps until grounded again
+                    canDoubleJump = false;
+
+                    // negate the jump buffer
+                    jumpBufferCounter = 0;
+
+                    // Clear input so holding the button doesn't retrigger jump
+                    _input.jump = false;
+                }
+            }
+
+            // ========================
+            // GROUNDED BEHAVIOR
+            // ========================
+            if (Grounded) 
+            {
+                // reset the fall timeout timer (used for animations)
                 _fallTimeoutDelta = FallTimeout;
 
                 // update animator if using character
+                // Reset jump/fall animations
                 if (_hasAnimator)
                 {
                     _animator.SetBool(_animIDJump, false);
@@ -319,36 +426,18 @@ namespace StarterAssets
                 }
 
                 // stop our velocity dropping infinitely when grounded
+                // Prevent player from building up downward speed when grounded
                 if (_verticalVelocity < 0.0f)
                 {
-                    _verticalVelocity = -2f;
+                    _verticalVelocity = -2f; // small downward force keeps player grounded
                 }
-
-                // Jump
-                if (_input.jump && _jumpTimeoutDelta <= 0.0f)
-                {
-                    // the square root of H * -2 * G = how much velocity needed to reach desired height
-                    _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
-
-                    // update animator if using character
-                    if (_hasAnimator)
-                    {
-                        _animator.SetBool(_animIDJump, true);
-                    }
-                }
-
-                // jump timeout
-                if (_jumpTimeoutDelta >= 0.0f)
-                {
-                    _jumpTimeoutDelta -= Time.deltaTime;
-                }
-
-                _doubleJumpTimer = doubleJumpTimer;
             }
+
+            // ========================
+            // AIRBORNE BEHAVIOR
+            // ========================
             else
             {
-                // reset the jump timeout timer
-                _jumpTimeoutDelta = JumpTimeout;
 
                 // fall timeout
                 if (_fallTimeoutDelta >= 0.0f)
@@ -357,7 +446,7 @@ namespace StarterAssets
                 }
                 else
                 {
-                    // update animator if using character
+                    // Trigger falling animation after delay
                     if (_hasAnimator)
                     {
                         _animator.SetBool(_animIDFreeFall, true);
@@ -368,6 +457,9 @@ namespace StarterAssets
                 //_input.jump = false;
             }
 
+            // ========================
+            // GRAVITY
+            // ========================
             // apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
             if (_verticalVelocity < _terminalVelocity)
             {
@@ -415,5 +507,7 @@ namespace StarterAssets
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
         }
+
+        
     }
 }
