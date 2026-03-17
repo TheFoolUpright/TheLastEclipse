@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
+
     [SerializeField]
     private WaypointPath _waypointPath;
 
@@ -18,7 +19,7 @@ public class MovingPlatform : MonoBehaviour
     private float _timeToWaypoint;
     private float _elapsedTime;
 
-    
+    public PlayerController Player;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -30,9 +31,9 @@ public class MovingPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (isSun)
-        //{
-            _elapsedTime += Time.deltaTime;
+        if (Player.IsMoonActive)
+        {
+        _elapsedTime += Time.deltaTime;
 
             float elapsedPercentage = _elapsedTime / _timeToWaypoint;
             elapsedPercentage = Mathf.SmoothStep(0, 1, elapsedPercentage);
@@ -43,12 +44,12 @@ public class MovingPlatform : MonoBehaviour
                 TargetNextWaypoint();
             }
 
-        //}
+        }
 
-        //else
-        //{
-            //Break;
-        //}
+        else
+        {
+           
+        }
  
     }
 
