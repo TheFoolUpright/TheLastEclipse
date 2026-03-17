@@ -19,8 +19,9 @@ public class MovingPlatform : MonoBehaviour
     private float _timeToWaypoint;
     private float _elapsedTime;
 
-    public PlayerController Player;
+    private int _direction = 1;
 
+    public PlayerController Player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -56,7 +57,16 @@ public class MovingPlatform : MonoBehaviour
     private void TargetNextWaypoint()
     {
         _previousWaypoint = _waypointPath.GetWaypoint(_targetWaypointIndex);
-        _targetWaypointIndex = _waypointPath.GetNextWaypointIndex(_targetWaypointIndex);
+
+        _targetWaypointIndex += _direction;
+
+        int lastIndex = _waypointPath.transform.childCount - 1;
+
+        if (_targetWaypointIndex == 0 || _targetWaypointIndex == lastIndex)
+        {
+            _direction *= -1;
+        }
+
         _targetWaypoint = _waypointPath.GetWaypoint(_targetWaypointIndex);
 
         _elapsedTime = 0;
