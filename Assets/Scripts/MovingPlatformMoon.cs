@@ -2,7 +2,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class MovingPlatformMoon : MonoBehaviour
 {
 
     [SerializeField]
