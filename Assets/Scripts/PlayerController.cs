@@ -15,8 +15,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject sunVisual;
     [SerializeField] [Range(0.1f, 2f)] float delayBetweenChanges;
     [SerializeField] CharacterController characterController;
+    [SerializeField] private int _currentHealth = 0;
 
-    private int _currentHealth = 0;
+    public Action characterChanged;
     private int currentHealth 
     {
         get => _currentHealth;
@@ -80,6 +81,24 @@ public class PlayerController : MonoBehaviour
     {
         moonVisual.SetActive(!isSun);
         sunVisual.SetActive(isSun);
+
+        characterChanged.Invoke();
     }
 
+    internal void Damage()
+    {
+        currentHealth--;
+
+        if (currentHealth <= 0)
+        {
+            RespawnPlayer();
+        }
+    }
+
+}
+
+public enum Character
+{
+    Sun, 
+    Moon
 }

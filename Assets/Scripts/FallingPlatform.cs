@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class FallingPlatform : MonoBehaviour
 {
+    [Header("Duration")]
+    public float shakeDuration = 2;
+    public float fallDuration = 2;
+    public float stayFallenDuration = 5;
+    public float comeBackDuration = 2;
 
     private bool animating;
     private Vector3 startPosition;
@@ -73,7 +78,7 @@ public class FallingPlatform : MonoBehaviour
     {
         animationTimer = 0;
         animationStatus = 4;
-        animationDuration = 2;
+        animationDuration = comeBackDuration;
         transform.position = startPosition + fallOffset;
     }
 
@@ -81,7 +86,7 @@ public class FallingPlatform : MonoBehaviour
     {
         animationTimer = 0;
         animationStatus = 3;
-        animationDuration = 5;
+        animationDuration = stayFallenDuration;
         transform.position = startPosition + fallOffset;
     }
 
@@ -89,7 +94,7 @@ public class FallingPlatform : MonoBehaviour
     {
         animationTimer = 0;
         animationStatus = 2;
-        animationDuration = 2;
+        animationDuration = fallDuration;
         transform.position = startPosition;
     }
 
@@ -98,7 +103,7 @@ public class FallingPlatform : MonoBehaviour
         if (animating) return;
         animating = true;
         animationStatus = 1;
-        animationDuration = 2;
+        animationDuration = shakeDuration;
         animationTimer = 0;
     }
     private void OnTriggerEnter(Collider other)
