@@ -8,6 +8,6 @@ public class FlippingPlatform : MonoBehaviour
    
     void Update()
     {
-        transform.Rotate(_rotation * );
+        //transform.Rotate(_rotation * );
     }
 }
