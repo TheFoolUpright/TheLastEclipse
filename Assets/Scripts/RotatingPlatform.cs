@@ -10,16 +10,17 @@ public class RotatingPlatform : MonoBehaviour
 
     public float rotationSpeed = 30f;
 
+
     void Update()
     {
         if (Player.IsMoonActive)
         {
-        transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime, Space.Self);
+            transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime, Space.Self);
         }
 
         else
         { 
-        transform.Rotate(Vector3.up * rotationSpeed * -Time.deltaTime, Space.Self);
+            transform.Rotate(Vector3.up * rotationSpeed * -Time.deltaTime, Space.Self);
         }
 
 

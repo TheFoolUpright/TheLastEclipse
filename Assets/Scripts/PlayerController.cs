@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
             if (_currentHealth != value)
             {
                 _currentHealth = value;
-                onHpChange.Invoke(_currentHealth);
+                onHpChange?.Invoke(_currentHealth);
             }
         }
     }
@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
         moonVisual.SetActive(!isSun);
         sunVisual.SetActive(isSun);
 
-        characterChanged.Invoke();
+        characterChanged?.Invoke();
     }
 
     internal void Damage()

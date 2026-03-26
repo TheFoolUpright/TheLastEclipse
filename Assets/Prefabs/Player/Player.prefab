@@ -1533,7 +1533,7 @@ Transform:
   m_GameObject: {fileID: 4900571091752203033}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.458331, y: 0.2407217, z: 1.9726343}
+  m_LocalPosition: {x: 19.4, y: 4.2, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1635,6 +1635,8 @@ MonoBehaviour:
   CameraAngleOverride: 0
   LockCameraPosition: 0
   doubleJumpTimer: 0.5
+  coyoteMax: 0.5
+  jumpBufferMax: 0.5
 --- !u!114 &4911118137392073430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1669,6 +1671,8 @@ MonoBehaviour:
   jump: 0
   sprint: 0
   changeVisual: 0
+  jumpPressedThisFrame: 0
+  sprintPressedThisFrame: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
@@ -1785,6 +1789,8 @@ MonoBehaviour:
   moonVisual: {fileID: 5715516504099711604}
   sunVisual: {fileID: 4082320485420294455}
   delayBetweenChanges: 0.5
+  characterController: {fileID: 6556313778882047170}
+  _currentHealth: 0
 --- !u!1 &4969167276163611271
 GameObject:
   m_ObjectHideFlags: 0
