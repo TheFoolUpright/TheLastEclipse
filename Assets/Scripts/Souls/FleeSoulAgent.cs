@@ -36,9 +36,9 @@ public class FleeSoulAgent : MonoBehaviour
     {
         var states = new Dictionary<Type, BaseState>()
         {
-            { typeof(STATE_Wander), new STATE_Wander(this) },
+            { typeof(STATE_FleeWander), new STATE_FleeWander(this) },
             { typeof(STATE_Flee), new STATE_Flee(this) },
-            { typeof(STATE_Collectable), new STATE_Collectable(this) },
+            { typeof(STATE_FleeCollectable), new STATE_FleeCollectable(this) },
         };
 
         _stateMachine = GetComponent<StateMachine>();
