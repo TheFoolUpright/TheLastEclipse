@@ -16,6 +16,7 @@ public class FlippingPlatform : MonoBehaviour
     private void Awake()
     {
         Player.OnCharacterChanged += PlayerStateChanged;
+        StartCoroutine(nameof(RotateRoutine));
     }
 
     private void OnDestroy()
@@ -33,9 +34,27 @@ public class FlippingPlatform : MonoBehaviour
             _rotationAmount = -90f;
     }
 
-    private void Update()
+ 
+    IEnumerator RotateRoutine()
     {
-        
+        while (true)
+        {
+            Quaternion startRot = transform.rotation;
+            Quaternion targetRot = startRot * Quaternion.Euler(_rotationAmount, 0, 0);
+
+            while (transform.rotation != targetRot)
+            {
+                transform.rotation = Quaternion.RotateTowards(
+                    transform.rotation,
+                    targetRot,
+                    _speed * Time.deltaTime
+                );
+
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(_pauseTime);
+        }
     }
 
     //void Start()

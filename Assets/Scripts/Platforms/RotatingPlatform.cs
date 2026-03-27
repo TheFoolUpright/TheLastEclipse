@@ -9,11 +9,29 @@ public class RotatingPlatform : MonoBehaviour
 
 
     public float rotationSpeed = 30f;
+    private bool clockwise = true;
+    private void Awake()
+    {
+        Player.OnCharacterChanged += PlayerStateChanged;
+    }
 
+    private void OnDestroy()
+    {
+        Player.OnCharacterChanged -= PlayerStateChanged;
 
+    }
+
+    private void PlayerStateChanged(Character character)
+    {
+
+        if (character == Character.Sun)
+            clockwise = true;
+        else
+            clockwise = false;
+    }
     void Update()
     {
-        if (Player.IsMoonActive)
+        if (clockwise)
         {
             transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime, Space.Self);
         }

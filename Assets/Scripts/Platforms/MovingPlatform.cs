@@ -2,7 +2,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class MovingPlatformMoon : MonoBehaviour
+public class MovingPlatform : MonoBehaviour
 {
 
     [SerializeField]
@@ -22,17 +22,44 @@ public class MovingPlatformMoon : MonoBehaviour
     private int _direction = 1;
 
     public PlayerController Player;
+    private bool isMoving;
+    [SerializeField]
+    private Character _platformType;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    private void Awake()
     {
+        Player.OnCharacterChanged += PlayerStateChanged;
+        PlayerStateChanged(Player.CurrentCharacter);
+    }
+
+    private void OnDestroy()
+    {
+        Player.OnCharacterChanged -= PlayerStateChanged;
+
+    }
+
+    private void PlayerStateChanged(Character character)
+    {
+
+        if (character == _platformType)
+            isMoving = true;
+        else
+            isMoving = false;
+    }
+
+
+
+    void Start()
+   {
+        PlayerStateChanged(Player.CurrentCharacter);
         TargetNextWaypoint();
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
-        if (Player.IsMoonActive)
+        if (isMoving)
         {
         _elapsedTime += Time.deltaTime;
 
@@ -45,11 +72,6 @@ public class MovingPlatformMoon : MonoBehaviour
                 TargetNextWaypoint();
             }
 
-        }
-
-        else
-        {
-           
         }
  
     }
@@ -76,3 +98,4 @@ public class MovingPlatformMoon : MonoBehaviour
     }
 
 }
+
