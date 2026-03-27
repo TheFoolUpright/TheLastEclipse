@@ -11,16 +11,16 @@ public class HazardsMechanics : MonoBehaviour
     public BoxCollider onTriggerCollider;
     private void Start()
     {
-        ActiveVisual();
+        //ActiveVisual();
     }
     private void OnEnable()
     {
-        player.characterChanged += ActiveVisual;
+        player.OnCharacterChanged += ActiveVisual;
     }
 
     private void OnDisable()
     {
-        player.characterChanged -= ActiveVisual;
+        player.OnCharacterChanged -= ActiveVisual;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -40,7 +40,7 @@ public class HazardsMechanics : MonoBehaviour
         }
     }
 
-    private void ActiveVisual()
+    private void ActiveVisual(Character characterType)
     {
         hazardVisual.SetActive((player.IsMoonActive && hazardSide == Character.Moon) || 
             (!player.IsMoonActive && hazardSide == Character.Sun));

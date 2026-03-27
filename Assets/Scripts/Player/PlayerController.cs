@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public event Action<Character> OnCharacterChanged;
     public bool IsMoonActive => moonVisual.activeInHierarchy;
 
     private StarterAssetsInputs inputs;
@@ -17,7 +18,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] CharacterController characterController;
     [SerializeField] private int _currentHealth = 0;
 
-    public Action characterChanged;
     private int currentHealth 
     {
         get => _currentHealth;
@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
         moonVisual.SetActive(!isSun);
         sunVisual.SetActive(isSun);
 
-        characterChanged?.Invoke();
+        OnCharacterChanged?.Invoke(moonVisual.activeInHierarchy ? Character.Moon : Character.Sun);
     }
 
     internal void Damage()
