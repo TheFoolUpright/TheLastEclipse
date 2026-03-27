@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 
 public class GameManager : MonoBehaviour
@@ -21,6 +22,19 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
         CheckpointData.Initialize();
+    }
+
+    private void Update()
+    {
+        if (Keyboard.current.rKey.wasPressedThisFrame)
+            RestartLevel();
+    }
+
+    private void RestartLevel()
+    {
+        var player = GameObject.FindGameObjectWithTag("Player");
+        // Move player to CheckpointData.activeCheckpoint
+
     }
 
 
