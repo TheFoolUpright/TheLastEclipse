@@ -88,6 +88,12 @@ namespace StarterAssets
         [Tooltip("Time (in seconds) you can press jump BEFORE landing and still jump")]
         public float jumpBufferMax = .5f;
 
+        [Header("Camera Sensitivity")]
+        [Tooltip("How fast the camera moves with the mouse")]
+        public float MouseSensitivity = 0.05f;
+        [Tooltip("How fast the camera moves with a controller stick")]
+        public float GamepadSensitivity = 120f;
+
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
@@ -223,24 +229,74 @@ namespace StarterAssets
 
         private void CameraRotation()
         {
-            // if there is an input and camera position is not fixed
+            // Only rotate the camera if:
+            // 1. The player is actually moving the camera (input is not tiny)
+            // 2. The camera is not locked
             if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
             {
-                //Don't multiply mouse input by Time.deltaTime;
-                float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
+                // Check if we are using mouse or controller
+                if (IsCurrentDeviceMouse)
+                {
+                    // MOUSE INPUT
 
-                _cinemachineTargetYaw += _input.look.x * deltaTimeMultiplier;
-                _cinemachineTargetPitch += _input.look.y * deltaTimeMultiplier;
+                    // Add horizontal input (left/right) to yaw (turning left/right)
+                    // Multiply by sensitivity to control speed
+                    _cinemachineTargetYaw += _input.look.x * MouseSensitivity;
+
+                    // Add vertical input (up/down) to pitch (looking up/down)
+                    _cinemachineTargetPitch += _input.look.y * MouseSensitivity;
+                }
+                else
+                {
+                    // CONTROLLER INPUT
+
+                    // Controller input is NOT frame-based, so we multiply by deltaTime
+                    // This keeps movement smooth and consistent across frame rates
+
+                    _cinemachineTargetYaw += _input.look.x * GamepadSensitivity * Time.deltaTime;
+                    _cinemachineTargetPitch += _input.look.y * GamepadSensitivity * Time.deltaTime;
+                }
             }
 
-            // clamp our rotations so our values are limited 360 degrees
+            // Clamp = limit values so they don't go crazy
+
+            // Yaw (left/right) can spin forever, so we just normalize it
             _cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
+
+            // Pitch (up/down) is clamped so you can't flip upside down
+            // BottomClamp = how far you can look down
+            // TopClamp = how far you can look up
             _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
 
-            // Cinemachine will follow this target
-            CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride,
-                _cinemachineTargetYaw, 0.0f);
+            // Apply rotation to the camera target
+            // Cinemachine will follow this object
+
+            CinemachineCameraTarget.transform.rotation = Quaternion.Euler(
+                _cinemachineTargetPitch + CameraAngleOverride, // up/down
+                _cinemachineTargetYaw,                         // left/right
+                0.0f                                           // no roll (tilting sideways)
+            );
         }
+        //private void CameraRotation()
+        //{
+        //    // if there is an input and camera position is not fixed
+        //    if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
+        //    {
+        //        //Don't multiply mouse input by Time.deltaTime;
+        //        float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
+
+        //        _cinemachineTargetYaw += _input.look.x * deltaTimeMultiplier;
+        //        _cinemachineTargetPitch += _input.look.y * deltaTimeMultiplier;
+        //    }
+
+        //    // clamp our rotations so our values are limited 360 degrees
+        //    _cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
+        //    _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
+
+        //    // Cinemachine will follow this target
+        //    CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride,
+        //        _cinemachineTargetYaw, 0.0f);
+        //}
 
         private void Move()
         {

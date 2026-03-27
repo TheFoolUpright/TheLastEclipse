@@ -1,11 +1,11 @@
 using System;
 using UnityEngine;
 
-public class STATE_Wander : BaseState
+public class STATE_FleeWander : BaseState
 {
     private readonly FleeSoulAgent _owner;
 
-    public STATE_Wander(FleeSoulAgent owner) : base(owner.gameObject)
+    public STATE_FleeWander(FleeSoulAgent owner) : base(owner.gameObject)
     {
         _owner = owner;
     }
