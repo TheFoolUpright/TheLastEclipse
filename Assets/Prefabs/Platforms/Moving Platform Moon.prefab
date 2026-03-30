@@ -128,3 +128,4 @@ MonoBehaviour:
   _waypointPath: {fileID: 0}
   _speed: 3
   Player: {fileID: 0}
+  _platformType: 1

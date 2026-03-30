@@ -8,6 +8,8 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public event Action<Character> OnCharacterChanged;
+
+    public Character CurrentCharacter => moonVisual.activeInHierarchy ? Character.Moon : Character.Sun;
     public bool IsMoonActive => moonVisual.activeInHierarchy;
 
     private StarterAssetsInputs inputs;
@@ -63,7 +65,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void PlayerDie()
+    public void PlayerDie()
     {
         currentHealth = 0;
         RespawnPlayer();

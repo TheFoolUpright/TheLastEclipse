@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6562791543140663529}
   - component: {fileID: 7764534489270786012}
   - component: {fileID: 708609642280891500}
-  - component: {fileID: 7580471191613637579}
+  - component: {fileID: 5328012999032787767}
   m_Layer: 0
   m_Name: Moving Platform Sun
   m_TagString: Untagged
@@ -113,7 +113,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7580471191613637579
+--- !u!114 &5328012999032787767
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,9 +122,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 472154687012489842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b7ad089ac08bad498c83aa296a577de, type: 3}
+  m_Script: {fileID: 11500000, guid: f7d1bdb35fb47624fa1a8277e0e1c2bc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MovingPlatformSun
+  m_EditorClassIdentifier: Assembly-CSharp::MovingPlatform
   _waypointPath: {fileID: 0}
-  _speed: 3
-  Player: {fileID: 0}
+  _speed: 0
+  Player: {fileID: 8584021865794721866, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
+  _platformType: 0
