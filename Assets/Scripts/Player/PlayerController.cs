@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void PlayerDie()
+    public void PlayerDie()
     {
         currentHealth = 0;
         RespawnPlayer();
