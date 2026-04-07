@@ -11,7 +11,7 @@ namespace StarterAssets
 		public Vector2 move;
 		public Vector2 look;
 		public bool jump;
-		public bool sprint;
+		public bool walk;
 		public bool changeVisual;
 
         // True only on the exact frame the jump button is pressed
@@ -19,7 +19,7 @@ namespace StarterAssets
         public bool jumpPressedThisFrame;
         // Tracks the previous frame's sprint button state
         // (used to detect a button press instead of a hold)
-        public bool sprintPressedThisFrame;
+        public bool walkToggleButtonHeldLastFrame;
 
         [Header("Movement Settings")]
 		public bool analogMovement;
@@ -92,12 +92,12 @@ namespace StarterAssets
 		public void SprintInput(bool newSprintState)
 		{
             // Detect the exact moment the sprint button is pressed
-            if (newSprintState && !sprintPressedThisFrame)
+            if (newSprintState && !walkToggleButtonHeldLastFrame)
                 // Toggle sprint on/off each time the button is pressed
-                sprint = !sprint;
+                walk = !walk;
 
             // Store the current button state for the next frame
-            sprintPressedThisFrame = newSprintState;
+            walkToggleButtonHeldLastFrame = newSprintState;
         }
 
 		private void OnApplicationFocus(bool hasFocus)

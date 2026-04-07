@@ -11,7 +11,7 @@ public class StateMachine : MonoBehaviour
 
     public StateSharedData SharedData;
 
-    private string CurrentStateName;
+    [SerializeField] private string CurrentStateName;
 
     public void SetStates(Dictionary<Type, BaseState> states)
     {

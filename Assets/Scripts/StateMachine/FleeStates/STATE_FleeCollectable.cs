@@ -16,7 +16,8 @@ public class STATE_FleeCollectable : BaseState
     
     // Runs when we enter this state
     public override void OnEnter(BaseState oldState){
-    
+        _owner.ClearMovement();
+        Debug.Log("Entered Collectable State");
     }
     
     // Runs when we exit this state

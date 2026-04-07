@@ -46,6 +46,21 @@ namespace StarterAssets
         [Tooltip("Time required to pass before entering the fall state. Useful for walking down stairs")]
         public float FallTimeout = 0.15f;
 
+
+        // This controls how much the jump is shortened when the player
+        // lets go of the jump button early.
+        //
+        // Example:
+        // - Holding jump = full jump height
+        // - Tapping jump quickly = shorter jump
+        //
+        // Lower values make the jump get cut more aggressively.
+        [Header("Variable Jump Height")]
+        [Tooltip("How much upward speed is kept when the jump button is released early. Lower = shorter hop")]
+        [Range(0.1f, 1.0f)]
+        public float JumpCutMultiplier = 0.5f;
+
+
         [Header("Player Grounded")]
         [Tooltip("If the character is grounded or not. Not part of the CharacterController built in grounded check")]
         public bool Grounded = true;
@@ -58,6 +73,15 @@ namespace StarterAssets
 
         [Tooltip("What layers the character uses as ground")]
         public LayerMask GroundLayers;
+
+        // This tells us whether the player was grounded during the PREVIOUS frame.
+        // We use this to detect the exact moment the player lands.
+        // Example:
+        // - last frame: false
+        // - this frame: true
+        // => the player just landed
+        [Tooltip("Check if player was previously grounded")]
+        public bool WasGroundedLastFrame { get; private set; }
 
         [Header("Cinemachine")]
         [Tooltip("The follow target set in the Cinemachine Virtual Camera that the camera will follow")]
@@ -77,16 +101,17 @@ namespace StarterAssets
 
         [Header("Double Jump")]
         [Tooltip("For restricting how long the player need to wait before double jumping")]
-        [SerializeField][Range(0.1f, 1.5f)] 
+        [SerializeField]
+        [Range(0.1f, 1.5f)]
         private float doubleJumpTimer;
 
         [Header("Coyote Time")]
         [Tooltip("Time (in seconds) you can still jump after leaving ground")]
-        public float coyoteMax = .5f;
+        public float coyoteMax = .3f;
 
         [Header("Jump Buffering")]
         [Tooltip("Time (in seconds) you can press jump BEFORE landing and still jump")]
-        public float jumpBufferMax = .5f;
+        public float jumpBufferMax = .3f;
 
         [Header("Camera Sensitivity")]
         [Tooltip("How fast the camera moves with the mouse")]
@@ -105,6 +130,17 @@ namespace StarterAssets
         private float _rotationVelocity;
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
+
+        // If the player is standing on a bounce platform,
+        // we store a reference to it here.
+        // If they are standing on normal ground, this stays null.
+        private BouncyPlatform _currentBounceSurface;
+
+        // This is a very short cooldown that stops the bounce from
+        // firing over and over across multiple frames.
+        // It helps prevent accidental repeated launching.
+        [SerializeField] private float bounceRetriggerLock = 0.15f;
+        private float _bounceRetriggerTimer = 0f;
 
         // double jump
         private bool canDoubleJump = true;
@@ -187,8 +223,23 @@ namespace StarterAssets
         {
             _hasAnimator = TryGetComponent(out _animator);
 
-            JumpAndGravity();
+            // Before we do a new grounded check,
+            // remember whether we were grounded last frame.
+            // This lets us compare old state vs new state.
+            WasGroundedLastFrame = Grounded;
+
+            // Reduce the bounce cooldown timer over time.
+            // Once this reaches 0, bouncing is allowed again.
+            if (_bounceRetriggerTimer > 0f)
+                _bounceRetriggerTimer -= Time.deltaTime;
+
             GroundedCheck();
+
+            // After checking what ground is under the player,
+            // see whether we just landed on a bounce platform.
+            HandleBounceLanding();
+
+            JumpAndGravity();
             Move();
         }
 
@@ -209,16 +260,44 @@ namespace StarterAssets
         private void GroundedCheck()
         {
             // set sphere position, with offset
-            Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset,
-                transform.position.z);
-            // Check if player is touching the ground using a small sphere
-            Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers,
-                QueryTriggerInteraction.Ignore);
+            Vector3 spherePosition = new Vector3(
+                transform.position.x,
+                transform.position.y - GroundedOffset,
+                transform.position.z
+            );
+
+            // Instead of only asking "am I touching ground?",
+            // we gather all colliders in the ground check sphere.
+            // That way we can inspect the surface we landed on.
+            Collider[] hits = Physics.OverlapSphere(
+                spherePosition,
+                GroundedRadius,
+                GroundLayers,
+                QueryTriggerInteraction.Ignore
+            );
+
+            // If we touched at least one valid ground collider,
+            // the player is considered grounded.
+            Grounded = hits.Length > 0;
+
+            // Reset this every frame before checking the colliders.
+            // If we find a bounce platform below us, we store it here.
+            _currentBounceSurface = null;
+
+            foreach (Collider hit in hits)
+            {
+                // Check whether this ground collider belongs to a bounce platform.
+                // If yes, save a reference so we can use its bounce settings.
+                BouncyPlatform bounceSurface = hit.GetComponent<BouncyPlatform>();
+                if (bounceSurface != null)
+                {
+                    _currentBounceSurface = bounceSurface;
+                    break;
+                }
+            }
+
             if (Grounded)
                 canDoubleJump = true;
-
-            //if (Grounded)
-            //    _input.jump = false;
 
             // update animator if using character
             if (_hasAnimator)
@@ -277,31 +356,14 @@ namespace StarterAssets
                 0.0f                                           // no roll (tilting sideways)
             );
         }
-        //private void CameraRotation()
-        //{
-        //    // if there is an input and camera position is not fixed
-        //    if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
-        //    {
-        //        //Don't multiply mouse input by Time.deltaTime;
-        //        float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
 
-        //        _cinemachineTargetYaw += _input.look.x * deltaTimeMultiplier;
-        //        _cinemachineTargetPitch += _input.look.y * deltaTimeMultiplier;
-        //    }
-
-        //    // clamp our rotations so our values are limited 360 degrees
-        //    _cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
-        //    _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
-
-        //    // Cinemachine will follow this target
-        //    CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride,
-        //        _cinemachineTargetYaw, 0.0f);
-        //}
 
         private void Move()
         {
-            // set target speed based on move speed, sprint speed and if sprint is pressed
-            float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+            // Choose movement speed.
+            // By default, the player runs.
+            // If walk mode has been toggled on, use walk speed instead.
+            float targetSpeed = _input.walk ? MoveSpeed : SprintSpeed;
 
             // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
@@ -443,8 +505,7 @@ namespace StarterAssets
                     // Reset double jump delay timer
                     _doubleJumpTimer = doubleJumpTimer;
 
-                    // Clear input so holding the button doesn't retrigger jump
-                    _input.jump = false;
+
                 }
                 // ------------------------
                 // DOUBLE JUMP (mid-air)
@@ -462,15 +523,13 @@ namespace StarterAssets
                     // negate the jump buffer
                     jumpBufferCounter = 0;
 
-                    // Clear input so holding the button doesn't retrigger jump
-                    _input.jump = false;
                 }
             }
 
             // ========================
             // GROUNDED BEHAVIOR
             // ========================
-            if (Grounded) 
+            if (Grounded)
             {
                 // reset the fall timeout timer (used for animations)
                 _fallTimeoutDelta = FallTimeout;
@@ -511,8 +570,16 @@ namespace StarterAssets
                     }
                 }
 
-                // if we are not grounded, do not jump
-                //_input.jump = false;
+            }
+
+            // ========================
+            // VARIABLE JUMP HEIGHT
+            // ========================
+            // If the player releases jump while still moving upward,
+            // cut the upward velocity short to create a smaller hop.
+            if (!Grounded && _verticalVelocity > 0.0f && !_input.jump)
+            {
+                _verticalVelocity *= JumpCutMultiplier;
             }
 
             // ========================
@@ -523,6 +590,70 @@ namespace StarterAssets
             {
                 _verticalVelocity += Gravity * Time.deltaTime;
             }
+        }
+
+        private void HandleBounceLanding()
+        {
+            // If the short bounce cooldown is still active,
+            // do nothing yet.
+            if (_bounceRetriggerTimer > 0f)
+                return;
+
+            // The player "just landed" if:
+            // - they are grounded now
+            // - but they were NOT grounded last frame
+            bool justLanded = Grounded && !WasGroundedLastFrame;
+
+            if (!justLanded)
+                return;
+
+            // If there is no bounce platform under the player,
+            // then this is just a normal landing.
+            if (_currentBounceSurface == null)
+                return;
+
+            // Apply the bounce using the settings from the platform.
+            Bounce(_currentBounceSurface.BounceHeight, _currentBounceSurface.ResetDoubleJump);
+
+            // Tell the platform to play its own feedback
+            // such as audio, particles, or squash animation.
+            _currentBounceSurface.PlayBounceFeedback();
+
+            // Start the short lock so the bounce doesn't trigger again instantly.
+            _bounceRetriggerTimer = bounceRetriggerLock;
+        }
+
+        public void Bounce(float bounceHeight, bool resetDoubleJump = true, bool clearJumpBuffer = true)
+        {
+            // Convert the desired bounce height into upward velocity.
+            // This uses the same jump physics idea as the normal jump.
+            _verticalVelocity = Mathf.Sqrt(bounceHeight * -2f * Gravity);
+
+            // Optional: clear jump buffering so a stored jump press
+            // does not accidentally trigger immediately after bouncing.
+            if (clearJumpBuffer)
+                jumpBufferCounter = 0f;
+
+            // Clear coyote time because the bounce is a fresh launch,
+            // not a leftover "just left the ground" state.
+            coyoteCounter = 0f;
+
+            // Optionally restore double jump after bouncing.
+            // This is useful if you want the bounce platform to feel generous.
+            if (resetDoubleJump)
+            {
+                canDoubleJump = true;
+                _doubleJumpTimer = 0f;
+            }
+
+            // Trigger jump-style animation states.
+            if (_hasAnimator)
+            {
+                _animator.SetBool(_animIDJump, true);
+                _animator.SetBool(_animIDFreeFall, false);
+            }
+
+         
         }
 
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
@@ -565,7 +696,5 @@ namespace StarterAssets
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
         }
-
-        
     }
 }
