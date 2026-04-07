@@ -148,6 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ebbfde2f2f73b46ab81c4342699fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FallingPlatform
+  shakeDuration: 0.5
+  fallDuration: 2
+  stayFallenDuration: 5
+  comeBackDuration: 2
 --- !u!54 &7350066502227706056
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -33,7 +33,7 @@ public class FallingPlatform : MonoBehaviour
         
         if (animationStatus == 1)
         {
-            transform.position = startPosition + new Vector3(Mathf.Sin(animationTimer * UnityEngine.Random.Range(5, 10)), 0, -Mathf.Sin(animationTimer * UnityEngine.Random.Range(5, 10)));
+            transform.position = startPosition + new Vector3(Mathf.Sin(animationTimer * UnityEngine.Random.Range(1, 3)), 0, -Mathf.Sin(animationTimer * UnityEngine.Random.Range(1, 3)));
             if(animationTimer >= animationDuration)
             {
                 Fall();
