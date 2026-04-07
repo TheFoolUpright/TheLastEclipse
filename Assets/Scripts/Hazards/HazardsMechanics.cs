@@ -36,7 +36,6 @@ public class HazardsMechanics : MonoBehaviour
 
             if (controller)
             {
-                Debug.Log("I was here, I collided");
 
                 if ((controller.IsMoonActive && hazardSide == Character.Moon) || 
                     (!controller.IsMoonActive && hazardSide == Character.Sun))

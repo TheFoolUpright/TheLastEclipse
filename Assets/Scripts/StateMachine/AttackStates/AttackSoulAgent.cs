@@ -19,10 +19,10 @@ public class AttackSoulAgent : MonoBehaviour
      !agent.pathPending &&
      agent.remainingDistance != Mathf.Infinity &&
      agent.remainingDistance <= agent.stoppingDistance &&
-     Vector3.Distance(transform.position, agent.destination) <= agent.stoppingDistance &&
+     //Vector3.Distance(transform.position, agent.destination) <= agent.stoppingDistance &&
      agent.velocity.sqrMagnitude == 0f;
 
-    public List<Vector3> WanderingPoints = new List<Vector3>();
+    public List<Transform> WanderingPoints = new List<Transform>();
     [HideInInspector] public PlayerController player;
     [HideInInspector] public int attackCount = 0;
 
