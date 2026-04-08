@@ -11,7 +11,6 @@ public class AttackSoulAgent : MonoBehaviour
     private StateMachine _stateMachine;
     public StateMachine StateMachine => _stateMachine;
 
-
     [SerializeField] private NavMeshAgent agent;
     public NavMeshAgent NavMeshAgent => agent;
     public bool AgentReachedDestination =>
@@ -22,14 +21,23 @@ public class AttackSoulAgent : MonoBehaviour
      //Vector3.Distance(transform.position, agent.destination) <= agent.stoppingDistance &&
      agent.velocity.sqrMagnitude == 0f;
 
+    public List<AttackSoulDamageArea> AttackAreas = new List<AttackSoulDamageArea>();
     public List<Transform> WanderingPoints = new List<Transform>();
+    public List<Transform> IdlePoints = new List<Transform>();
     [HideInInspector] public PlayerController player;
-    [HideInInspector] public int attackCount = 0;
+    
+    public int attackCount = 0;
+    public bool attackHit;
 
+    public MeshRenderer attackRenderer;
 
     private void Awake()
     {
         InitializeStateMachine();
+        foreach (var item in AttackAreas)
+        {
+            item.Initialize(this);
+        }
     }
 
     void InitializeStateMachine()
@@ -65,6 +73,11 @@ public class AttackSoulAgent : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SetStateColor(Color color)
+    {
+        attackRenderer.material.color = color;
     }
 }
 

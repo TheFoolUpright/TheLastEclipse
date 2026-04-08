@@ -1,5 +1,7 @@
 using StarterAssets;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEditorInternal;
 using UnityEngine;
@@ -11,6 +13,11 @@ public class PlayerController : MonoBehaviour
 
     public Character CurrentCharacter => moonVisual.activeInHierarchy ? Character.Moon : Character.Sun;
     public bool IsMoonActive => moonVisual.activeInHierarchy;
+
+    private List<Color> originalColors = new List<Color>();
+    private bool isDamaged;
+    private SkinnedMeshRenderer moonRenderer;
+    private SkinnedMeshRenderer sunRenderer;
 
     private StarterAssetsInputs inputs;
 
@@ -44,6 +51,10 @@ public class PlayerController : MonoBehaviour
         timer = delayBetweenChanges;
         startingPosition = transform.position;
         currentHealth = maxHealth;
+        moonRenderer = moonVisual.GetComponentInChildren<SkinnedMeshRenderer>();
+        sunRenderer = sunVisual.GetComponentInChildren<SkinnedMeshRenderer>();
+
+
     }
 
     private void Update()
@@ -53,9 +64,9 @@ public class PlayerController : MonoBehaviour
             timer -= Time.deltaTime;
         }
 
-        if (inputs.changeVisual && timer <= 0)
+        if (inputs.changeVisual && timer <= 0 && !isDamaged)
         {
-            ActiveVisual(!sunVisual.activeInHierarchy);
+            ActiveVisual(IsMoonActive);
             timer = delayBetweenChanges;
         }
 
@@ -90,13 +101,54 @@ public class PlayerController : MonoBehaviour
     internal void Damage()
     {
         currentHealth--;
-
+        
         if (currentHealth <= 0)
         {
             RespawnPlayer();
+
+        } 
+        else
+        {
+            originalColors = new();
+            for(int i = 0; i < 3; i++)
+            {
+                if (IsMoonActive)
+                {
+                    originalColors.Add(moonRenderer.materials[i].color);
+                } else
+                {
+                    originalColors.Add(sunRenderer.materials[i].color);
+                }
+            }
+            isDamaged = true;
+            StartCoroutine(DamagedEffect());
+        }
+    }
+    public void SetStateColor(Color color)
+    {
+        SkinnedMeshRenderer renderer = IsMoonActive ? moonRenderer : sunRenderer;
+        for (int i = 0; i < 3; i++)
+        {
+            renderer.materials[i].color = color;
         }
     }
 
+    public void ResetColor()
+    {
+        SkinnedMeshRenderer renderer = IsMoonActive ? moonRenderer : sunRenderer;
+        for(int i = 0; i < 3; i++)
+        {
+            renderer.materials[i].color = originalColors[i];
+        }
+    }
+
+    private IEnumerator DamagedEffect()
+    {
+        SetStateColor(Color.red);
+        yield return new WaitForSeconds(1);
+        ResetColor();
+        isDamaged = false;
+    }
 }
 
 public enum Character
