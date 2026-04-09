@@ -16,7 +16,8 @@ public class HazardsMechanics : MonoBehaviour
 
     private void Start()
     {
-        //ActiveVisual();
+        ActiveVisual(Character.Sun);
+        
     }
     private void OnEnable()
     {
