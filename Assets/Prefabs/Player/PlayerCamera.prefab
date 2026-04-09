@@ -119,14 +119,14 @@ MonoBehaviour:
     ScreenPosition: {x: 0, y: 0}
     DeadZone:
       Enabled: 0
-      Size: {x: 0.1, y: 0.7}
+      Size: {x: 0.1, y: 0.5}
     HardLimits:
       Enabled: 1
-      Size: {x: 0.1, y: 0.7}
+      Size: {x: 0.1, y: 0.5}
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
   TargetOffset: {x: 0, y: 0, z: 3}
-  Damping: {x: 0.5, y: 1}
+  Damping: {x: 1, y: 2}
   Lookahead:
     Enabled: 0
     Time: 0
