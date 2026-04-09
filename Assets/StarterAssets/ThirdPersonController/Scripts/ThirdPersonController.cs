@@ -141,6 +141,10 @@ namespace StarterAssets
         // It helps prevent accidental repeated launching.
         [SerializeField] private float bounceRetriggerLock = 0.15f;
         private float _bounceRetriggerTimer = 0f;
+        // True only when the current upward launch came from a player jump
+        // that should support variable jump height.
+        // Bounce launches should usually set this to false.
+        private bool _allowVariableJumpCut = false;
 
         // double jump
         private bool canDoubleJump = true;
@@ -487,6 +491,9 @@ namespace StarterAssets
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 
+                    // Allow for varible jump height
+                    _allowVariableJumpCut = true;
+
                     // Reset jump cooldown
                     _jumpTimeoutDelta = JumpTimeout;
 
@@ -517,6 +524,9 @@ namespace StarterAssets
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
                     _verticalVelocity = Mathf.Sqrt(JumpHeight / 1.5f * -2f * Gravity);
 
+                    // Allow for varible jump height
+                    _allowVariableJumpCut = true;
+
                     // Disable further double jumps until grounded again
                     canDoubleJump = false;
 
@@ -531,6 +541,9 @@ namespace StarterAssets
             // ========================
             if (Grounded)
             {
+                // Don't allow varible jump height
+                _allowVariableJumpCut = false;
+
                 // reset the fall timeout timer (used for animations)
                 _fallTimeoutDelta = FallTimeout;
 
@@ -577,9 +590,10 @@ namespace StarterAssets
             // ========================
             // If the player releases jump while still moving upward,
             // cut the upward velocity short to create a smaller hop.
-            if (!Grounded && _verticalVelocity > 0.0f && !_input.jump)
+            if (_allowVariableJumpCut && !Grounded && _verticalVelocity > 0.0f && !_input.jump)
             {
                 _verticalVelocity *= JumpCutMultiplier;
+                _allowVariableJumpCut = false;
             }
 
             // ========================
@@ -628,6 +642,9 @@ namespace StarterAssets
             // Convert the desired bounce height into upward velocity.
             // This uses the same jump physics idea as the normal jump.
             _verticalVelocity = Mathf.Sqrt(bounceHeight * -2f * Gravity);
+            
+            // Don't allow varible jump height
+            _allowVariableJumpCut = false;
 
             // Optional: clear jump buffering so a stored jump press
             // does not accidentally trigger immediately after bouncing.

@@ -71,7 +71,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190443275931889740}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -1517,6 +1517,7 @@ GameObject:
   - component: {fileID: 327620689315284114}
   - component: {fileID: 951958417910161257}
   - component: {fileID: 8584021865794721866}
+  - component: {fileID: 8458444068517782397}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1623,6 +1624,7 @@ MonoBehaviour:
   Gravity: -15
   JumpTimeout: 0.3
   FallTimeout: 0.15
+  JumpCutMultiplier: 0.5
   Grounded: 1
   GroundedOffset: -0.14
   GroundedRadius: 0.2
@@ -1637,6 +1639,9 @@ MonoBehaviour:
   doubleJumpTimer: 0.5
   coyoteMax: 0.5
   jumpBufferMax: 0.5
+  MouseSensitivity: 0.05
+  GamepadSensitivity: 120
+  bounceRetriggerLock: 0.15
 --- !u!114 &4911118137392073430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1669,10 +1674,10 @@ MonoBehaviour:
   move: {x: 0, y: 0}
   look: {x: 0, y: 0}
   jump: 0
-  sprint: 0
+  walk: 0
   changeVisual: 0
   jumpPressedThisFrame: 0
-  sprintPressedThisFrame: 0
+  walkToggleButtonHeldLastFrame: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
@@ -1791,6 +1796,29 @@ MonoBehaviour:
   delayBetweenChanges: 0.5
   characterController: {fileID: 6556313778882047170}
   _currentHealth: 0
+--- !u!114 &8458444068517782397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4900571091752203033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f646ab546dcdc7a429197d6e76896712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDropShadow
+  shadowVisual: {fileID: 0}
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  rayDistance: 20
+  yOffset: 0.02
+  minScale: 0.35
+  maxScale: 1
+  minAlpha: 0.15
+  maxAlpha: 0.6
+  maxHeight: 8
 --- !u!1 &4969167276163611271
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,7 +2529,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8030958208651836016}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
