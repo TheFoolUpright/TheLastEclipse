@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GameObject moonVisual;
     [SerializeField] private GameObject sunVisual;
+    [SerializeField] private GameObject sunUISymbol;
+    [SerializeField] private GameObject moonUISymbol;
     [SerializeField] [Range(0.1f, 2f)] float delayBetweenChanges;
     [SerializeField] CharacterController characterController;
     [SerializeField] private int _currentHealth = 0;
@@ -53,7 +55,8 @@ public class PlayerController : MonoBehaviour
         currentHealth = maxHealth;
         moonRenderer = moonVisual.GetComponentInChildren<SkinnedMeshRenderer>();
         sunRenderer = sunVisual.GetComponentInChildren<SkinnedMeshRenderer>();
-
+        sunUISymbol.SetActive(true);
+        moonUISymbol.SetActive(false);
 
     }
 
@@ -94,6 +97,8 @@ public class PlayerController : MonoBehaviour
     {
         moonVisual.SetActive(!isSun);
         sunVisual.SetActive(isSun);
+        moonUISymbol.SetActive(!isSun);
+        sunUISymbol.SetActive(isSun);
 
         OnCharacterChanged?.Invoke(moonVisual.activeInHierarchy ? Character.Moon : Character.Sun);
     }

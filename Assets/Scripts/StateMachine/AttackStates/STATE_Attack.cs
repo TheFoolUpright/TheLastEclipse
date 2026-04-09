@@ -60,7 +60,7 @@ public class STATE_Attack : BaseState
         Debug.Log("Attack");
         onCooldown = true;
         timer = 0;
-        _owner.SetStateColor(Color.rebeccaPurple);
+        _owner.SetStateColor(Color.indianRed);
     }
     
     // Runs when we exit this state

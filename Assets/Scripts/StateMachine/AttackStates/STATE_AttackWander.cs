@@ -42,7 +42,7 @@ public class STATE_AttackWander : BaseState
     public override void OnEnter(BaseState oldState){
         Debug.Log("Wandering");
         SetTarget();
-        _owner.SetStateColor(Color.purple);
+        _owner.SetStateColor(Color.darkRed);
     }
     
     // Runs when we exit this state

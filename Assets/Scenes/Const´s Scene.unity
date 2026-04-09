@@ -271,38 +271,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2122546415}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &466583766
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 466583767}
-  m_Layer: 0
-  m_Name: Waypoint1 (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &466583767
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 466583766}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.12, y: -0.005710125, z: 2.35}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2122546415}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &494099845
+--- !u!1001 &341533588
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -314,57 +283,9 @@ PrefabInstance:
       propertyPath: Target.TrackingTarget
       value: 
       objectReference: {fileID: 423401091644389139}
-    - target: {fileID: 2632358809254545685, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
-      propertyPath: Damping.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2632358809254545685, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
-      propertyPath: Damping.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2632358809254545685, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
-      propertyPath: CameraSide
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2632358809254545685, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
-      propertyPath: ShoulderOffset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2632358809254545685, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
-      propertyPath: VerticalArmLength
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4446570716515696387, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_Name
       value: PlayerCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 4522285561479721603, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
-      propertyPath: Damping.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4522285561479721603, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
-      propertyPath: Damping.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4522285561479721603, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
-      propertyPath: Lookahead.Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4522285561479721603, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
-      propertyPath: Composition.DeadZone.Size.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4522285561479721603, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
-      propertyPath: Composition.DeadZone.Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4522285561479721603, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
-      propertyPath: Composition.ScreenPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4522285561479721603, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
-      propertyPath: Composition.HardLimits.Size.y
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7085709587800296204, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -396,7 +317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7085709587800296204, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 2.083
       objectReference: {fileID: 0}
     - target: {fileID: 7085709587800296204, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -411,6 +332,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
+--- !u!1 &466583766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 466583767}
+  m_Layer: 0
+  m_Name: Waypoint1 (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &466583767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466583766}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.12, y: -0.005710125, z: 2.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2122546415}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &510180065
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,7 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshLink
   m_SerializedVersion: 1
   m_AgentTypeID: 0
-  m_StartPoint: {x: 2, y: -1.76, z: -1.05}
+  m_StartPoint: {x: 0.76649475, y: -1.76, z: -1.5328829}
   m_EndPoint: {x: -1.7244434, y: 0.21000004, z: -1.2250336}
   m_StartTransform: {fileID: 0}
   m_EndTransform: {fileID: 0}
@@ -600,7 +552,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1a7c4add630b3254fa6cb61c52ac16ab, type: 2}
+  - {fileID: 2100000, guid: eb4d741219e1bb04a982089e312b181d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -815,7 +767,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1
+  m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &777999890
@@ -1032,7 +984,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1a7c4add630b3254fa6cb61c52ac16ab, type: 2}
+  - {fileID: 2100000, guid: eb4d741219e1bb04a982089e312b181d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1135,6 +1087,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1130366305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3566499303641111274, guid: 4bda71eb613ded84490305edce3e3541, type: 3}
+  m_PrefabInstance: {fileID: 3389363304188669985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1133210473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1244,6 +1201,11 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2.1898968
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1166547271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 370255027750566185, guid: 4bda71eb613ded84490305edce3e3541, type: 3}
+  m_PrefabInstance: {fileID: 3389363304188669985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1204451167
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,7 +1360,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1a7c4add630b3254fa6cb61c52ac16ab, type: 2}
+  - {fileID: 2100000, guid: eb4d741219e1bb04a982089e312b181d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1519,8 +1481,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshLink
   m_SerializedVersion: 1
   m_AgentTypeID: 0
-  m_StartPoint: {x: 2, y: 0.96, z: -1.05}
-  m_EndPoint: {x: -2, y: -1.25, z: 0.33}
+  m_StartPoint: {x: 1.5046453, y: 0.96000004, z: -1.05}
+  m_EndPoint: {x: -1.0473766, y: -1.25, z: -1.6278702}
   m_StartTransform: {fileID: 0}
   m_EndTransform: {fileID: 0}
   m_Activated: 1
@@ -1873,8 +1835,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshLink
   m_SerializedVersion: 1
   m_AgentTypeID: 0
-  m_StartPoint: {x: 2, y: 0.39, z: -1.05}
-  m_EndPoint: {x: -2, y: -1.25, z: 0.33}
+  m_StartPoint: {x: 1.1934891, y: 0.38999987, z: -1.05}
+  m_EndPoint: {x: -1.4879036, y: -1.25, z: -1.4893157}
   m_StartTransform: {fileID: 0}
   m_EndTransform: {fileID: 0}
   m_Activated: 1
@@ -1984,6 +1946,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 951958417910161257, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1432517983}
     - target: {fileID: 1467135826963096764, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.43
@@ -2028,6 +1994,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8584021865794721866, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
+      propertyPath: sunUISymbol
+      value: 
+      objectReference: {fileID: 1166547271}
+    - target: {fileID: 8584021865794721866, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
+      propertyPath: moonUISymbol
+      value: 
+      objectReference: {fileID: 1130366305}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2517,7 +2491,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1036216752}
   - {fileID: 1432517984}
-  - {fileID: 494099845}
+  - {fileID: 341533588}
   - {fileID: 423401091644389138}
   - {fileID: 1412647811}
   - {fileID: 7990518632411998073}
