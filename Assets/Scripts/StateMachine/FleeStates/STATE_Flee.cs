@@ -27,6 +27,7 @@ public class STATE_Flee : BaseState
 
         _owner.OnCaughtByPlayer += HandleCaughtByPlayer;
         _owner.SetFleeMovement();
+        _owner.SetStateColor(Color.green);
 
         Transform fleePoint = _owner.ChooseFleePoint();
         if (fleePoint != null)
@@ -124,6 +125,7 @@ public class STATE_Flee : BaseState
         _burstTimer = _owner.BurstDuration;
 
         _owner.SetBurstMovement();
+        _owner.SetStateColor(Color.limeGreen);
         Debug.Log($"Burst started. Speed is now {_owner.NavMeshAgent.speed}");
     }
 
@@ -133,6 +135,7 @@ public class STATE_Flee : BaseState
         _burstTimer = 0f;
 
         _owner.SetFleeMovement();
+        _owner.SetStateColor(Color.green);
         Debug.Log($"Burst ended. Speed reset to {_owner.NavMeshAgent.speed}");
     }
 }

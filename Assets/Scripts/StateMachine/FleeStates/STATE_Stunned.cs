@@ -18,6 +18,7 @@ public class STATE_Stunned : BaseState
         _catchCountApplied = false;
 
         _owner.ClearMovement();
+        _owner.SetStateColor(Color.paleGreen);
 
         ApplyCatchCount();
         Debug.Log($"Entered Stunned State. Catch Count: {_owner.CurrentCatchCount}");
