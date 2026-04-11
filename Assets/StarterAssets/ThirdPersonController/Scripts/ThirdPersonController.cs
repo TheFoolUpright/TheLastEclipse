@@ -113,15 +113,18 @@ namespace StarterAssets
         [Tooltip("Time (in seconds) you can press jump BEFORE landing and still jump")]
         public float jumpBufferMax = .3f;
 
-        [Header("Camera Sensitivity")]
-        [Tooltip("How fast the camera moves with the mouse")]
-        public float MouseSensitivity = 0.05f;
-        [Tooltip("How fast the camera moves with a controller stick")]
-        public float GamepadSensitivity = 120f;
+        //[Header("Camera Sensitivity")]
+        //[Tooltip("How fast the camera moves with the mouse")]
+        //public float MouseSensitivity = 0.05f;
+        //[Tooltip("How fast the camera moves with a controller stick")]
+        //public float GamepadSensitivity = 120f;
 
-        // cinemachine
-        private float _cinemachineTargetYaw;
-        private float _cinemachineTargetPitch;
+        //// cinemachine
+        //private float _cinemachineTargetYaw;
+        //private float _cinemachineTargetPitch;
+
+        public bool IsGrounded => Grounded;
+        public float VerticalVelocity => _verticalVelocity;
 
         // player
         private float _speed;
@@ -180,17 +183,17 @@ namespace StarterAssets
 
         private bool _hasAnimator;
 
-        private bool IsCurrentDeviceMouse
-        {
-            get
-            {
-#if ENABLE_INPUT_SYSTEM
-                return _playerInput.currentControlScheme == "KeyboardMouse";
-#else
-				return false;
-#endif
-            }
-        }
+//        private bool IsCurrentDeviceMouse
+//        {
+//            get
+//            {
+//#if ENABLE_INPUT_SYSTEM
+//                return _playerInput.currentControlScheme == "KeyboardMouse";
+//#else
+//				return false;
+//#endif
+//            }
+//        }
 
 
         private void Awake()
@@ -205,7 +208,7 @@ namespace StarterAssets
 
         private void Start()
         {
-            _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
+            //_cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
 
             _hasAnimator = TryGetComponent(out _animator);
             _controller = GetComponent<CharacterController>();
@@ -247,10 +250,10 @@ namespace StarterAssets
             Move();
         }
 
-        private void LateUpdate()
-        {
-            CameraRotation();
-        }
+        //private void LateUpdate()
+        //{
+        //    CameraRotation();
+        //}
 
         private void AssignAnimationIDs()
         {
@@ -310,56 +313,56 @@ namespace StarterAssets
             }
         }
 
-        private void CameraRotation()
-        {
-            // Only rotate the camera if:
-            // 1. The player is actually moving the camera (input is not tiny)
-            // 2. The camera is not locked
-            if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
-            {
-                // Check if we are using mouse or controller
-                if (IsCurrentDeviceMouse)
-                {
-                    // MOUSE INPUT
+        //private void CameraRotation()
+        //{
+        //    // Only rotate the camera if:
+        //    // 1. The player is actually moving the camera (input is not tiny)
+        //    // 2. The camera is not locked
+        //    if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
+        //    {
+        //        // Check if we are using mouse or controller
+        //        if (IsCurrentDeviceMouse)
+        //        {
+        //            // MOUSE INPUT
 
-                    // Add horizontal input (left/right) to yaw (turning left/right)
-                    // Multiply by sensitivity to control speed
-                    _cinemachineTargetYaw += _input.look.x * MouseSensitivity;
+        //            // Add horizontal input (left/right) to yaw (turning left/right)
+        //            // Multiply by sensitivity to control speed
+        //            _cinemachineTargetYaw += _input.look.x * MouseSensitivity;
 
-                    // Add vertical input (up/down) to pitch (looking up/down)
-                    _cinemachineTargetPitch += _input.look.y * MouseSensitivity;
-                }
-                else
-                {
-                    // CONTROLLER INPUT
+        //            // Add vertical input (up/down) to pitch (looking up/down)
+        //            _cinemachineTargetPitch += _input.look.y * MouseSensitivity;
+        //        }
+        //        else
+        //        {
+        //            // CONTROLLER INPUT
 
-                    // Controller input is NOT frame-based, so we multiply by deltaTime
-                    // This keeps movement smooth and consistent across frame rates
+        //            // Controller input is NOT frame-based, so we multiply by deltaTime
+        //            // This keeps movement smooth and consistent across frame rates
 
-                    _cinemachineTargetYaw += _input.look.x * GamepadSensitivity * Time.deltaTime;
-                    _cinemachineTargetPitch += _input.look.y * GamepadSensitivity * Time.deltaTime;
-                }
-            }
+        //            _cinemachineTargetYaw += _input.look.x * GamepadSensitivity * Time.deltaTime;
+        //            _cinemachineTargetPitch += _input.look.y * GamepadSensitivity * Time.deltaTime;
+        //        }
+        //    }
 
-            // Clamp = limit values so they don't go crazy
+        //    // Clamp = limit values so they don't go crazy
 
-            // Yaw (left/right) can spin forever, so we just normalize it
-            _cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
+        //    // Yaw (left/right) can spin forever, so we just normalize it
+        //    _cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
 
-            // Pitch (up/down) is clamped so you can't flip upside down
-            // BottomClamp = how far you can look down
-            // TopClamp = how far you can look up
-            _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
+        //    // Pitch (up/down) is clamped so you can't flip upside down
+        //    // BottomClamp = how far you can look down
+        //    // TopClamp = how far you can look up
+        //    _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
 
-            // Apply rotation to the camera target
-            // Cinemachine will follow this object
+        //    // Apply rotation to the camera target
+        //    // Cinemachine will follow this object
 
-            CinemachineCameraTarget.transform.rotation = Quaternion.Euler(
-                _cinemachineTargetPitch + CameraAngleOverride, // up/down
-                _cinemachineTargetYaw,                         // left/right
-                0.0f                                           // no roll (tilting sideways)
-            );
-        }
+        //    CinemachineCameraTarget.transform.rotation = Quaternion.Euler(
+        //        _cinemachineTargetPitch + CameraAngleOverride, // up/down
+        //        _cinemachineTargetYaw,                         // left/right
+        //        0.0f                                           // no roll (tilting sideways)
+        //    );
+        //}
 
 
         private void Move()
