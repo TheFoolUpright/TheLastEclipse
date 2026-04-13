@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
     public Character CurrentCharacter => moonVisual.activeInHierarchy ? Character.Moon : Character.Sun;
     public bool IsMoonActive => moonVisual.activeInHierarchy;
 
-    private List<Color> originalColors = new List<Color>();
+    private List<Color> moonOriginalColors = new List<Color>();
+    private List<Color> sunOriginalColors = new List<Color>();
     private bool isDamaged;
     private SkinnedMeshRenderer moonRenderer;
     private SkinnedMeshRenderer sunRenderer;
@@ -58,6 +59,17 @@ public class PlayerController : MonoBehaviour
         sunUISymbol.SetActive(true);
         moonUISymbol.SetActive(false);
 
+        moonOriginalColors = new();
+        for (int i = 0; i < 3; i++)
+        {
+            moonOriginalColors.Add(moonRenderer.materials[i].color);
+        }
+
+        sunOriginalColors = new();
+        for (int i = 0; i < 3; i++)
+        {
+            sunOriginalColors.Add(sunRenderer.materials[i].color);
+        }
     }
 
     private void Update()
@@ -114,17 +126,7 @@ public class PlayerController : MonoBehaviour
         } 
         else
         {
-            originalColors = new();
-            for(int i = 0; i < 3; i++)
-            {
-                if (IsMoonActive)
-                {
-                    originalColors.Add(moonRenderer.materials[i].color);
-                } else
-                {
-                    originalColors.Add(sunRenderer.materials[i].color);
-                }
-            }
+
             isDamaged = true;
             StartCoroutine(DamagedEffect());
         }
@@ -143,7 +145,7 @@ public class PlayerController : MonoBehaviour
         SkinnedMeshRenderer renderer = IsMoonActive ? moonRenderer : sunRenderer;
         for(int i = 0; i < 3; i++)
         {
-            renderer.materials[i].color = originalColors[i];
+            renderer.materials[i].color = IsMoonActive ? moonOriginalColors[i] : sunOriginalColors[i];
         }
     }
 

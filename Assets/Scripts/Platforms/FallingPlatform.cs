@@ -17,6 +17,7 @@ public class FallingPlatform : MonoBehaviour
     private int animationStatus;
     private float animationTimer;
     private float animationDuration;
+    private Transform player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -92,6 +93,7 @@ public class FallingPlatform : MonoBehaviour
 
     private void Fall()
     {
+        player.parent = null;
         animationTimer = 0;
         animationStatus = 2;
         animationDuration = fallDuration;
@@ -105,6 +107,7 @@ public class FallingPlatform : MonoBehaviour
         animationStatus = 1;
         animationDuration = shakeDuration;
         animationTimer = 0;
+        player.parent = this.transform;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -115,10 +118,19 @@ public class FallingPlatform : MonoBehaviour
 
             if (controller)
             {
+                player = controller.transform;
                 Shake();
             }
         }
     }
 
-   
+    private void OnTriggerExit(Collider other)
+    {
+        if (player != null)
+        {
+            player.parent = null;
+        }
+    }
+
+
 }

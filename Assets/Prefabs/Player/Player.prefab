@@ -1534,7 +1534,7 @@ Transform:
   m_GameObject: {fileID: 4900571091752203033}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.4, y: 4.2, z: -0.1}
+  m_LocalPosition: {x: 17.43, y: 4.04, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1793,6 +1793,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moonVisual: {fileID: 5715516504099711604}
   sunVisual: {fileID: 4082320485420294455}
+  sunUISymbol: {fileID: 0}
+  moonUISymbol: {fileID: 0}
   delayBetweenChanges: 0.5
   characterController: {fileID: 6556313778882047170}
   _currentHealth: 0
@@ -2546,9 +2548,9 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 76b50c68c96cd9f43944b191f13b71a5, type: 2}
-  - {fileID: 2100000, guid: 76b50c68c96cd9f43944b191f13b71a5, type: 2}
-  - {fileID: 2100000, guid: 76b50c68c96cd9f43944b191f13b71a5, type: 2}
+  - {fileID: 2100000, guid: 6fe0e59704d4d554390c7a3b43d70aab, type: 2}
+  - {fileID: 2100000, guid: 6fe0e59704d4d554390c7a3b43d70aab, type: 2}
+  - {fileID: 2100000, guid: 6fe0e59704d4d554390c7a3b43d70aab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -6,7 +6,9 @@ public class STATE_Attack : BaseState
     private readonly AttackSoulAgent _owner;
     private bool onCooldown;
     private bool attacking;
+    private bool toAttack;
     private float timer;
+    private float startSpeed;
     private GameObject activeArea;
     public STATE_Attack(AttackSoulAgent owner) : base(owner.gameObject) {
         _owner = owner;
@@ -26,14 +28,38 @@ public class STATE_Attack : BaseState
                 onCooldown = false;
                 activeArea = _owner.AttackAreas[_owner.attackCount].gameObject;
                 activeArea.SetActive(true);
+                toAttack = true;
+                activeArea.transform.parent = null;
+            }
+        }
+        if (toAttack)
+        {
+            timer += Time.deltaTime;
+            if (timer >= 2)
+            {
+                timer = 0;
+                toAttack = false;
+                activeArea = _owner.AttackAreas[_owner.attackCount].gameObject;
+                activeArea.SetActive(true);
                 attacking = true;
+                startSpeed = _owner.NavMeshAgent.speed;
+                _owner.NavMeshAgent.speed *= 10;
+                _owner.NavMeshAgent.SetDestination(_owner.AttackAreas[_owner.attackCount].endTarget.position);
             }
         }
         if (attacking)
         {
+            if (_owner.AgentReachedDestination)
+            {
+                _owner.NavMeshAgent.speed = startSpeed;
+            }
             timer += Time.deltaTime;
             if(timer >= 3)
             {
+                activeArea.transform.parent = _owner.transform;
+                activeArea.transform.localPosition = Vector3.zero;
+                activeArea.transform.localRotation = Quaternion.identity;
+
                 if (_owner.attackHit)
                 {
                     _owner.attackHit = false;
