@@ -70,6 +70,7 @@ public class FleeSoulAgent : MonoBehaviour
     public event Action<Collider> OnTriggerEnterEvent;
     public event Action OnCaughtByPlayer;
 
+    public MeshRenderer fleeRenderer;
 
     private void Awake()
     {
@@ -340,6 +341,11 @@ public class FleeSoulAgent : MonoBehaviour
         {
             OnCaughtByPlayer?.Invoke();
         }
+    }
+
+    public void SetStateColor(Color color)
+    {
+        fleeRenderer.material.color = color;
     }
 
 }

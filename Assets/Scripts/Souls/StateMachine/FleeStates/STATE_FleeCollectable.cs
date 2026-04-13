@@ -1,9 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class STATE_FleeCollectable : BaseState
 {
     private readonly FleeSoulAgent _owner;
+
+    private InputAction _collectAction;
 
     public STATE_FleeCollectable(FleeSoulAgent owner) : base(owner.gameObject)
     {
@@ -13,19 +16,21 @@ public class STATE_FleeCollectable : BaseState
     // Runs every frame
     public override Type Tick()
     {
-
-        // Check of er iets de trigger raakt
-        Collider[] hits = Physics.OverlapSphere(_owner.transform.position, 0.5f);
+        
+        Collider[] hits = Physics.OverlapSphere(_owner.transform.position, 1.5f);
 
         foreach (var hit in hits)
         {
             if (hit.CompareTag("Player"))
             {
-                Debug.Log("Soul Collected!");
+               
+                if (_collectAction != null && _collectAction.WasPressedThisFrame())
+                {
+                    Debug.Log("Soul Collected");
 
-                _owner.gameObject.SetActive(false);
-
-                return null;
+                    _owner.gameObject.SetActive(false);
+                    return null;
+                }
             }
         }
 
@@ -38,12 +43,23 @@ public class STATE_FleeCollectable : BaseState
         _owner.ClearMovement();
         Debug.Log("Entered Collectable State");
 
-        // Zorg dat hij stil staat
         Rigidbody rb = _owner.GetComponent<Rigidbody>();
         if (rb != null)
         {
             rb.linearVelocity = Vector3.zero;
         }
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            PlayerInput playerInput = player.GetComponent<PlayerInput>();
+            if (playerInput != null)
+            {
+                _collectAction = playerInput.actions["CollectSoul"];
+            }
+        }
+
+        _owner.SetStateColor(Color.rebeccaPurple);
     }
 
     // Runs when we exit this state

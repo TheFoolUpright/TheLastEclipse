@@ -1,9 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class STATE_AttackCollectable : BaseState
 {
     private readonly AttackSoulAgent _owner;
+
+    private InputAction _collectAction;
 
     public STATE_AttackCollectable(AttackSoulAgent owner) : base(owner.gameObject)
     {
@@ -13,21 +16,22 @@ public class STATE_AttackCollectable : BaseState
     // Runs every frame
     public override Type Tick()
     {
-        // Check of er iets de trigger raakt
-        Collider[] hits = Physics.OverlapSphere(_owner.transform.position, 0.5f);
+        Collider[] hits = Physics.OverlapSphere(_owner.transform.position, 1.5f);
 
         foreach (var hit in hits)
         {
             if (hit.CompareTag("Player"))
             {
-                Debug.Log("Soul Collected!");
+                // Alleen collecten als F wordt ingedrukt
+                if (_collectAction != null && _collectAction.WasPressedThisFrame())
+                {
+                    Debug.Log("Soul Collected");
 
-                _owner.gameObject.SetActive(false);
-
-                return null;
+                    _owner.gameObject.SetActive(false);
+                    return null;
+                }
             }
         }
-
 
         return null;
     }
@@ -37,12 +41,23 @@ public class STATE_AttackCollectable : BaseState
     {
         Debug.Log("Entered Collectable State");
 
+
         if (_owner.NavMeshAgent != null && _owner.NavMeshAgent.isOnNavMesh)
         {
             _owner.NavMeshAgent.isStopped = true;
             _owner.NavMeshAgent.ResetPath();
+            _owner.SetStateColor(Color.rebeccaPurple);
         }
 
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            PlayerInput playerInput = player.GetComponent<PlayerInput>();
+            if (playerInput != null)
+            {
+                _collectAction = playerInput.actions["CollectSoul"];
+            }
+        }
     }
 
     // Runs when we exit this state

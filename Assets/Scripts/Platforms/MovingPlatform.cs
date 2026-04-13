@@ -25,9 +25,7 @@ public class MovingPlatform : MonoBehaviour
     private bool isMoving;
     [SerializeField]
     private Character _platformType;
-
-
-    private void Awake()
+        private void Awake()
     {
         Player.OnCharacterChanged += PlayerStateChanged;
         PlayerStateChanged(Player.CurrentCharacter);

@@ -16,11 +16,11 @@ public class STATE_FleeWander : BaseState
     // Runs when we enter this state
     public override void OnEnter(BaseState oldState)
     {
-        Debug.Log("Entered Wander State");
         _isWaiting = false;
         _waitTimer = 0f;
 
         _owner.SetWanderMovement();
+        _owner.SetStateColor(Color.lightGreen);
 
         Transform wanderPoint = _owner.ChooseRandomWanderPoint();
         if (wanderPoint != null)

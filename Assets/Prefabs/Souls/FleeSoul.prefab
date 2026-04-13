@@ -187,6 +187,7 @@ MonoBehaviour:
   stunnedDuration: 10
   playerInDetectionRange: 0
   player: {fileID: 0}
+  fleeRenderer: {fileID: 8962566104694857811}
 --- !u!1 &5450355073295560978
 GameObject:
   m_ObjectHideFlags: 0
