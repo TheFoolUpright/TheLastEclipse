@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class PlayerLighting : MonoBehaviour
+public class CharacterSwitchLighting : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private PlayerController playerController;
