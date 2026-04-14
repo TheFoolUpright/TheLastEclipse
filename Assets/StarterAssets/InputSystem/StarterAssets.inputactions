@@ -250,6 +250,17 @@
                     "action": "ChangeVisual",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6cea8a3b-3fcf-4272-928d-e71d6dd29cca",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "ChangeVisual",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

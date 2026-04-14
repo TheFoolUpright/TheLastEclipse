@@ -1,27 +1,43 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
-    public List<GameObject> hearts;
-    public PlayerController playerController;
+    [SerializeField] private List<GameObject> hearts;
+    [SerializeField] private PlayerController playerController;
 
     private void OnEnable()
     {
-        playerController.onHpChange += SetHearts;
+        if (playerController != null)
+        {
+            playerController.OnHpChanged += SetHearts;
+        }
     }
 
     private void OnDisable()
     {
-        playerController.onHpChange -= SetHearts;
+        if (playerController != null)
+        {
+            playerController.OnHpChanged -= SetHearts;
+        }
+    }
+
+    private void Start()
+    {
+        if (playerController != null)
+        {
+            SetHearts(playerController.CurrentHealth);
+        }
     }
 
     public void SetHearts(int hp)
     {
-        for (int i = 0; i< hearts.Count; i++)
+        for (int i = 0; i < hearts.Count; i++)
         {
-            hearts[i].SetActive(i + 1 <= hp);
+            if (hearts[i] != null)
+            {
+                hearts[i].SetActive(i < hp);
+            }
         }
     }
 }
