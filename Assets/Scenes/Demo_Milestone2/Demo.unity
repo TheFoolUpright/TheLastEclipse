@@ -878,6 +878,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Regular Platform (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4219764413477963496, guid: b8098df55b3700f489107db4637d6e57, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 74117f645ca87544896e430b75e9a316, type: 2}
     - target: {fileID: 6862507749206627429, guid: b8098df55b3700f489107db4637d6e57, type: 3}
       propertyPath: m_LocalScale.y
       value: 3
@@ -1109,6 +1113,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Regular Platform (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4219764413477963496, guid: b8098df55b3700f489107db4637d6e57, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f74a13152dad544abedc7538eb3182c, type: 2}
     - target: {fileID: 6862507749206627429, guid: b8098df55b3700f489107db4637d6e57, type: 3}
       propertyPath: m_LocalScale.x
       value: 25
@@ -2224,7 +2232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1400769612}
   m_Layer: 0
-  m_Name: WanderPoint
+  m_Name: Flee WanderPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2795,6 +2803,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Regular Platform (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4219764413477963496, guid: b8098df55b3700f489107db4637d6e57, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: bce32739db90b6843ac7f0179bcaa6b7, type: 2}
     - target: {fileID: 6862507749206627429, guid: b8098df55b3700f489107db4637d6e57, type: 3}
       propertyPath: m_LocalPosition.x
       value: 32.68345
