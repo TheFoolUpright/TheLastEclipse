@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5461385978751519397}
   - component: {fileID: 8043647617835736794}
   - component: {fileID: 3583845969567504859}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MoonTogglePlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

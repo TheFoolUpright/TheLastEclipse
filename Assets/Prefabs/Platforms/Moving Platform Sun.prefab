@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7764534489270786012}
   - component: {fileID: 708609642280891500}
   - component: {fileID: 5328012999032787767}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Moving Platform Sun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
