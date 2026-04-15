@@ -22,7 +22,7 @@ public class STATE_AttackCollectable : BaseState
         {
             if (hit.CompareTag("Player"))
             {
-                // Alleen collecten als F wordt ingedrukt
+                
                 if (_collectAction != null && _collectAction.WasPressedThisFrame())
                 {
                     Debug.Log("Soul Collected");
