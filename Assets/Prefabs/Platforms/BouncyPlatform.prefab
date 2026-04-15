@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c19e995a133622459d4cd2c6d2dc540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BouncyPlatform
-  bounceHeight: 4
+  bounceHeight: 5
   resetDoubleJump: 1
   bounceAudioClip: {fileID: 8300000, guid: d060ed0edbe341348b75b54238418d4f, type: 3}
   bounceAudioVolume: 0.5
