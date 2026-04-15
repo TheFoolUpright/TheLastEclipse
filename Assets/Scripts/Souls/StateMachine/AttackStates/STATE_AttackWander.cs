@@ -5,7 +5,7 @@ using UnityEngine;
 public class STATE_AttackWander : BaseState
 {
     private readonly AttackSoulAgent _owner;
-    private float minAttackDistance = 10f;
+    private float minAttackDistance = 5f;
     private Transform target;
     public STATE_AttackWander(AttackSoulAgent owner) : base(owner.gameObject) {
         _owner = owner;
@@ -27,13 +27,13 @@ public class STATE_AttackWander : BaseState
             }
         } else
         {
-            Debug.Log("Going to target");
-            Debug.Log("is on navMesh" + _owner.NavMeshAgent.isOnNavMesh);
-            Debug.Log("waiting path" + !_owner.NavMeshAgent.pathPending);
-            Debug.Log("infinite distance" + (_owner.NavMeshAgent.remainingDistance != Mathf.Infinity));
-            Debug.Log("stoping distance" + (_owner.NavMeshAgent.remainingDistance <= _owner.NavMeshAgent.stoppingDistance));
-            Debug.Log("distance to target" + (Vector3.Distance(_owner.transform.position, _owner.NavMeshAgent.destination) <= _owner.NavMeshAgent.stoppingDistance));
-            Debug.Log("velocity" + (_owner.NavMeshAgent.velocity.sqrMagnitude == 0f));
+            //Debug.Log("Going to target");
+            //Debug.Log("is on navMesh" + _owner.NavMeshAgent.isOnNavMesh);
+            //Debug.Log("waiting path" + !_owner.NavMeshAgent.pathPending);
+            //Debug.Log("infinite distance" + (_owner.NavMeshAgent.remainingDistance != Mathf.Infinity));
+            //Debug.Log("stoping distance" + (_owner.NavMeshAgent.remainingDistance <= _owner.NavMeshAgent.stoppingDistance));
+            //Debug.Log("distance to target" + (Vector3.Distance(_owner.transform.position, _owner.NavMeshAgent.destination) <= _owner.NavMeshAgent.stoppingDistance));
+            //Debug.Log("velocity" + (_owner.NavMeshAgent.velocity.sqrMagnitude == 0f));
         }
             return null;
     }
