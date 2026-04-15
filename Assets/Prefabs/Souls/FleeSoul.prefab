@@ -184,7 +184,7 @@ MonoBehaviour:
   burstSpeedBonus: 1.75
   burstDuration: 0.75
   burstTriggerDistance: 2
-  stunnedDuration: 10
+  stunnedDuration: 1
   playerInDetectionRange: 0
   player: {fileID: 0}
   fleeRenderer: {fileID: 8962566104694857811}
