@@ -50,6 +50,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "CollectSoul",
+                    "type": "Button",
+                    "id": "6169b1ee-8819-4859-9beb-2646ae416c16",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -259,6 +268,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "ChangeVisual",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e5ee9681-6e9d-4c49-81ae-5a1b26c11541",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KeyboardMouse",
+                    "action": "CollectSoul",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

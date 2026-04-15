@@ -15,6 +15,7 @@ public class MovingPlatform : MonoBehaviour
 
     private Transform _previousWaypoint;
     private Transform _targetWaypoint;
+    private Transform player;
 
     private float _timeToWaypoint;
     private float _elapsedTime;
@@ -95,7 +96,15 @@ public class MovingPlatform : MonoBehaviour
         _timeToWaypoint = distanceToWaypoint / _speed;
     }
 
-
+    private void OnTriggerExit(Collider other)
+    {
+        if (player != null)
+        {
+            player.parent = null;
+        }
+    }
 
 }
+
+
 
