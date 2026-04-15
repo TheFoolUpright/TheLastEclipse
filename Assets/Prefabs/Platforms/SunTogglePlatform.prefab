@@ -129,7 +129,7 @@ MonoBehaviour:
   _platformCollider: {fileID: 6436170105481056080}
   _meshRenderer: {fileID: 7548233437449389731}
   _platformType: 0
-  _solidDuration: 2
+  _solidDuration: 4
   _offDuration: 2
   _startOffset: 0
   _solidUsableTint: {r: 1, g: 1, b: 1, a: 1}
