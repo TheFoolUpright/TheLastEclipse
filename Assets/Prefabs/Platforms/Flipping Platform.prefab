@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5121017793765334211}
   - component: {fileID: 6874624755534499288}
   - component: {fileID: 9147782847327903569}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Flipping Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,3 +129,4 @@ MonoBehaviour:
   _speed: 90
   _pauseTime: 1.5
   Player: {fileID: 0}
+  shakeDuration: 2

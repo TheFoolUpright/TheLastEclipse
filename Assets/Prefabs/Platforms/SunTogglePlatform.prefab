@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7548233437449389731}
   - component: {fileID: 6436170105481056080}
   - component: {fileID: 4517261446479663281}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SunTogglePlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -95,5 +95,7 @@ public class MovingPlatform : MonoBehaviour
         _timeToWaypoint = distanceToWaypoint / _speed;
     }
 
+
+
 }
 
