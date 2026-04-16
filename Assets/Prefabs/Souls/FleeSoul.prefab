@@ -177,9 +177,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  fleeSpeedLevel0: 4
-  fleeSpeedLevel1: 4.75
-  fleeSpeedLevel2: 5.5
+  fleeSpeedLevel0: 8
+  fleeSpeedLevel1: 9.75
+  fleeSpeedLevel2: 10.5
   fleeDisengageDelay: 3
   burstSpeedBonus: 1.75
   burstDuration: 0.75

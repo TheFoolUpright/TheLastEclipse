@@ -1719,9 +1719,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 3
-  SprintSpeed: 5.5
+  SprintSpeed: 8
   RotationSmoothTime: 0.09
-  SpeedChangeRate: 10
+  AccelerationTime: 0.5
+  DecelerationTime: 0.2
+  DirectionChangeSpeedMultiplier: 0.8
   LandingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
   FootstepAudioClips:
   - {fileID: 8300000, guid: 72f526a6a9890f643a88e85a61c86c8a, type: 3}
@@ -1754,6 +1756,8 @@ MonoBehaviour:
   doubleJumpTimer: 0.5
   coyoteMax: 0.3
   jumpBufferMax: 0.2
+  FallGravityMultiplier: 2.5
+  LowJumpGravityMultiplier: 2
   bounceRetriggerLock: 0.15
 --- !u!114 &4911118137392073430
 MonoBehaviour:
@@ -1908,9 +1912,13 @@ MonoBehaviour:
   sunVisual: {fileID: 4082320485420294455}
   sunUISymbol: {fileID: 0}
   moonUISymbol: {fileID: 0}
-  delayBetweenChanges: 0.5
   characterController: {fileID: 6556313778882047170}
-  _currentHealth: 0
+  delayBetweenChanges: 0.5
+  maxHealth: 3
+  fallDeathY: -10
+  damageFlashDuration: 1
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  startingPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &8458444068517782397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1947,20 +1955,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCamera
   Target: {fileID: 1629417611338183486}
-  PlayerController: {fileID: 8566397466763661757}
   Input: {fileID: 327620689315284114}
   PlayerInput: {fileID: 951958417910161257}
-  MouseSensitivity: 0.05
+  MouseSensitivity: 0.1
   GamepadSensitivity: 120
   TopClamp: 70
   BottomClamp: -30
   CameraAngleOverride: 0
   LockCameraPosition: 0
-  JumpPitchAssist: 8
-  FallPitchAssist: 14
-  AirPitchSmoothSpeed: 8
-  UpwardAssistVelocity: 1
-  DownwardAssistVelocity: -3
 --- !u!1 &4969167276163611271
 GameObject:
   m_ObjectHideFlags: 0
