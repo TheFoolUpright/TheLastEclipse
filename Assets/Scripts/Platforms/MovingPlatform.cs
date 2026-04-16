@@ -99,13 +99,11 @@ public class MovingPlatform : MonoBehaviour
 
     private void SetPlayerParent()
     {
-        Debug.Log("I AM HERE FATHER");
         player.SetParent(this.transform, true);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("I was here, I collided");
         if (other != null)
         {
             PlayerController controller = other.gameObject.GetComponent<PlayerController>();

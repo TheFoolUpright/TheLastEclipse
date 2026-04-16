@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RotatingPlatform : MonoBehaviour
 {
+    private Transform player;
 
     public PlayerController Player;
 
@@ -59,4 +60,32 @@ public class RotatingPlatform : MonoBehaviour
             collision.transform.SetParent(null);
         }
     }
+
+    private void SetPlayerParent()
+    {
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other != null)
+        {
+            PlayerController controller = other.gameObject.GetComponent<PlayerController>();
+
+            if (controller)
+            {
+                player = controller.transform;
+                SetPlayerParent();
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (player != null)
+        {
+            player.parent = null;
+        }
+    }
+
 }
