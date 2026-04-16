@@ -24,6 +24,8 @@ public class MovingPlatform : MonoBehaviour
 
     public PlayerController Player;
     private bool isMoving;
+    private bool playerOnPlat;
+
     [SerializeField]
     private Character _platformType;
         private void Awake()
@@ -55,10 +57,10 @@ public class MovingPlatform : MonoBehaviour
         TargetNextWaypoint();
     }
 
-   
-    void Update()
+
+    private void FixedUpdate()
     {
-        if (isMoving)
+                if (isMoving)
         {
         _elapsedTime += Time.deltaTime;
 
@@ -72,7 +74,6 @@ public class MovingPlatform : MonoBehaviour
             }
 
         }
- 
     }
 
     private void TargetNextWaypoint()
@@ -96,6 +97,25 @@ public class MovingPlatform : MonoBehaviour
         _timeToWaypoint = distanceToWaypoint / _speed;
     }
 
+    private void SetPlayerParent()
+    {
+        player.SetParent(this.transform, true);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other != null)
+        {
+            PlayerController controller = other.gameObject.GetComponent<PlayerController>();
+
+            if (controller)
+            {
+                player = controller.transform;
+                SetPlayerParent();
+            }
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if (player != null)
@@ -103,7 +123,6 @@ public class MovingPlatform : MonoBehaviour
             player.parent = null;
         }
     }
-
 }
 
 

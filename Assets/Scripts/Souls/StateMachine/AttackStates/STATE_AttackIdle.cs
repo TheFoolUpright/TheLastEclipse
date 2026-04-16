@@ -23,7 +23,6 @@ public class STATE_AttackIdle : BaseState
     
     // Runs when we enter this state
     public override void OnEnter(BaseState oldState){
-        Debug.Log("Idle");
         SetTarget();
         _owner.SetStateColor(Color.softRed);
     }
@@ -38,6 +37,5 @@ public class STATE_AttackIdle : BaseState
         targetIndex = (targetIndex + 1 + _owner.IdlePoints.Count) % _owner.IdlePoints.Count;
         target = _owner.IdlePoints[targetIndex];
         _owner.NavMeshAgent.SetDestination(target.position);
-        Debug.Log($"Set Target: {target.name}");
     }
 }
