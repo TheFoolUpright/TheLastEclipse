@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     private float switchTimer;
     private bool isDamaged;
     private int currentHealth;
-    private Vector3 startingPosition;
+    [SerializeField] private Vector3 startingPosition;
     private Coroutine damageRoutine;
 
     public int CurrentHealth => currentHealth;
