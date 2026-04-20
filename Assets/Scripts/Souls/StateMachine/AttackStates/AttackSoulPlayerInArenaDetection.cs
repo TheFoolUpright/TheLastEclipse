@@ -5,10 +5,16 @@ public class AttackSoulPlayerInArenaDetection : MonoBehaviour
     [HideInInspector] public PlayerController player;
 
     private StateMachine _stateMachine;
+    [SerializeField] public AttackSoulAgent soulAgent;
+
+    private void Start()
+    {
+        _stateMachine = soulAgent.StateMachine;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other != null)
+        if (other.CompareTag("Player"))
         {
             PlayerController controller = other.gameObject.GetComponent<PlayerController>();
 
@@ -17,7 +23,7 @@ public class AttackSoulPlayerInArenaDetection : MonoBehaviour
                 player = controller;
                 if (_stateMachine.CurrentState is STATE_AttackIdle)
                 {
-                    _stateMachine.SwitchToNewState(typeof(STATE_AttackWander));
+                    _stateMachine.SwitchToNewState(typeof(STATE_AttackPreperation));
                 }
             }
         }
@@ -25,17 +31,16 @@ public class AttackSoulPlayerInArenaDetection : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other != null)
+        if (other.CompareTag("Player"))
         {
-            PlayerController controller = other.gameObject.GetComponent<PlayerController>();
-
-            if (controller)
+            if (other.TryGetComponent<PlayerController>(out var controller))
             {
+                Debug.Log("Player left area");
                 player = controller;
-                if (_stateMachine.CurrentState is STATE_AttackWander)
+                if (_stateMachine.CurrentState is STATE_AttackPreperation)
                 {
                     _stateMachine.SwitchToNewState(typeof(STATE_AttackIdle));
-                } 
+                }
                 else if (_stateMachine.CurrentState is STATE_Attack)
                 {
                     _stateMachine.SwitchToNewState(typeof(STATE_AttackIdle));

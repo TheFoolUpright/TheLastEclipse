@@ -20,7 +20,7 @@ public class AttackSoulDamageArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other != null)
+        if (other.CompareTag("Player"))
         {
             PlayerController controller = other.gameObject.GetComponent<PlayerController>();
 
@@ -28,6 +28,7 @@ public class AttackSoulDamageArea : MonoBehaviour
             {
                 owner.attackHit = true;
                 controller.Damage();
+                boxCollider.enabled = false;
                 
             }
         }

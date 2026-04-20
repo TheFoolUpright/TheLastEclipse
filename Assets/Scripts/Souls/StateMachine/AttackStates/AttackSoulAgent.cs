@@ -28,6 +28,7 @@ public class AttackSoulAgent : MonoBehaviour
     
     public int attackCount = 0;
     public bool attackHit;
+    public float minAttackDistance = 5f;
 
     public MeshRenderer attackRenderer;
 
@@ -45,7 +46,7 @@ public class AttackSoulAgent : MonoBehaviour
         var states = new Dictionary<Type, BaseState>()
         {
             { typeof(STATE_AttackIdle), new STATE_AttackIdle(this) },
-            { typeof(STATE_AttackWander), new STATE_AttackWander(this) },
+            { typeof(STATE_AttackPreperation), new STATE_AttackPreperation(this) },
             { typeof(STATE_Attack), new STATE_Attack(this) },
             { typeof(STATE_AttackCollectable), new STATE_AttackCollectable(this) },
         };
@@ -55,8 +56,6 @@ public class AttackSoulAgent : MonoBehaviour
             _stateMachine = gameObject.AddComponent<StateMachine>();
         _stateMachine.SetStates(states);
     }
-
-    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -69,7 +68,7 @@ public class AttackSoulAgent : MonoBehaviour
                 player = controller;
                 if (_stateMachine.CurrentState is STATE_AttackIdle)
                 {
-                    _stateMachine.SwitchToNewState(typeof(STATE_AttackWander));
+                    _stateMachine.SwitchToNewState(typeof(STATE_AttackPreperation));
                 }
             }
         }

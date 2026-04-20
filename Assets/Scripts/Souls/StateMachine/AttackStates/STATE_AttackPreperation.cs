@@ -2,12 +2,11 @@ using NUnit.Framework;
 using System;
 using UnityEngine;
 
-public class STATE_AttackWander : BaseState
+public class STATE_AttackPreperation : BaseState
 {
     private readonly AttackSoulAgent _owner;
-    private float minAttackDistance = 5f;
     private Transform target;
-    public STATE_AttackWander(AttackSoulAgent owner) : base(owner.gameObject) {
+    public STATE_AttackPreperation(AttackSoulAgent owner) : base(owner.gameObject) {
         _owner = owner;
     }
 
@@ -17,7 +16,7 @@ public class STATE_AttackWander : BaseState
         {
             float playerDistance = Vector3.Distance(target.position , _owner.player.transform.position);
             
-            if (playerDistance < minAttackDistance){
+            if (playerDistance < _owner.minAttackDistance){
                 SetTarget();
             } 
             else

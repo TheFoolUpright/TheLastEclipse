@@ -63,8 +63,8 @@ public class STATE_Attack : BaseState
                 if (_owner.attackHit)
                 {
                     _owner.attackHit = false;
-
-                } else
+                } 
+                else
                 {
                     _owner.attackCount++;
                 }
@@ -73,7 +73,7 @@ public class STATE_Attack : BaseState
                 {
                     return typeof(STATE_AttackCollectable);
                 }
-                return typeof(STATE_AttackWander);
+                return typeof(STATE_AttackPreperation);
             }
         }
 

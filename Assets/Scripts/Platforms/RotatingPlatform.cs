@@ -34,12 +34,12 @@ public class RotatingPlatform : MonoBehaviour
     {
         if (clockwise)
         {
-            transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime, Space.Self);
+            transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime, Space.Self);
         }
 
         else
         { 
-            transform.Rotate(Vector3.up * rotationSpeed * -Time.deltaTime, Space.Self);
+            transform.Rotate(Vector3.forward * rotationSpeed * -Time.deltaTime, Space.Self);
         }
 
 
@@ -47,45 +47,17 @@ public class RotatingPlatform : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            collision.transform.SetParent(transform);
-        }
+       
     }
 
     void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            collision.transform.SetParent(null);
-        }
+
     }
 
     private void SetPlayerParent()
     {
-
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other != null)
-        {
-            PlayerController controller = other.gameObject.GetComponent<PlayerController>();
-
-            if (controller)
-            {
-                player = controller.transform;
-                SetPlayerParent();
-            }
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (player != null)
-        {
-            player.parent = null;
-        }
+        player.SetParent(this.transform, true);
     }
 
 }

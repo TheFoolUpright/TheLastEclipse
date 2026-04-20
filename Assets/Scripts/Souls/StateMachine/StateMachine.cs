@@ -32,6 +32,7 @@ public class StateMachine : MonoBehaviour
 
     public void SwitchToNewState(Type nextState)
     {
+        Debug.Log("Swapping to state " + nextState.ToString());
         BaseState oldState = CurrentState;
         BaseState newState = AvailableStates[nextState];
         CurrentState?.OnExit(newState);
