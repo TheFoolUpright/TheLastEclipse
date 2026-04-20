@@ -1,47 +1,43 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using System;
 
 public class FlippingPlatform : MonoBehaviour
 {
-
+    [Header("Flip Settings")]
     [SerializeField] private float _rotationAmount = 90f;
     [SerializeField] private float _speed = 90f;
     [SerializeField] private float _pauseTime = 1.5f;
 
-
-
+    [Header("Shake Settings")]
+    [SerializeField] private float _shakeDuration = 0.5f;
+    [SerializeField] private float _shakeAmount = 2f;
 
     public PlayerController Player;
+
+    private Quaternion _originalRotation;
 
     private void Awake()
     {
         Player.OnCharacterChanged += PlayerStateChanged;
-        StartCoroutine(nameof(RotateRoutine));
+        StartCoroutine(RotateRoutine());
     }
 
     private void OnDestroy()
     {
         Player.OnCharacterChanged -= PlayerStateChanged;
-
     }
 
     private void PlayerStateChanged(Character character)
     {
-
-        if (character == Character.Sun)
-            _rotationAmount = 90f;
-        else
-            _rotationAmount = -90f;
+        _rotationAmount = (character == Character.Sun) ? 90f : -90f;
     }
-
 
     IEnumerator RotateRoutine()
     {
         while (true)
         {
+            yield return StartCoroutine(Shake());
+
             Quaternion startRot = transform.rotation;
             Quaternion targetRot = startRot * Quaternion.Euler(_rotationAmount, 0, 0);
 
@@ -60,81 +56,22 @@ public class FlippingPlatform : MonoBehaviour
         }
     }
 
-
-
-    public float shakeDuration = 2;
-
-    private bool animating;
-    private Vector3 startPosition;
-    private Vector3 fallOffset = new Vector3(0, -100, 0);
-    private int animationStatus;
-    private float animationTimer;
-    private float animationDuration;
-
-    void FixedUpdate()
+    IEnumerator Shake()
     {
-        if (!animating) return;
+        _originalRotation = transform.rotation;
+        float timer = 0;
 
-        animationTimer += Time.fixedDeltaTime;
-
-        if (animationStatus == 1)
+        while (timer < _shakeDuration)
         {
-            transform.position = startPosition + new Vector3(Mathf.Sin(animationTimer * UnityEngine.Random.Range(1, 3)), 0, -Mathf.Sin(animationTimer * UnityEngine.Random.Range(1, 3)));
+            timer += Time.deltaTime;
 
-        }
-        else if (animationStatus == 2)
-        {
-            //how much percent are we in the animation
-            float percentage = animationTimer / animationDuration;
-            transform.position = startPosition + fallOffset * percentage;
+            float shake = Mathf.Sin(timer * 50f) * _shakeAmount;
 
+            transform.rotation = _originalRotation * Quaternion.Euler(shake, 0, 0);
+
+            yield return null;
         }
 
-
-
+        transform.rotation = _originalRotation;
     }
-
-
-    //void Start()
-    //{
-
-    //    if (Player.IsMoonActive)
-    //    {
-    //        {
-    //            StartCoroutine(RotateRoutine());
-    //        }
-
-    //        IEnumerator RotateRoutine()
-    //        {
-    //            while (true)
-    //            {
-    //                Quaternion startRot = transform.rotation;
-    //                Quaternion targetRot = startRot * Quaternion.Euler(_rotationAmount, 0, 0);
-
-    //                while (transform.rotation != targetRot)
-    //                {
-    //                    transform.rotation = Quaternion.RotateTowards(
-    //                        transform.rotation,
-    //                        targetRot,
-    //                        _speed * Time.deltaTime
-    //                    );
-
-    //                    yield return null;
-    //                }
-
-    //                yield return new WaitForSeconds(_pauseTime);
-    //            }
-    //        }
-    //    }
-
-    //    else
-    //    {
-
-    //    }
-
-    //}
 }
-
-
-
-
