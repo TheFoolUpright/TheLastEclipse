@@ -52,14 +52,12 @@ public class CharacterSwitchLighting : MonoBehaviour
 
     private void ApplyLighting(Character character)
     {
-        Debug.Log($"ApplyLighting called with: {character}");
 
         bool isSun = character == Character.Sun;
 
         if (sunLight != null) sunLight.enabled = isSun;
         if (moonLight != null) moonLight.enabled = !isSun;
 
-        Debug.Log($"Sun enabled: {sunLight.enabled}, Moon enabled: {moonLight.enabled}");
 
         RenderSettings.ambientMode = AmbientMode.Flat;
         RenderSettings.ambientLight = isSun ? sunAmbientColor : moonAmbientColor;
