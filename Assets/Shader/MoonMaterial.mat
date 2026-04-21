@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DissolveMoonMaterial
+  m_Name: MoonMaterial
   m_Shader: {fileID: -6465566751694194690, guid: 7893965377702444798f6b551bcd6f94, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -99,7 +99,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DissolveForce: 0.35
+    - _DissolveForce: 1.0238416
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
@@ -123,10 +123,10 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Base_Color: {r: 0.26881215, g: 0.35686275, b: 1, a: 1}
+    - _Base_Color: {r: 0, g: 0.07725477, b: 1, a: 1}
     - _Color: {r: 1, g: 0.45000002, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Line_Color: {r: 1, g: 0.49378306, b: 0, a: 0}
+    - _Line_Color: {r: 1, g: 0.6171273, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

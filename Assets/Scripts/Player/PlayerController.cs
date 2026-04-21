@@ -2,7 +2,10 @@ using StarterAssets;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
+using Color = UnityEngine.Color;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +14,7 @@ public class PlayerController : MonoBehaviour
 
     public Character CurrentCharacter => moonVisual.activeSelf ? Character.Moon : Character.Sun;
     public bool IsMoonActive => CurrentCharacter == Character.Moon;
+    private Material activeMaterial => IsMoonActive ? moonMaterial : sunMaterial; 
 
     [Header("Character Visuals")]
     [SerializeField] private GameObject moonVisual;
@@ -22,26 +26,29 @@ public class PlayerController : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private CharacterController characterController;
+    [SerializeField] private Material sunMaterial;
+    [SerializeField] private Material moonMaterial;
+
 
     [Header("Settings")]
     [SerializeField, Range(0.1f, 2f)] private float delayBetweenChanges = 0.5f;
     [SerializeField] private int maxHealth = 3;
     [SerializeField] private float fallDeathY = -10f;
     [SerializeField] private float damageFlashDuration = 1f;
+
     [SerializeField] private Color damageColor = Color.red;
+    [SerializeField] private Color moonColor = Color.blue;
+    [SerializeField] private Color sunColor = Color.yellow;
 
     private StarterAssetsInputs inputs;
-    private SkinnedMeshRenderer moonRenderer;
-    private SkinnedMeshRenderer sunRenderer;
-
-    private readonly List<Color> moonOriginalColors = new();
-    private readonly List<Color> sunOriginalColors = new();
 
     private float switchTimer;
     private bool isDamaged;
     private int currentHealth;
     [SerializeField] private Vector3 startingPosition;
     private Coroutine damageRoutine;
+    private float dissolveTimer;
+    private float dissolveDuration = 0.25f;
 
     public int CurrentHealth => currentHealth;
 
@@ -52,14 +59,9 @@ public class PlayerController : MonoBehaviour
         switchTimer = 0f;
         currentHealth = maxHealth;
 
-        moonRenderer = moonVisual.GetComponentInChildren<SkinnedMeshRenderer>();
-        sunRenderer = sunVisual.GetComponentInChildren<SkinnedMeshRenderer>();
-
-        CacheOriginalColors(moonRenderer, moonOriginalColors);
-        CacheOriginalColors(sunRenderer, sunOriginalColors);
-
         SetCharacter(Character.Sun, notify: false);
         OnHpChanged?.Invoke(currentHealth);
+
     }
 
     private void Update()
@@ -151,18 +153,7 @@ public class PlayerController : MonoBehaviour
 
     private void SetCharacter(Character character, bool notify)
     {
-        bool isSun = character == Character.Sun;
-
-        sunVisual.SetActive(isSun);
-        moonVisual.SetActive(!isSun);
-
-        sunUISymbol.SetActive(isSun);
-        moonUISymbol.SetActive(!isSun);
-
-        if (notify)
-        {
-            OnCharacterChanged?.Invoke(character);
-        }
+        StartCoroutine(DissolveEffect(character, notify));
     }
 
     private IEnumerator DamagedEffect()
@@ -177,59 +168,49 @@ public class PlayerController : MonoBehaviour
         damageRoutine = null;
     }
 
+    private IEnumerator DissolveEffect(Character character, bool notify)
+    {
+        bool isSun = character == Character.Sun;
+
+        dissolveTimer = 0;
+
+        while (dissolveTimer < dissolveDuration)
+        {
+            dissolveTimer += Time.deltaTime;
+            activeMaterial.SetFloat("_DissolveForce", dissolveTimer / dissolveDuration);
+            yield return null;
+        }
+
+        sunVisual.SetActive(isSun);
+        moonVisual.SetActive(!isSun);
+        dissolveTimer = 0;
+
+        while (dissolveTimer < dissolveDuration)
+        {
+            dissolveTimer += Time.deltaTime;
+            activeMaterial.SetFloat("_DissolveForce", 1 - (dissolveTimer / dissolveDuration));
+            yield return null;
+        }
+        sunUISymbol.SetActive(isSun);
+        moonUISymbol.SetActive(!isSun);
+
+        ResetActiveCharacterColor();
+
+        if (notify)
+        {
+            OnCharacterChanged?.Invoke(character);
+        }
+    }
+
     private void SetActiveCharacterColor(Color color)
     {
-        SkinnedMeshRenderer renderer = GetActiveRenderer();
-        if (renderer == null) return;
-
-        Material[] materials = renderer.materials;
-        for (int i = 0; i < materials.Length; i++)
-        {
-            materials[i].color = color;
-        }
+        activeMaterial.SetColor("_Base_Color", color);
     }
 
     private void ResetActiveCharacterColor()
     {
-        SkinnedMeshRenderer renderer = GetActiveRenderer();
-        List<Color> originalColors = GetActiveOriginalColors();
-
-        if (renderer == null || originalColors == null) return;
-
-        Material[] materials = renderer.materials;
-        int count = Mathf.Min(materials.Length, originalColors.Count);
-
-        for (int i = 0; i < count; i++)
-        {
-            materials[i].color = originalColors[i];
-        }
-    }
-
-    private SkinnedMeshRenderer GetActiveRenderer()
-    {
-        return IsMoonActive ? moonRenderer : sunRenderer;
-    }
-
-    private List<Color> GetActiveOriginalColors()
-    {
-        return IsMoonActive ? moonOriginalColors : sunOriginalColors;
-    }
-
-    private void CacheOriginalColors(SkinnedMeshRenderer renderer, List<Color> colorCache)
-    {
-        colorCache.Clear();
-
-        if (renderer == null)
-        {
-            Debug.LogError("PlayerController: Missing SkinnedMeshRenderer.");
-            return;
-        }
-
-        Material[] materials = renderer.materials;
-        for (int i = 0; i < materials.Length; i++)
-        {
-            colorCache.Add(materials[i].color);
-        }
+        activeMaterial.SetColor("_Base_Color", IsMoonActive ? moonColor : sunColor);
+        activeMaterial.SetFloat("_DissolveForce", 0);
     }
 }
 
