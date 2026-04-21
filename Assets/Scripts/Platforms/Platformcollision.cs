@@ -20,7 +20,7 @@ public class Platformcollision : MonoBehaviour
     {
         if (other.gameObject.CompareTag(playertag))
         {
-            other.gameObject.transform.parent = null;
+            //other.gameObject.transform.parent = null;
         }
 
     }

@@ -31,16 +31,16 @@ public class FallingPlatform : MonoBehaviour
         if (!animating) return;
 
         animationTimer += Time.fixedDeltaTime;
-        
+
         if (animationStatus == 1)
         {
             transform.position = startPosition + new Vector3(Mathf.Sin(animationTimer * UnityEngine.Random.Range(1, 3)), 0, -Mathf.Sin(animationTimer * UnityEngine.Random.Range(1, 3)));
-            if(animationTimer >= animationDuration)
+            if (animationTimer >= animationDuration)
             {
                 Fall();
             }
-        } 
-        else if (animationStatus == 2) 
+        }
+        else if (animationStatus == 2)
         {
             //how much percent are we in the animation
             float percentage = animationTimer / animationDuration;
@@ -49,14 +49,15 @@ public class FallingPlatform : MonoBehaviour
             {
                 StayHidden();
             }
-        } 
-        else if(animationStatus == 3)
+        }
+        else if (animationStatus == 3)
         {
             if (animationTimer >= animationDuration)
             {
                 Comeback();
             }
-        } else if (animationStatus == 4)
+        }
+        else if (animationStatus == 4)
         {
             float percentage = animationTimer / animationDuration;
             transform.position = startPosition + fallOffset * (1 - percentage);
@@ -93,7 +94,8 @@ public class FallingPlatform : MonoBehaviour
 
     private void Fall()
     {
-        player.parent = null;
+        if (player.parent == transform)
+            player.parent = null;
         animationTimer = 0;
         animationStatus = 2;
         animationDuration = fallDuration;
@@ -111,7 +113,7 @@ public class FallingPlatform : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("I was here, I collided");
+        //Debug.Log("I was here, I collided");
         if (other != null)
         {
             PlayerController controller = other.gameObject.GetComponent<PlayerController>();
@@ -128,7 +130,8 @@ public class FallingPlatform : MonoBehaviour
     {
         if (player != null)
         {
-            player.parent = null;
+            if (player.parent == transform)
+                player.parent = null;
         }
     }
 

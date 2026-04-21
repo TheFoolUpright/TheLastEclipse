@@ -1,63 +1,41 @@
-using Unity.VisualScripting;
-using UnityEditor.Build.Reporting;
 using UnityEngine;
 
 public class RotatingPlatform : MonoBehaviour
 {
-    private Transform player;
+    [SerializeField] private PlayerController player;
+    [SerializeField] private float rotationSpeed = 30f;
 
-    public PlayerController Player;
-
-
-    public float rotationSpeed = 30f;
     private bool clockwise = true;
+
     private void Awake()
     {
-        Player.OnCharacterChanged += PlayerStateChanged;
+        if (player != null)
+        {
+            player.OnCharacterChanged += PlayerStateChanged;
+        }
     }
 
     private void OnDestroy()
     {
-        Player.OnCharacterChanged -= PlayerStateChanged;
-
+        if (player != null)
+        {
+            player.OnCharacterChanged -= PlayerStateChanged;
+        }
     }
 
     private void PlayerStateChanged(Character character)
     {
-
-        if (character == Character.Sun)
-            clockwise = true;
-        else
-            clockwise = false;
-    }
-    void Update()
-    {
-        if (clockwise)
-        {
-            transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime, Space.Self);
-        }
-
-        else
-        { 
-            transform.Rotate(Vector3.forward * rotationSpeed * -Time.deltaTime, Space.Self);
-        }
-
-
+        clockwise = (character == Character.Sun);
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-       
-    }
-
-    void OnCollisionExit(Collision collision)
+    private void Update()
     {
 
+        float direction = clockwise ? 1f : -1f;
+        transform.Rotate(Vector3.up * direction * rotationSpeed * Time.deltaTime, Space.Self);
+
+
     }
 
-    private void SetPlayerParent()
-    {
-        player.SetParent(this.transform, true);
-    }
 
 }

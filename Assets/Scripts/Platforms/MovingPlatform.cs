@@ -99,6 +99,7 @@ public class MovingPlatform : MonoBehaviour
 
     private void SetPlayerParent()
     {
+        Debug.Log("Are u");
         player.SetParent(this.transform, true);
     }
 
@@ -120,7 +121,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (player != null)
         {
-            player.parent = null;
+            //player.parent = null;
         }
     }
 }
