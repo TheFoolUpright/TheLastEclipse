@@ -8,6 +8,7 @@ public class STATE_AttackCollectable : BaseState
 
     private InputAction _collectAction;
 
+    private SoulUI _uiController;
     public STATE_AttackCollectable(AttackSoulAgent owner) : base(owner.gameObject)
     {
         _owner = owner;
@@ -26,6 +27,11 @@ public class STATE_AttackCollectable : BaseState
                 if (_collectAction != null && _collectAction.WasPressedThisFrame())
                 {
                     Debug.Log("Soul Collected");
+
+                    if (_uiController != null)
+                    {
+                        _uiController.SetAttackCollected();
+                    }
 
                     _owner.gameObject.SetActive(false);
                     return null;
@@ -58,6 +64,8 @@ public class STATE_AttackCollectable : BaseState
                 _collectAction = playerInput.actions["CollectSoul"];
             }
         }
+
+        _uiController = GameObject.FindAnyObjectByType<SoulUI>();
     }
 
     // Runs when we exit this state

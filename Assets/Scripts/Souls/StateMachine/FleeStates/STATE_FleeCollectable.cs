@@ -8,6 +8,8 @@ public class STATE_FleeCollectable : BaseState
 
     private InputAction _collectAction;
 
+    private SoulUI _uiController;
+
     public STATE_FleeCollectable(FleeSoulAgent owner) : base(owner.gameObject)
     {
         _owner = owner;
@@ -27,6 +29,11 @@ public class STATE_FleeCollectable : BaseState
                 if (_collectAction != null && _collectAction.WasPressedThisFrame())
                 {
                     Debug.Log("Soul Collected");
+
+                    if (_uiController != null)
+                    {
+                        _uiController.SetFleeCollected();
+                    }
 
                     _owner.gameObject.SetActive(false);
                     return null;
@@ -60,6 +67,8 @@ public class STATE_FleeCollectable : BaseState
         }
 
         _owner.SetStateColor(Color.rebeccaPurple);
+
+        _uiController = GameObject.FindAnyObjectByType<SoulUI>();
     }
 
     // Runs when we exit this state
