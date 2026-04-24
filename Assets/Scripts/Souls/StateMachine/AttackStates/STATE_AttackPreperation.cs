@@ -14,6 +14,9 @@ public class STATE_AttackPreperation : BaseState
     public override Type Tick() {
         if (_owner.AgentReachedDestination)
         {
+            Debug.Log(target);
+            Debug.Log(_owner);
+            Debug.Log(_owner.player);
             float playerDistance = Vector3.Distance(target.position , _owner.player.transform.position);
             
             if (playerDistance < _owner.minAttackDistance){

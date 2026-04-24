@@ -24,7 +24,7 @@ public class AttackSoulAgent : MonoBehaviour
     public List<AttackSoulDamageArea> AttackAreas = new List<AttackSoulDamageArea>();
     public List<Transform> WanderingPoints = new List<Transform>();
     public List<Transform> IdlePoints = new List<Transform>();
-    [HideInInspector] public PlayerController player;
+    public PlayerController player;
     
     public int attackCount = 0;
     public bool attackHit;
@@ -57,22 +57,22 @@ public class AttackSoulAgent : MonoBehaviour
         _stateMachine.SetStates(states);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other != null)
-        {
-            PlayerController controller = other.gameObject.GetComponent<PlayerController>();
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other != null)
+    //    {
+    //        PlayerController controller = other.gameObject.GetComponent<PlayerController>();
 
-            if (controller)
-            {
-                player = controller;
-                if (_stateMachine.CurrentState is STATE_AttackIdle)
-                {
-                    _stateMachine.SwitchToNewState(typeof(STATE_AttackPreperation));
-                }
-            }
-        }
-    }
+    //        if (controller)
+    //        {
+    //            player = controller;
+    //            if (_stateMachine.CurrentState is STATE_AttackIdle)
+    //            {
+    //                _stateMachine.SwitchToNewState(typeof(STATE_AttackPreperation));
+    //            }
+    //        }
+    //    }
+    //}
 
     public void SetStateColor(Color color)
     {

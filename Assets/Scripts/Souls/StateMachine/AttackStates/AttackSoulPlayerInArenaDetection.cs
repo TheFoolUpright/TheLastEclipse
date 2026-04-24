@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class AttackSoulPlayerInArenaDetection : MonoBehaviour
 {
-    [HideInInspector] public PlayerController player;
 
     private StateMachine _stateMachine;
     [SerializeField] public AttackSoulAgent soulAgent;
@@ -20,7 +19,6 @@ public class AttackSoulPlayerInArenaDetection : MonoBehaviour
 
             if (controller)
             {
-                player = controller;
                 if (_stateMachine.CurrentState is STATE_AttackIdle)
                 {
                     _stateMachine.SwitchToNewState(typeof(STATE_AttackPreperation));
@@ -36,7 +34,6 @@ public class AttackSoulPlayerInArenaDetection : MonoBehaviour
             if (other.TryGetComponent<PlayerController>(out var controller))
             {
                 Debug.Log("Player left area");
-                player = controller;
                 if (_stateMachine.CurrentState is STATE_AttackPreperation)
                 {
                     _stateMachine.SwitchToNewState(typeof(STATE_AttackIdle));
