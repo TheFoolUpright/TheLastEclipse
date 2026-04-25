@@ -2713,8 +2713,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 24.413233
-  m_Center: {x: 2.6941967, y: 7.4465866, z: 0}
+  m_Radius: 23.48623
+  m_Center: {x: 2.6941967, y: 6.5195827, z: 0}
 --- !u!114 &790015299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4669,6 +4669,14 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 5107746569781105019, guid: 4bda71eb613ded84490305edce3e3541, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 907660703}
+    - target: {fileID: 5512200746500252114, guid: 4bda71eb613ded84490305edce3e3541, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5990152302361559157, guid: 4bda71eb613ded84490305edce3e3541, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5811,22 +5819,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2369970859370617542, guid: 5c2e1eb0083b3af4ab81360f50ac4800, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2462927971561545060, guid: 5c2e1eb0083b3af4ab81360f50ac4800, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6629510403444692735, guid: 5c2e1eb0083b3af4ab81360f50ac4800, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 907660703}
-    - target: {fileID: 6629510403444692735, guid: 5c2e1eb0083b3af4ab81360f50ac4800, type: 3}
-      propertyPath: IdlePoints.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 6629510403444692735, guid: 5c2e1eb0083b3af4ab81360f50ac4800, type: 3}
       propertyPath: 'IdlePoints.Array.data[0]'
       value: 
@@ -5843,14 +5839,6 @@ PrefabInstance:
       propertyPath: 'IdlePoints.Array.data[3]'
       value: 
       objectReference: {fileID: 1423656499}
-    - target: {fileID: 6629510403444692735, guid: 5c2e1eb0083b3af4ab81360f50ac4800, type: 3}
-      propertyPath: 'IdlePoints.Array.data[4]'
-      value: 
-      objectReference: {fileID: 1423656498}
-    - target: {fileID: 6629510403444692735, guid: 5c2e1eb0083b3af4ab81360f50ac4800, type: 3}
-      propertyPath: WanderingPoints.Array.size
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 6629510403444692735, guid: 5c2e1eb0083b3af4ab81360f50ac4800, type: 3}
       propertyPath: 'WanderingPoints.Array.data[0]'
       value: 
@@ -5891,12 +5879,7 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8896845967691098051, guid: 5c2e1eb0083b3af4ab81360f50ac4800, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6585370149763141987, guid: 5c2e1eb0083b3af4ab81360f50ac4800, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8535,10 +8518,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.25
+  m_Height: 1.8
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!108 &2100126370 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 3111163858600451441, guid: 6124c8856528fdd4690ba6e30186b8d7, type: 3}

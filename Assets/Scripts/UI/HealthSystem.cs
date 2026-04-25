@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthSystem : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class HealthSystem : MonoBehaviour
         {
             SetHearts(playerController.CurrentHealth);
         }
+        LayoutRebuilder.ForceRebuildLayoutImmediate(this.transform as RectTransform);
     }
 
     public void SetHearts(int hp)
