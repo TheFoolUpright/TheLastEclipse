@@ -163,6 +163,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   IdlePoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -171,6 +175,7 @@ MonoBehaviour:
   player: {fileID: 0}
   attackCount: 0
   attackHit: 0
+  minAttackDistance: 5
   attackRenderer: {fileID: 462525984091497235}
 --- !u!195 &2067964093627660296
 NavMeshAgent:
@@ -433,7 +438,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7587173541482023628
 Transform:
   m_ObjectHideFlags: 0
@@ -550,18 +555,17 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2369970859370617542}
-  - component: {fileID: 203444632288498446}
   - component: {fileID: 1244727760679606153}
   - component: {fileID: 2673073513422344700}
   - component: {fileID: 767592920454433587}
-  - component: {fileID: 6585370149763141987}
+  - component: {fileID: 2010890734937913174}
   m_Layer: 0
   m_Name: Area of damage (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2369970859370617542
 Transform:
   m_ObjectHideFlags: 0
@@ -573,32 +577,11 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6, y: 7.5, z: 20.325}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5999751685404452151}
   m_Father: {fileID: 1044511245920918202}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &203444632288498446
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8695115410749716267}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 22, y: 10, z: 58.84}
-  m_Center: {x: 0, y: 0, z: -28.4}
 --- !u!114 &1244727760679606153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -669,7 +652,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8695115410749716267}
   m_Mesh: {fileID: 7535803439391131454, guid: c6a55ba99e9e99d41b7eef123e311a43, type: 3}
---- !u!65 &6585370149763141987
+--- !u!65 &2010890734937913174
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -689,4 +672,4 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 3.4872339, y: 2.5007021, z: 2.0028443}
-  m_Center: {x: 0, y: 0.00000011920929, z: 0.99898744}
+  m_Center: {x: 0, y: 0.00000023841858, z: 0.99898744}

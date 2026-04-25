@@ -1,9 +1,6 @@
 using System.Collections;
 using TMPro;
-using TMPro.EditorUtilities;
-using UnityEditor.Build;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TextAreaPopUp : MonoBehaviour
 {
