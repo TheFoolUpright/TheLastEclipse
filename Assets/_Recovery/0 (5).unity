@@ -144,37 +144,6 @@ MonoBehaviour:
   m_IgnoreFromBuild: 1
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
---- !u!1 &20769067
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 20769068}
-  m_Layer: 0
-  m_Name: BigPlatform2Point2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &20769068
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 20769067}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.1, y: 58.4, z: -88.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &43253639 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8116375959507147993, guid: fe757c7abbd579e40954daa75192fcf5, type: 3}
@@ -548,7 +517,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1467135826963096764, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.7
+      value: -24.4
       objectReference: {fileID: 0}
     - target: {fileID: 1467135826963096764, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
       propertyPath: m_LocalPosition.y
@@ -556,7 +525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1467135826963096764, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.5
+      value: -30.5
       objectReference: {fileID: 0}
     - target: {fileID: 1467135826963096764, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
       propertyPath: m_LocalRotation.w
@@ -603,63 +572,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
---- !u!1 &131558563
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 131558565}
-  - component: {fileID: 131558564}
-  m_Layer: 0
-  m_Name: SunHazardToSunToggle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &131558564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131558563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshLink
-  m_SerializedVersion: 1
-  m_AgentTypeID: 0
-  m_StartPoint: {x: 0, y: 0, z: 2.5}
-  m_EndPoint: {x: 9.337511, y: 4.0980415, z: -1.5898361}
-  m_StartTransform: {fileID: 1483945697}
-  m_EndTransform: {fileID: 1366120628}
-  m_Activated: 1
-  m_Width: 5
-  m_CostModifier: 1
-  m_IsOverridingCost: 0
-  m_Bidirectional: 1
-  m_AutoUpdatePosition: 0
-  m_Area: 0
---- !u!4 &131558565
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131558563}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2, y: 39.97, z: -64.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &135744242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -729,37 +641,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cf9b3db2467b0949a1af41020fe5a77, type: 3}
---- !u!1 &138080143
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 138080144}
-  m_Layer: 0
-  m_Name: BigPlatform3Point2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &138080144
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138080143}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.6, y: 42.5, z: -33.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &140110520 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4074701979488782075, guid: 4f3d76889171248409abe03235123bbd, type: 3}
@@ -831,63 +712,6 @@ MonoBehaviour:
   m_IgnoreFromBuild: 1
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
---- !u!1 &190326899
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 190326901}
-  - component: {fileID: 190326900}
-  m_Layer: 0
-  m_Name: FlippingPlatformToSunHazard
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &190326900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 190326899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshLink
-  m_SerializedVersion: 1
-  m_AgentTypeID: 0
-  m_StartPoint: {x: 0, y: 0, z: 2.5}
-  m_EndPoint: {x: 9.337511, y: 4.0980415, z: -1.5898361}
-  m_StartTransform: {fileID: 818632218}
-  m_EndTransform: {fileID: 928448464}
-  m_Activated: 1
-  m_Width: 5
-  m_CostModifier: 1
-  m_IsOverridingCost: 0
-  m_Bidirectional: 1
-  m_AutoUpdatePosition: 0
-  m_Area: 0
---- !u!4 &190326901
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 190326899}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2, y: 39.97, z: -64.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &219660956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,63 +1192,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 924223376}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &474144942
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 474144944}
-  - component: {fileID: 474144943}
-  m_Layer: 0
-  m_Name: MoonHazardToFlippingPlatform
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &474144943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474144942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshLink
-  m_SerializedVersion: 1
-  m_AgentTypeID: 0
-  m_StartPoint: {x: 0, y: 0, z: 2.5}
-  m_EndPoint: {x: 9.337511, y: 4.0980415, z: -1.5898361}
-  m_StartTransform: {fileID: 1444108518}
-  m_EndTransform: {fileID: 1993542644}
-  m_Activated: 1
-  m_Width: 5
-  m_CostModifier: 1
-  m_IsOverridingCost: 0
-  m_Bidirectional: 1
-  m_AutoUpdatePosition: 0
-  m_Area: 0
---- !u!4 &474144944
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474144942}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2, y: 39.97, z: -64.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &479570412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1584,37 +1351,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1637183452531418054, guid: eeb864c5a126338409df7a72f34face8, type: 3}
   m_PrefabInstance: {fileID: 8352295536215262192}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &535886753
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 535886754}
-  m_Layer: 0
-  m_Name: FallingPlatformPoint1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &535886754
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 535886753}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13, y: 39.4, z: -40.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &541921270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,37 +1731,6 @@ MonoBehaviour:
   m_IgnoreFromBuild: 1
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
---- !u!1 &818632217
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 818632218}
-  m_Layer: 0
-  m_Name: SunHazardPoint1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &818632218
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818632217}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -43.8, y: 46.4, z: -57}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &851451080
 GameObject:
   m_ObjectHideFlags: 0
@@ -2114,37 +1819,6 @@ Transform:
   m_Children:
   - {fileID: 1846515715}
   - {fileID: 1516747769}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &865450237
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 865450238}
-  m_Layer: 0
-  m_Name: MoonTogglePoint2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &865450238
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 865450237}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.4, y: 57.6, z: -86.6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &877445983 stripped
@@ -2516,37 +2190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde30664c9818834383a03cf07ed3773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaypointPath
---- !u!1 &928448463
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 928448464}
-  m_Layer: 0
-  m_Name: FlippingPlatformPoint2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &928448464
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 928448463}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.8, y: 53.4, z: -69.53}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &935513207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2608,63 +2251,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6124c8856528fdd4690ba6e30186b8d7, type: 3}
---- !u!1 &945387720
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 945387722}
-  - component: {fileID: 945387721}
-  m_Layer: 0
-  m_Name: MoonToggleToMoonHazard
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &945387721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 945387720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshLink
-  m_SerializedVersion: 1
-  m_AgentTypeID: 0
-  m_StartPoint: {x: 0, y: 0, z: 2.5}
-  m_EndPoint: {x: 9.337511, y: 4.0980415, z: -1.5898361}
-  m_StartTransform: {fileID: 865450238}
-  m_EndTransform: {fileID: 1446735216}
-  m_Activated: 1
-  m_Width: 5
-  m_CostModifier: 1
-  m_IsOverridingCost: 0
-  m_Bidirectional: 1
-  m_AutoUpdatePosition: 0
-  m_Area: 0
---- !u!4 &945387722
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 945387720}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2, y: 39.97, z: -64.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &959383368 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2089723619243004168, guid: fe757c7abbd579e40954daa75192fcf5, type: 3}
@@ -2695,37 +2281,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3365648611865336076, guid: cfa67d87f5ae300459140082126165af, type: 3}
   m_PrefabInstance: {fileID: 1480262443}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &982141788
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 982141789}
-  m_Layer: 0
-  m_Name: SunTogglePoint2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &982141789
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 982141788}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45.5, y: 42.5, z: -41.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &992944903 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8451282838422057320, guid: fe757c7abbd579e40954daa75192fcf5, type: 3}
@@ -3026,7 +2581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7085709587800296204, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.7
+      value: -24.4
       objectReference: {fileID: 0}
     - target: {fileID: 7085709587800296204, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3034,7 +2589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7085709587800296204, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -31.879242
+      value: -47.879242
       objectReference: {fileID: 0}
     - target: {fileID: 7085709587800296204, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3311,6 +2866,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1290476560 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2112392583163868088, guid: fe757c7abbd579e40954daa75192fcf5, type: 3}
+  m_PrefabInstance: {fileID: 5891772844402238831}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1298137380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3467,37 +3027,6 @@ MonoBehaviour:
   m_IgnoreFromBuild: 1
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
---- !u!1 &1366120627
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1366120628}
-  m_Layer: 0
-  m_Name: SunTogglePoint1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1366120628
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1366120627}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45.5, y: 42.5, z: -41.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1400769611
 GameObject:
   m_ObjectHideFlags: 0
@@ -3673,68 +3202,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7063411080168014747, guid: 3cf9b3db2467b0949a1af41020fe5a77, type: 3}
   m_PrefabInstance: {fileID: 135744242}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1444108517
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1444108518}
-  m_Layer: 0
-  m_Name: MoonHazardPoint2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1444108518
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1444108517}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.9, y: 56.7, z: -77.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1446735215
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1446735216}
-  m_Layer: 0
-  m_Name: MoonHazardPoint1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1446735216
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446735215}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.4, y: 55.7, z: -81.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1447583866 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4105847987252145140, guid: 0b9e2dfa7e3999a4b86578926263fc73, type: 3}
@@ -3911,37 +3378,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2544812124668173772, guid: 4c091d0da98312d499bbc98d3e5b07b1, type: 3}
   m_PrefabInstance: {fileID: 1641149386}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1483945696
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1483945697}
-  m_Layer: 0
-  m_Name: SunHazardPoint2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1483945697
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1483945696}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -44.2, y: 46.4, z: -57}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1516747768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4043,7 +3479,7 @@ GameObject:
   - component: {fileID: 1521101374}
   - component: {fileID: 1521101375}
   m_Layer: 0
-  m_Name: 'BigPlatform3ToFallingPlatform '
+  m_Name: NavMeshLink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4057,12 +3493,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521101373}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.82, y: 42.07, z: -33.410004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.18, y: 49.91, z: -5.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1290476560}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1521101375
 MonoBehaviour:
@@ -4080,10 +3516,10 @@ MonoBehaviour:
   m_AgentTypeID: 0
   m_StartPoint: {x: 0, y: 0, z: 0}
   m_EndPoint: {x: 5.677108, y: -2.8836288, z: -5.76725}
-  m_StartTransform: {fileID: 138080144}
-  m_EndTransform: {fileID: 535886754}
+  m_StartTransform: {fileID: 0}
+  m_EndTransform: {fileID: 0}
   m_Activated: 1
-  m_Width: 4
+  m_Width: 2.1374912
   m_CostModifier: 1
   m_IsOverridingCost: 0
   m_Bidirectional: 1
@@ -4220,63 +3656,6 @@ MonoBehaviour:
   m_IgnoreFromBuild: 1
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
---- !u!1 &1618469272
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1618469274}
-  - component: {fileID: 1618469273}
-  m_Layer: 0
-  m_Name: SunToggleToBigPlatform3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1618469273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1618469272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshLink
-  m_SerializedVersion: 1
-  m_AgentTypeID: 0
-  m_StartPoint: {x: 0, y: 0, z: 2.5}
-  m_EndPoint: {x: 9.337511, y: 4.0980415, z: -1.5898361}
-  m_StartTransform: {fileID: 982141789}
-  m_EndTransform: {fileID: 2015289938}
-  m_Activated: 1
-  m_Width: 5
-  m_CostModifier: 1
-  m_IsOverridingCost: 0
-  m_Bidirectional: 1
-  m_AutoUpdatePosition: 0
-  m_Area: 0
---- !u!4 &1618469274
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1618469272}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2, y: 39.97, z: -64.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1641149386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4901,7 +4280,7 @@ Transform:
   m_GameObject: {fileID: 1902374707}
   serializedVersion: 2
   m_LocalRotation: {x: 0.21473312, y: 0, z: 0, w: 0.97667277}
-  m_LocalPosition: {x: 6.7, y: 56.320282, z: -31.879242}
+  m_LocalPosition: {x: -24.4, y: 56.320282, z: -47.879242}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4983,63 +4362,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
---- !u!1 &1926254721
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1926254723}
-  - component: {fileID: 1926254722}
-  m_Layer: 0
-  m_Name: BigPlatform2ToMoonToggle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1926254722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926254721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshLink
-  m_SerializedVersion: 1
-  m_AgentTypeID: 0
-  m_StartPoint: {x: 9.337511, y: 4.0980415, z: -1.5898361}
-  m_EndPoint: {x: 0, y: 0, z: 2.5}
-  m_StartTransform: {fileID: 20769068}
-  m_EndTransform: {fileID: 2131565083}
-  m_Activated: 1
-  m_Width: 5
-  m_CostModifier: 1
-  m_IsOverridingCost: 0
-  m_Bidirectional: 1
-  m_AutoUpdatePosition: 0
-  m_Area: 0
---- !u!4 &1926254723
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926254721}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2, y: 39.97, z: -64.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1940221371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5215,68 +4537,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7063411080168014747, guid: 3cf9b3db2467b0949a1af41020fe5a77, type: 3}
   m_PrefabInstance: {fileID: 1003904609}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1993542643
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1993542644}
-  m_Layer: 0
-  m_Name: FlippingPlatformPoint1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1993542644
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1993542643}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.45, y: 53.4, z: -69.53}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2015289937
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2015289938}
-  m_Layer: 0
-  m_Name: BigPlatform3Point1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2015289938
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2015289937}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.3, y: 41, z: -32.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2015931909 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8617218095200108730, guid: c58c7a5291fc27f41b3a88cb87d5b5bc, type: 3}
@@ -5585,37 +4845,6 @@ MonoBehaviour:
   m_IgnoreFromBuild: 1
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
---- !u!1 &2131565082
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2131565083}
-  m_Layer: 0
-  m_Name: MoonTogglePoint1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2131565083
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2131565082}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 56.9, z: -87.4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &2137384659 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1358888185123524920, guid: fb03f40f016134c458431f73e0551b5f, type: 3}
@@ -5675,7 +4904,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2112392583163868088, guid: fe757c7abbd579e40954daa75192fcf5, type: 3}
+      insertIndex: 19
+      addedObject: {fileID: 1521101374}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1039958099400268114, guid: fe757c7abbd579e40954daa75192fcf5, type: 3}
       insertIndex: -1
@@ -5910,10 +5142,6 @@ SceneRoots:
   - {fileID: 1049553277}
   - {fileID: 490604248}
   - {fileID: 316237626}
-  - {fileID: 2015289938}
-  - {fileID: 138080144}
-  - {fileID: 1521101374}
-  - {fileID: 535886754}
   - {fileID: 398049038}
   - {fileID: 430530037}
   - {fileID: 1096734175}
@@ -5923,23 +5151,6 @@ SceneRoots:
   - {fileID: 1181875217}
   - {fileID: 851451082}
   - {fileID: 1284518739}
-  - {fileID: 20769068}
-  - {fileID: 1926254723}
-  - {fileID: 2131565083}
-  - {fileID: 865450238}
-  - {fileID: 945387722}
-  - {fileID: 1446735216}
-  - {fileID: 1444108518}
-  - {fileID: 474144944}
-  - {fileID: 1993542644}
-  - {fileID: 928448464}
-  - {fileID: 190326901}
-  - {fileID: 818632218}
-  - {fileID: 1483945697}
-  - {fileID: 131558565}
-  - {fileID: 1366120628}
-  - {fileID: 982141789}
-  - {fileID: 1618469274}
   - {fileID: 46169910}
   - {fileID: 115698489}
   - {fileID: 74603097}
