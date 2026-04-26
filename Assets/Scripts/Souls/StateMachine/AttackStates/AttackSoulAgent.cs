@@ -31,6 +31,10 @@ public class AttackSoulAgent : MonoBehaviour
     public float minAttackDistance = 5f;
     public float requiredTimeToAttack = 2f;
 
+    public GameObject activeArea;
+
+    private float startSpeed;
+
     public MeshRenderer attackRenderer;
 
     private void Awake()
@@ -58,22 +62,148 @@ public class AttackSoulAgent : MonoBehaviour
         _stateMachine.SetStates(states);
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other != null)
-    //    {
-    //        PlayerController controller = other.gameObject.GetComponent<PlayerController>();
+    
 
-    //        if (controller)
-    //        {
-    //            player = controller;
-    //            if (_stateMachine.CurrentState is STATE_AttackIdle)
-    //            {
-    //                _stateMachine.SwitchToNewState(typeof(STATE_AttackPreperation));
-    //            }
-    //        }
-    //    }
-    //}
+    public void OnAttackStateEnter()
+    {
+        SetStateColor(Color.indianRed);
+    }
+
+    public void OnAttackStateExit()
+    {
+        if (activeArea != null)
+        {
+            activeArea.SetActive(false);
+        }
+
+        if (agent != null)
+        {
+            agent.speed = startSpeed;
+        }
+    }
+
+    public void FacePlayer()
+    {
+        if (player == null)
+            return;
+
+        Vector3 direction = player.transform.position - transform.position;
+        direction.y = 0f;
+
+        if (direction.sqrMagnitude <= 0.001f)
+            return;
+
+        transform.rotation = Quaternion.LookRotation(direction);
+    }
+
+    public void PrepareAttackArea()
+    {
+        activeArea = AttackAreas[attackCount].gameObject;
+
+        // Make sure the attack area is aligned with the enemy
+        // before detaching it.
+        activeArea.transform.position = transform.position;
+        activeArea.transform.rotation = transform.rotation;
+
+        activeArea.SetActive(true);
+        activeArea.transform.parent = null;
+    }
+
+    public void StartDashAttack()
+    {
+        activeArea = AttackAreas[attackCount].gameObject;
+        activeArea.SetActive(true);
+
+        startSpeed = agent.speed;
+        agent.speed *= 10f;
+
+        DashThroughAttackArea();
+    }
+
+    public void DashThroughAttackArea()
+    {
+        if (activeArea == null)
+            return;
+
+        Vector3 direction = activeArea.transform.forward;
+        direction.y = 0f;
+
+        if (direction.sqrMagnitude <= 0.001f)
+            return;
+
+        direction.Normalize();
+
+        transform.rotation = Quaternion.LookRotation(direction);
+
+        float dashDistance = GetActiveAreaLength();
+
+        Vector3 dashTarget = activeArea.transform.position + direction * dashDistance;
+
+        agent.SetDestination(dashTarget);
+    }
+
+    private float GetActiveAreaLength()
+    {
+        Collider areaCollider = activeArea.GetComponent<Collider>();
+
+        if (areaCollider == null)
+        {
+            return 8f;
+        }
+
+        float extraDistance = 1.5f;
+
+        if (areaCollider is BoxCollider box)
+        {
+            return box.size.z * activeArea.transform.lossyScale.z + extraDistance;
+        }
+
+        if (areaCollider is CapsuleCollider capsule)
+        {
+            return capsule.height * activeArea.transform.lossyScale.z + extraDistance;
+        }
+
+        if (areaCollider is SphereCollider sphere)
+        {
+            return sphere.radius * 2f * activeArea.transform.lossyScale.z + extraDistance;
+        }
+
+        return 8f;
+    }
+
+    public void CheckDashFinished()
+    {
+        if (AgentReachedDestination)
+        {
+            agent.speed = startSpeed;
+        }
+    }
+
+    public bool FinishAttack()
+    {
+        ResetAttackArea();
+
+        if (attackHit)
+        {
+            attackHit = false;
+        }
+        else
+        {
+            attackCount++;
+        }
+
+        return attackCount >= 3;
+    }
+
+    private void ResetAttackArea()
+    {
+        if (activeArea == null)
+            return;
+
+        activeArea.transform.SetParent(transform);
+        activeArea.transform.localPosition = Vector3.zero;
+        activeArea.transform.localRotation = Quaternion.identity;
+    }
 
     public void SetStateColor(Color color)
     {

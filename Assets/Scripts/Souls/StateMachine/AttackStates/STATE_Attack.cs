@@ -4,99 +4,90 @@ using UnityEngine;
 public class STATE_Attack : BaseState
 {
     private readonly AttackSoulAgent _owner;
+
     private bool onCooldown;
-    private bool attacking;
     private bool toAttack;
+    private bool attacking;
+
     private float timer;
-    private float startSpeed;
-    public GameObject activeArea;
-    public STATE_Attack(AttackSoulAgent owner) : base(owner.gameObject) {
+
+    public STATE_Attack(AttackSoulAgent owner) : base(owner.gameObject)
+    {
         _owner = owner;
     }
 
-    // Runs every frame
     public override Type Tick()
     {
         if (onCooldown)
         {
-            Vector3 direction = _owner.player.transform.position - _owner.transform.position;
-            _owner.transform.rotation = Quaternion.LookRotation(direction);
+            _owner.FacePlayer();
+
             timer += Time.deltaTime;
-            
-            //if (_owner.attackCount >= 1)
-            //{
-            //    _owner.requiredTimeToAttack += 1f;
-            //}
 
             if (timer >= _owner.requiredTimeToAttack)
             {
-                timer = 0;
+                timer = 0f;
                 onCooldown = false;
-                activeArea = _owner.AttackAreas[_owner.attackCount].gameObject;
-                activeArea.SetActive(true);
                 toAttack = true;
-                activeArea.transform.parent = null;
+
+                _owner.PrepareAttackArea();
             }
         }
+
         if (toAttack)
         {
             timer += Time.deltaTime;
-            if (timer >= 2)
+
+            if (timer >= 2f)
             {
-                timer = 0;
+                timer = 0f;
                 toAttack = false;
-                activeArea = _owner.AttackAreas[_owner.attackCount].gameObject;
-                activeArea.SetActive(true);
                 attacking = true;
-                startSpeed = _owner.NavMeshAgent.speed;
-                _owner.NavMeshAgent.speed *= 10;
-                _owner.NavMeshAgent.SetDestination(_owner.AttackAreas[_owner.attackCount].endTarget.position);
+
+                _owner.StartDashAttack();
             }
         }
+
         if (attacking)
         {
-            if (_owner.AgentReachedDestination)
-            {
-                _owner.NavMeshAgent.speed = startSpeed;
-            }
+            _owner.CheckDashFinished();
+
             timer += Time.deltaTime;
-            if(timer >= 3)
+
+            if (timer >= 3f)
             {
-                activeArea.transform.parent = _owner.transform;
-                activeArea.transform.localPosition = Vector3.zero;
-                activeArea.transform.localRotation = Quaternion.identity;
+                timer = 0f;
+                attacking = false;
 
-                if (_owner.attackHit)
-                {
-                    _owner.attackHit = false;
-                } 
-                else
-                {
-                    _owner.attackCount++;
-                }
+                bool shouldCollect = _owner.FinishAttack();
 
-                if (_owner.attackCount >= 3)
+                if (shouldCollect)
                 {
                     return typeof(STATE_AttackCollectable);
                 }
+
                 return typeof(STATE_AttackPreperation);
             }
         }
 
         return null;
-     
     }
 
-    // Runs when we enter this state
-    public override void OnEnter(BaseState oldState){
+    public override void OnEnter(BaseState oldState)
+    {
         Debug.Log("Attack");
+
         onCooldown = true;
-        timer = 0;
-        _owner.SetStateColor(Color.indianRed);
+        toAttack = false;
+        attacking = false;
+
+        timer = 0f;
+
+        _owner.OnAttackStateEnter();
     }
-    
-    // Runs when we exit this state
-    public override void OnExit(BaseState newState) {
-        activeArea?.SetActive(false);
+
+    public override void OnExit(BaseState newState)
+    {
+        _owner.OnAttackStateExit();
     }
 }
