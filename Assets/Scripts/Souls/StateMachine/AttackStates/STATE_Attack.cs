@@ -22,7 +22,13 @@ public class STATE_Attack : BaseState
             Vector3 direction = _owner.player.transform.position - _owner.transform.position;
             _owner.transform.rotation = Quaternion.LookRotation(direction);
             timer += Time.deltaTime;
-            if (timer >= 2)
+            
+            //if (_owner.attackCount >= 1)
+            //{
+            //    _owner.requiredTimeToAttack += 1f;
+            //}
+
+            if (timer >= _owner.requiredTimeToAttack)
             {
                 timer = 0;
                 onCooldown = false;
