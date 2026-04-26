@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     [Header("Settings")]
     [SerializeField, Range(0.1f, 2f)] private float delayBetweenChanges = 0.5f;
     [SerializeField] private int maxHealth = 3;
-    [SerializeField] private float fallDeathY = -10f;
+    [SerializeField] private float fallDeathY = -15f;
     [SerializeField] private float damageFlashDuration = 1f;
 
     [SerializeField] private Color damageColor = Color.red;

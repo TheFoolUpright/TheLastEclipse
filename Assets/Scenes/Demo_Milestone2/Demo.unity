@@ -3093,7 +3093,7 @@ GameObject:
   m_Component:
   - component: {fileID: 790015297}
   - component: {fileID: 790015299}
-  - component: {fileID: 790015298}
+  - component: {fileID: 790015300}
   m_Layer: 0
   m_Name: Player Detector
   m_TagString: Untagged
@@ -3110,14 +3110,27 @@ Transform:
   m_GameObject: {fileID: 790015296}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 95.8, y: 7.025391, z: -54.5}
+  m_LocalPosition: {x: 93, y: 9.72, z: -55.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1042489241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &790015298
-SphereCollider:
+--- !u!114 &790015299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790015296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b35594e87ddcf41a3b5e3cd78fa218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackSoulPlayerInArenaDetection
+  soulAgent: {fileID: 10271255}
+--- !u!136 &790015300
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3134,22 +3147,11 @@ SphereCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 28.029766
-  m_Center: {x: 7.2370677, y: 6.519459, z: 0.000000080845666}
---- !u!114 &790015299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 790015296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81b35594e87ddcf41a3b5e3cd78fa218, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AttackSoulPlayerInArenaDetection
-  soulAgent: {fileID: 10271255}
+  serializedVersion: 2
+  m_Radius: 19.32397
+  m_Height: 38.64794
+  m_Direction: 1
+  m_Center: {x: -1.3693368, y: 5.282097, z: -3.4025843}
 --- !u!1 &817587840
 GameObject:
   m_ObjectHideFlags: 0
@@ -6603,7 +6605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4292154010595695564, guid: 4a3de465b572586419d5312bd8ca39ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6335
+      value: -12.8
       objectReference: {fileID: 0}
     - target: {fileID: -4292154010595695564, guid: 4a3de465b572586419d5312bd8ca39ed, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8463,6 +8465,22 @@ PrefabInstance:
     - target: {fileID: 4728886682537177437, guid: fe757c7abbd579e40954daa75192fcf5, type: 3}
       propertyPath: m_Name
       value: Regular Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741322964427781398, guid: fe757c7abbd579e40954daa75192fcf5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172476709625760942, guid: fe757c7abbd579e40954daa75192fcf5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172476709625760942, guid: fe757c7abbd579e40954daa75192fcf5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172476709625760942, guid: fe757c7abbd579e40954daa75192fcf5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

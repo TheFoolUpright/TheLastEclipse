@@ -9,7 +9,7 @@ public class STATE_Attack : BaseState
     private bool toAttack;
     private float timer;
     private float startSpeed;
-    private GameObject activeArea;
+    public GameObject activeArea;
     public STATE_Attack(AttackSoulAgent owner) : base(owner.gameObject) {
         _owner = owner;
     }
@@ -97,6 +97,6 @@ public class STATE_Attack : BaseState
     
     // Runs when we exit this state
     public override void OnExit(BaseState newState) {
-        activeArea.SetActive(false);
+        activeArea?.SetActive(false);
     }
 }
