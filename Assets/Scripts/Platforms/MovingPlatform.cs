@@ -121,7 +121,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (player != null)
         {
-            //player.parent = null;
+            player.parent = null;
         }
     }
 }
