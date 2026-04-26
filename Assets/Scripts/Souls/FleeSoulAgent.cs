@@ -250,14 +250,19 @@ public class FleeSoulAgent : MonoBehaviour
             // 1 means same direction, -1 means opposite direction
             float directionScore = Vector3.Dot(awayFromPlayer, toPoint);
 
+            float pathAwayScore = GetPathFirstStepAwayScore(point.position);
+            
             // Skip points that strongly move toward the player
-            if (directionScore < 0f)
+            if (pathAwayScore < -0.1f)
                 continue;
 
             float distanceFromPlayer = Vector3.Distance(point.position, player.position);
 
             // Weighted score: prioritize direction first, distance second
-            float score = directionScore * 10f + distanceFromPlayer;
+            float score =
+                 directionScore * 10f +
+                 pathAwayScore * 20f +
+                 distanceFromPlayer; 
 
             if (score > bestScore)
             {
@@ -306,6 +311,33 @@ public class FleeSoulAgent : MonoBehaviour
         float directionScore = Vector3.Dot(awayFromPlayer, towardDestination);
 
         return directionScore < 0f;
+    }
+
+    private float GetPathFirstStepAwayScore(Vector3 targetPosition)
+    {
+        if (player == null || !agent.isOnNavMesh)
+            return 0f;
+
+        NavMeshPath path = new NavMeshPath();
+
+        if (!agent.CalculatePath(targetPosition, path))
+            return -1f;
+
+        if (path.status != NavMeshPathStatus.PathComplete)
+            return -1f;
+
+        if (path.corners.Length < 2)
+            return -1f;
+
+        Vector3 awayFromPlayer = transform.position - player.position;
+        awayFromPlayer.y = 0f;
+        awayFromPlayer.Normalize();
+
+        Vector3 firstStep = path.corners[1] - path.corners[0];
+        firstStep.y = 0f;
+        firstStep.Normalize();
+
+        return Vector3.Dot(awayFromPlayer, firstStep);
     }
 
     private void OnDrawGizmosSelected()
