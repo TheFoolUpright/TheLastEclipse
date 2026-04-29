@@ -101,6 +101,7 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth = 0;
         OnHpChanged?.Invoke(currentHealth);
+        AudioManager.Instance.PlaySFX("Death");
         RespawnPlayer();
     }
 
