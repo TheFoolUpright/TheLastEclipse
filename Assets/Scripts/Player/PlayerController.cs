@@ -68,7 +68,6 @@ public class PlayerController : MonoBehaviour
     {
         UpdateSwitchTimer();
         HandleCharacterSwitchInput();
-        CheckFallDeath();
     }
 
     private void UpdateSwitchTimer()
@@ -89,13 +88,7 @@ public class PlayerController : MonoBehaviour
         switchTimer = delayBetweenChanges;
     }
 
-    private void CheckFallDeath()
-    {
-        if (transform.position.y < fallDeathY)
-        {
-            PlayerDie();
-        }
-    }
+
 
     public void PlayerDie()
     {

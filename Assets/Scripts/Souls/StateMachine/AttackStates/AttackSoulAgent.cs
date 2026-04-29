@@ -28,7 +28,6 @@ public class AttackSoulAgent : MonoBehaviour
     
     public int attackCount = 0;
     public bool attackHit;
-    public float minAttackDistance = 5f;
     public float requiredTimeToAttack = 2f;
 
     public GameObject activeArea;
