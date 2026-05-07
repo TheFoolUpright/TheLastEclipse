@@ -3075,7 +3075,7 @@ PrefabInstance:
     - target: {fileID: 479664621383147200, guid: 4f3d76889171248409abe03235123bbd, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1023917765}
     - target: {fileID: 2038079859451524835, guid: 4f3d76889171248409abe03235123bbd, type: 3}
       propertyPath: m_Name
       value: Ice Spike Hazard
@@ -3954,7 +3954,7 @@ PrefabInstance:
     - target: {fileID: 7252875611543117620, guid: 4c091d0da98312d499bbc98d3e5b07b1, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1023917765}
     - target: {fileID: 7975867255086646348, guid: 4c091d0da98312d499bbc98d3e5b07b1, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -7833,7 +7833,7 @@ PrefabInstance:
     - target: {fileID: 9147782847327903569, guid: 0d44689f835704d4db1c74789bd984aa, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1023917765}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

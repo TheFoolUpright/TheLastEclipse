@@ -50,8 +50,11 @@ Shader "Tutorial/VolumetricFog"
             
             float get_density(float3 worldPos)
             {
-                float4 noise = _FogNoise.SampleLevel(sampler_TrilinearRepeat, worldPos * 0.01 * _NoiseTiling, 0);
-                float density = dot(noise, noise);
+                float3 noiseUV = worldPos * 0.01 * _NoiseTiling;
+                noiseUV += float3(_Time.y * 0.02, 0, 0);
+
+                float4 noise = _FogNoise.SampleLevel(sampler_TrilinearRepeat, noiseUV, 0);
+                float density = noise.a;
                 density = saturate(density - _DensityThreshold) * _DensityMultiplier;
                 return density;
             }
