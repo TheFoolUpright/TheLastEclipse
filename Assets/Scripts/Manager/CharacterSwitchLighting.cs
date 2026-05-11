@@ -22,6 +22,9 @@ public class CharacterSwitchLighting : MonoBehaviour
     [SerializeField] private GameObject[] sunOnlyLights;
     [SerializeField] private GameObject[] moonOnlyLights;
 
+    [Header("Fog")]
+    [SerializeField] private Material volumetricFogMaterial;
+
     private void OnEnable()
     {
         if (playerController != null)
@@ -61,6 +64,12 @@ public class CharacterSwitchLighting : MonoBehaviour
 
         RenderSettings.ambientMode = AmbientMode.Flat;
         RenderSettings.ambientLight = isSun ? sunAmbientColor : moonAmbientColor;
+
+        if (volumetricFogMaterial != null)
+        {
+            volumetricFogMaterial.SetColor("_Color",
+                isSun ? sunAmbientColor : moonAmbientColor);
+        }
 
         if (isSun && sunSkybox != null)
         {

@@ -58,8 +58,8 @@ public class PlayerController : MonoBehaviour
         startingPosition = transform.position;
         switchTimer = 0f;
         currentHealth = maxHealth;
+        SetCharacterImmediate(Character.Sun, notify: true);
 
-        SetCharacter(Character.Sun, notify: false);
         OnHpChanged?.Invoke(currentHealth);
 
     }
@@ -88,7 +88,23 @@ public class PlayerController : MonoBehaviour
         switchTimer = delayBetweenChanges;
     }
 
+    private void SetCharacterImmediate(Character character, bool notify)
+    {
+        bool isSun = character == Character.Sun;
 
+        sunVisual.SetActive(isSun);
+        moonVisual.SetActive(!isSun);
+
+        sunUISymbol.SetActive(isSun);
+        moonUISymbol.SetActive(!isSun);
+
+        ResetActiveCharacterColor();
+
+        if (notify)
+        {
+            OnCharacterChanged?.Invoke(character);
+        }
+    }
 
     public void PlayerDie()
     {
