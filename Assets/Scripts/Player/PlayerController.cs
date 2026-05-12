@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CharacterController characterController;
     [SerializeField] private Material sunMaterial;
     [SerializeField] private Material moonMaterial;
+    [SerializeField] private Transform defaultSpawnPoint;
 
 
     [Header("Settings")]
@@ -45,23 +46,83 @@ public class PlayerController : MonoBehaviour
     private float switchTimer;
     private bool isDamaged;
     private int currentHealth;
-    [SerializeField] private Vector3 startingPosition;
     private Coroutine damageRoutine;
     private float dissolveTimer;
     private float dissolveDuration = 0.25f;
+
+    [SerializeField] private Vector3 respawnPosition;
+    [SerializeField] private Quaternion respawnRotation;
 
     public int CurrentHealth => currentHealth;
 
     private void Awake()
     {
         inputs = GetComponent<StarterAssetsInputs>();
-        startingPosition = transform.position;
+        SetRespawnPoint(defaultSpawnPoint);
+
         switchTimer = 0f;
         currentHealth = maxHealth;
         SetCharacterImmediate(Character.Sun, notify: true);
 
         OnHpChanged?.Invoke(currentHealth);
 
+    }
+
+    private void Start()
+    {
+        TryMoveToPortalSpawnPoint();
+    }
+
+
+    private void SetRespawnPoint(Transform spawnPoint)
+    {
+        if (spawnPoint == null)
+        {
+            Debug.LogWarning("No spawn point assigned. Using player position instead.");
+
+            respawnPosition = transform.position;
+            respawnRotation = transform.rotation;
+            return;
+        }
+
+        respawnPosition = spawnPoint.position;
+        respawnRotation = spawnPoint.rotation;
+    }
+
+    private void TryMoveToPortalSpawnPoint()
+    {
+        if (string.IsNullOrEmpty(PortalSpawnData.spawnPointName))
+            return;
+
+        GameObject spawnPoint = GameObject.Find(PortalSpawnData.spawnPointName);
+
+        if (spawnPoint == null)
+        {
+            Debug.LogWarning("Spawn point not found: " + PortalSpawnData.spawnPointName);
+            return;
+        }
+
+        characterController.enabled = false;
+
+        transform.position = spawnPoint.transform.position;
+        transform.rotation = spawnPoint.transform.rotation;
+
+        characterController.enabled = true;
+
+        SetRespawnPoint(spawnPoint.transform);
+
+        PortalSpawnData.spawnPointName = null;
+    }
+
+    public void CheatRefillHealth()
+    {
+        currentHealth = maxHealth;
+        OnHpChanged?.Invoke(currentHealth);
+    }
+
+    public void CheatRespawn()
+    {
+        RespawnPlayer();
     }
 
     private void Update()
@@ -148,7 +209,8 @@ public class PlayerController : MonoBehaviour
         ResetActiveCharacterColor();
 
         characterController.enabled = false;
-        transform.position = startingPosition;
+        transform.position = respawnPosition;
+        transform.rotation = respawnRotation;
         characterController.enabled = true;
 
         currentHealth = maxHealth;

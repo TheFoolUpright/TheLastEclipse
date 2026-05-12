@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_PortalShader
+  m_Name: M_HubPortalShader
   m_Shader: {fileID: -6465566751694194690, guid: 329fcd15c2a49c24c8bbef65161fe47a, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -62,6 +62,6 @@ Material:
     - _Speed: 0.5
     - _TwirlStrength: 30
     m_Colors:
-    - _Color: {r: 7.5294113, g: 26.227453, b: 8.784313, a: 1}
+    - _Color: {r: 15.058824, g: 37.1451, b: 52.454903, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
