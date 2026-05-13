@@ -65,16 +65,8 @@ public class DevCheats : MonoBehaviour
         if (soulSceneManager != null)
         {
             soulSceneManager.CollectMainSoul();
+            Debug.Log("CHEAT: Main soul collected.");
         }
-
-        SoulUI soulUI = FindAnyObjectByType<SoulUI>();
-
-        if (soulUI != null)
-        {
-            soulUI.SetFleeCollected();
-        }
-
-        Debug.Log("CHEAT: Main soul collected.");
     }
 
     private void RespawnCheat()
