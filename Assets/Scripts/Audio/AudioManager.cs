@@ -49,24 +49,22 @@ public class AudioManager : MonoBehaviour
 
         if (s == null)
         {
-            Debug.Log("Sound Not Found");
+            Debug.LogWarning("SFX Sound Not Found: " + name);
+            return;
         }
 
-        else
-        {
-            sfxSource.PlayOneShot(s.clip);
-        }
+        sfxSource.PlayOneShot(s.clip);
     }
 
-//    public void ToggleMusic()
-//    {
-//        musicSource.mute = !musicSource.mute;
-//    }
+    //    public void ToggleMusic()
+    //    {
+    //        musicSource.mute = !musicSource.mute;
+    //    }
 
-//    public void ToggleSFX()
-//    {
+    //    public void ToggleSFX()
+    //    {
 
-//    }
+    //    }
 
     public void MusicVolume(float volume)
     {

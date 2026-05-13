@@ -140,6 +140,8 @@ namespace StarterAssets
         private float _terminalVelocity = 53.0f;
         private Vector3 _lastMoveDirection = Vector3.forward;
 
+        private bool _suppressNextLandingAudio = false;
+
         // If the player is standing on a bounce platform,
         // we store a reference to it here.
         // If they are standing on normal ground, this stays null.
@@ -657,6 +659,9 @@ namespace StarterAssets
             if (_currentBounceSurface == null)
                 return;
 
+            // This landing is a bounce landing, so skip the normal landing sound once.
+            _suppressNextLandingAudio = true;
+
             // Apply the bounce using the settings from the platform.
             Bounce(_currentBounceSurface.BounceHeight, _currentBounceSurface.ResetDoubleJump);
 
@@ -741,7 +746,17 @@ namespace StarterAssets
         {
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
-                AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
+                if (_suppressNextLandingAudio)
+                {
+                    _suppressNextLandingAudio = false;
+                    return;
+                }
+
+                AudioSource.PlayClipAtPoint(
+                    LandingAudioClip,
+                    transform.TransformPoint(_controller.center),
+                    FootstepAudioVolume
+                );
             }
         }
     }

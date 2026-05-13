@@ -31,16 +31,19 @@ public class SoulSceneManager : MonoBehaviour
 
         SoulUI soulUI = FindAnyObjectByType<SoulUI>();
 
-        if (soulUI != null)
+        if (mainSoulType == MainSoulType.Flee)
         {
-            if (mainSoulType == MainSoulType.Flee)
-            {
+            GameProgress.fleeSoulCollected = true;
+
+            if (soulUI != null)
                 soulUI.SetFleeCollected();
-            }
-            else if (mainSoulType == MainSoulType.Attack)
-            {
+        }
+        else if (mainSoulType == MainSoulType.Attack)
+        {
+            GameProgress.attackSoulCollected = true;
+
+            if (soulUI != null)
                 soulUI.SetAttackCollected();
-            }
         }
 
         if (returnPortal != null)
