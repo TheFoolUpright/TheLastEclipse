@@ -3,7 +3,17 @@ guid: 7e7293b5e7da1594ba1ef42719cc0176
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sun Crystals
+    second: {fileID: 2100000, guid: 41ba06c03c5b5bd4cb8731eb0acc2106, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sun Platform
+    second: {fileID: 2100000, guid: b82b3f297d836e24db9ef6be11705599, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
