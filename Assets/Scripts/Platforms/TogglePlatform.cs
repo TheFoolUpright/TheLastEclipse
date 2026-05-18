@@ -1,5 +1,13 @@
 using UnityEngine;
 
+[System.Serializable]
+public class LinkedRendererSet
+{
+    public MeshRenderer renderer;
+    public Material opaqueMaterial;
+    public Material transparentMaterial;
+}
+
 public class TogglePlatform : MonoBehaviour
 {
     [Header("References")]
@@ -7,66 +15,52 @@ public class TogglePlatform : MonoBehaviour
     [SerializeField] private Collider _platformCollider;
     [SerializeField] private MeshRenderer _meshRenderer;
 
+    [Header("Materials")]
+    [SerializeField] private Material _opaqueMaterial;
+    [SerializeField] private Material _transparentMaterial;
+
     [Header("Platform Settings")]
     [SerializeField] private Character _platformType;
     [SerializeField] private float _solidDuration = 2f;
     [SerializeField] private float _offDuration = 2f;
     [SerializeField] private float _startOffset = 0f;
 
-    [Header("Visual Tints")]
-    [SerializeField] private Color _solidUsableTint = Color.white;
-    [SerializeField] private Color _solidBlockedTint = new Color(1f, 0.6f, 0.6f, 1f);
-    [SerializeField] private Color _offTint = new Color(1f, 1f, 1f, 0.25f);
-
     [Header("Blink Warning")]
     [SerializeField] private bool _useBlinkWarning = true;
     [SerializeField] private float _warningDuration = 0.5f;
     [SerializeField] private float _blinkSpeed = 8f;
-    [SerializeField] private Color _warningTint = new Color(1f, 0.8f, 0.8f, 0.6f);
+
+    [Header("Linked Visual Objects")]
+    [SerializeField] private LinkedRendererSet[] _linkedRenderers;
 
     private float _timer;
     private bool _isSolidPhase;
     private Character _currentCharacter;
 
-    private Material _platformMaterial;
-    private Color _originalColor = Color.white;
 
     private void Awake()
     {
-        if (_meshRenderer != null)
-        {
-            _platformMaterial = _meshRenderer.material;
-
-            if (_platformMaterial.HasProperty("_BaseColor"))
-                _originalColor = _platformMaterial.GetColor("_BaseColor");
-            else if (_platformMaterial.HasProperty("_Color"))
-                _originalColor = _platformMaterial.GetColor("_Color");
-        }
-
         if (_player != null)
         {
             _player.OnCharacterChanged += PlayerStateChanged;
-            PlayerStateChanged(_player.CurrentCharacter);
         }
     }
 
     private void OnDestroy()
     {
         if (_player != null)
-        {
             _player.OnCharacterChanged -= PlayerStateChanged;
-        }
     }
 
     private void Start()
     {
+        _currentCharacter = _player.CurrentCharacter;
+
         _isSolidPhase = true;
         _timer = _solidDuration;
 
         if (_startOffset > 0f)
-        {
             ApplyStartOffset(_startOffset);
-        }
 
         UpdatePlatformState();
     }
@@ -88,33 +82,16 @@ public class TogglePlatform : MonoBehaviour
     {
         while (offset > 0f)
         {
-            if (_isSolidPhase)
+            if (offset >= _timer)
             {
-                if (offset >= _timer)
-                {
-                    offset -= _timer;
-                    _isSolidPhase = false;
-                    _timer = _offDuration;
-                }
-                else
-                {
-                    _timer -= offset;
-                    offset = 0f;
-                }
+                offset -= _timer;
+                _isSolidPhase = !_isSolidPhase;
+                _timer = _isSolidPhase ? _solidDuration : _offDuration;
             }
             else
             {
-                if (offset >= _timer)
-                {
-                    offset -= _timer;
-                    _isSolidPhase = true;
-                    _timer = _solidDuration;
-                }
-                else
-                {
-                    _timer -= offset;
-                    offset = 0f;
-                }
+                _timer -= offset;
+                offset = 0f;
             }
         }
     }
@@ -128,67 +105,84 @@ public class TogglePlatform : MonoBehaviour
 
     private void PlayerStateChanged(Character character)
     {
+        Debug.Log($"{name} PLATFORM received character change: {character}");
+
         _currentCharacter = character;
         UpdatePlatformState();
     }
-
     private void UpdatePlatformState()
     {
         bool correctCharacter = _currentCharacter == _platformType;
         bool shouldBeSolid = _isSolidPhase && correctCharacter;
 
         if (_platformCollider != null)
-        {
             _platformCollider.enabled = shouldBeSolid;
-        }
 
         UpdateVisuals();
     }
 
     private void UpdateVisuals()
     {
-        if (_platformMaterial == null)
+        if (_meshRenderer == null)
             return;
 
         bool correctCharacter = _currentCharacter == _platformType;
 
-        if (!_isSolidPhase)
+        // Wrong character
+        if (!correctCharacter)
         {
-            SetMaterialTint(_offTint);
+            SetAllMaterials(false);
             return;
         }
 
-        Color baseTint = correctCharacter ? _solidUsableTint : _solidBlockedTint;
+        // Off phase
+        if (!_isSolidPhase)
+        {
+            SetAllMaterials(false);
+            return;
+        }
 
-        bool isInWarningWindow = _useBlinkWarning && correctCharacter && _timer <= _warningDuration;
+        bool isInWarningWindow =
+            _useBlinkWarning &&
+            _timer <= _warningDuration;
 
         if (isInWarningWindow)
         {
-            float pulse = Mathf.PingPong(Time.time * _blinkSpeed, 1f);
-            Color blinkTint = Color.Lerp(baseTint, _warningTint, pulse);
-            SetMaterialTint(blinkTint);
+            bool useOpaque =
+                Mathf.FloorToInt(Time.time * _blinkSpeed) % 2 == 0;
+
+            SetAllMaterials(useOpaque);
         }
         else
         {
-            SetMaterialTint(baseTint);
+            SetAllMaterials(true);
         }
     }
 
-    private void SetMaterialTint(Color tint)
+    private void SetAllMaterials(bool useOpaque)
     {
-        if (_platformMaterial == null)
+        // Main platform
+        if (_meshRenderer != null)
+        {
+            _meshRenderer.material =
+                useOpaque ? _opaqueMaterial : _transparentMaterial;
+        }
+
+        // Linked objects
+        if (_linkedRenderers == null)
             return;
 
-        Color finalColor = new Color(
-            _originalColor.r * tint.r,
-            _originalColor.g * tint.g,
-            _originalColor.b * tint.b,
-            _originalColor.a * tint.a
-        );
+        foreach (LinkedRendererSet linked in _linkedRenderers)
+        {
+            if (linked.renderer == null)
+                continue;
 
-        if (_platformMaterial.HasProperty("_BaseColor"))
-            _platformMaterial.SetColor("_BaseColor", finalColor);
-        else if (_platformMaterial.HasProperty("_Color"))
-            _platformMaterial.SetColor("_Color", finalColor);
+            linked.renderer.material =
+                useOpaque
+                ? linked.opaqueMaterial
+                : linked.transparentMaterial;
+        }
     }
+
+
 }
