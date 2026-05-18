@@ -12,8 +12,11 @@ public class PlayerController : MonoBehaviour
     public event Action<Character> OnCharacterChanged;
     public event Action<int> OnHpChanged;
 
-    public Character CurrentCharacter => moonVisual.activeSelf ? Character.Moon : Character.Sun;
-    public bool IsMoonActive => CurrentCharacter == Character.Moon;
+    [SerializeField] private Character currentCharacter = Character.Sun;
+
+    public Character CurrentCharacter => currentCharacter;
+    public bool IsMoonActive => currentCharacter == Character.Moon;
+
     private Material activeMaterial => IsMoonActive ? moonMaterial : sunMaterial; 
 
     [Header("Character Visuals")]
@@ -151,6 +154,8 @@ public class PlayerController : MonoBehaviour
 
     private void SetCharacterImmediate(Character character, bool notify)
     {
+        currentCharacter = character;
+
         bool isSun = character == Character.Sun;
 
         sunVisual.SetActive(isSun);
@@ -162,9 +167,7 @@ public class PlayerController : MonoBehaviour
         ResetActiveCharacterColor();
 
         if (notify)
-        {
-            OnCharacterChanged?.Invoke(character);
-        }
+            OnCharacterChanged?.Invoke(currentCharacter);
     }
 
     public void PlayerDie()
@@ -242,6 +245,9 @@ public class PlayerController : MonoBehaviour
     private void ToggleCharacter()
     {
         Character nextCharacter = IsMoonActive ? Character.Sun : Character.Moon;
+
+        Debug.Log($"PLAYER ToggleCharacter | Current: {currentCharacter} | Next: {nextCharacter}");
+
         SetCharacter(nextCharacter, notify: true);
     }
 
@@ -264,6 +270,8 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator DissolveEffect(Character character, bool notify)
     {
+        Debug.Log($"PLAYER Dissolve START | Current: {currentCharacter} | Target: {character}");
+
         bool isSun = character == Character.Sun;
 
         dissolveTimer = 0;
@@ -275,8 +283,13 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
 
+        currentCharacter = character;
+
+        Debug.Log($"PLAYER Character SET | Current is now: {currentCharacter}");
+
         sunVisual.SetActive(isSun);
         moonVisual.SetActive(!isSun);
+
         dissolveTimer = 0;
 
         while (dissolveTimer < dissolveDuration)
@@ -285,6 +298,7 @@ public class PlayerController : MonoBehaviour
             activeMaterial.SetFloat("_DissolveForce", 1 - (dissolveTimer / dissolveDuration));
             yield return null;
         }
+
         sunUISymbol.SetActive(isSun);
         moonUISymbol.SetActive(!isSun);
 
@@ -292,10 +306,10 @@ public class PlayerController : MonoBehaviour
 
         if (notify)
         {
-            OnCharacterChanged?.Invoke(character);
+            Debug.Log($"PLAYER Notify Platforms | Sending: {currentCharacter}");
+            OnCharacterChanged?.Invoke(currentCharacter);
         }
     }
-
     private void SetActiveCharacterColor(Color color)
     {
         activeMaterial.SetColor("_Base_Color", color);
