@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: da67d414a75b1434094fd2c5c1782736
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 194408
+  packageName: Cloth Dynamics
+  packageVersion: 2.0.9 Beta
+  assetPath: Assets/ClothDynamics/Scenes/Examples.unitypackage
+  uploadId: 595872

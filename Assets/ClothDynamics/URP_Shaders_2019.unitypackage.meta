@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 763db976c6371b84b98f4ca8992943fc
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 194408
+  packageName: Cloth Dynamics
+  packageVersion: 2.0.9 Beta
+  assetPath: Assets/ClothDynamics/URP_Shaders_2019.unitypackage
+  uploadId: 595872

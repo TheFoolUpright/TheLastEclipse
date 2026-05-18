@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b398ee545cb99fb49922357214a5c7ca
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 194408
+  packageName: Cloth Dynamics
+  packageVersion: 2.0.9 Beta
+  assetPath: Assets/ClothDynamics/Scenes/HDRP.unitypackage
+  uploadId: 595872
