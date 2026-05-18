@@ -175,7 +175,7 @@ public class PlayerController : MonoBehaviour
         RespawnPlayer();
     }
 
-    public void Damage()
+    public void Damage(Vector3 damageSourcePosition)
     {
         if (isDamaged)
             return;
@@ -189,12 +189,34 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        Knockback(damageSourcePosition);
+
         if (damageRoutine != null)
         {
             StopCoroutine(damageRoutine);
         }
 
         damageRoutine = StartCoroutine(DamagedEffect());
+    }
+
+    private void Knockback(Vector3 damageSourcePosition)
+    {
+        Vector3 direction = (this.transform.position - damageSourcePosition).normalized;
+        StartCoroutine(KnockbackCourotine(direction));
+    }
+
+    private IEnumerator KnockbackCourotine(Vector3 direction)
+    {
+        float elapsed = 0f;
+        float duration = 0.25f;
+        float forcePower = 30;
+        while (elapsed < duration)
+        {
+            float force = Mathf.Lerp(forcePower, 0f, elapsed / duration);
+            characterController.Move(direction * force * Time.deltaTime);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
     }
 
     private void RespawnPlayer()

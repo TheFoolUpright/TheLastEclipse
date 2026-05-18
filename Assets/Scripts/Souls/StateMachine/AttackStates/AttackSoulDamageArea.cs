@@ -28,7 +28,7 @@ public class AttackSoulDamageArea : MonoBehaviour
             {
                 Debug.Log("Damaged");
                 owner.attackHit = true;
-                controller.Damage();
+                controller.Damage(owner.transform.position);
                 boxCollider.enabled = false;
                 
             }

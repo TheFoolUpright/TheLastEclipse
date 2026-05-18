@@ -28,42 +28,25 @@ public class HazardsMechanics : MonoBehaviour
     {
         player.OnCharacterChanged -= ActiveVisual;
     }
-    private void OnTriggerStay(Collider other)
+
+    public void OnPlayerTriggerStay(PlayerController controller, Vector3 damageSoucePosition)
     {
-
-        if (other != null)
+        if ((controller.IsMoonActive && hazardSide == Character.Moon) ||
+                   (!controller.IsMoonActive && hazardSide == Character.Sun))
         {
-            PlayerController controller = other.gameObject.GetComponent<PlayerController>();
-
-            if (controller)
+            damageCooldown -= Time.deltaTime;
+            if (damageCooldown <= 0)
             {
-
-                if ((controller.IsMoonActive && hazardSide == Character.Moon) || 
-                    (!controller.IsMoonActive && hazardSide == Character.Sun))
-              {
-                    damageCooldown -= Time.deltaTime;
-                    if (damageCooldown <= 0)
-                    {
-                        controller.Damage();
-                        damageCooldown = damageCooldownDuration;
-                    }
-                    
-              }
+                controller.Damage(damageSoucePosition);
+                damageCooldown = damageCooldownDuration;
             }
+
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    public void OnPlayerTriggerExit()
     {
-        if (other != null)
-        {
-            PlayerController controller = other.gameObject.GetComponent<PlayerController>();
-
-            if (controller)
-            {
-                damageCooldown = 0;
-            }
-        }
+        damageCooldown = 0;
     }
 
     private void ActiveVisual(Character characterType)
