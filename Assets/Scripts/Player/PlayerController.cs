@@ -33,6 +33,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Material moonMaterial;
     [SerializeField] private Transform defaultSpawnPoint;
 
+    [Header("Animation")]
+    [SerializeField] private Animator animator;
+
+    private int animIDHurt;
+    private int animIDDead;
 
     [Header("Settings")]
     [SerializeField, Range(0.1f, 2f)] private float delayBetweenChanges = 0.5f;
@@ -61,6 +66,9 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         inputs = GetComponent<StarterAssetsInputs>();
+        animIDHurt = Animator.StringToHash("IsHurt");
+        animIDDead = Animator.StringToHash("IsDead");
+
         SetRespawnPoint(defaultSpawnPoint);
 
         switchTimer = 0f;
@@ -174,7 +182,19 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth = 0;
         OnHpChanged?.Invoke(currentHealth);
+
+        if (animator != null)
+        {
+            animator.SetTrigger(animIDDead);
+        }
+
         AudioManager.Instance.PlaySFX("Death");
+
+        StartCoroutine(RespawnAfterDeathAnimation());
+    }
+    private IEnumerator RespawnAfterDeathAnimation()
+    {
+        yield return new WaitForSeconds(1.0f);
         RespawnPlayer();
     }
 
@@ -188,8 +208,13 @@ public class PlayerController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            RespawnPlayer();
+            PlayerDie();
             return;
+        }
+
+        if (animator != null)
+        {
+            animator.SetTrigger(animIDHurt);
         }
 
         Knockback(damageSourcePosition);
