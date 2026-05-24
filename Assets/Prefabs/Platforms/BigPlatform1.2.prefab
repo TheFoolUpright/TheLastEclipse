@@ -40,6 +40,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9199072989513103412}
     m_Modifications:
+    - target: {fileID: -8919975841950300356, guid: 2f5304a9094e71545a966af759955458, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a479de2a19d418e47864a94758e7793f, type: 2}
     - target: {fileID: -8679921383154817045, guid: 2f5304a9094e71545a966af759955458, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.6
@@ -80,6 +84,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7051428634168275698, guid: 2f5304a9094e71545a966af759955458, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a479de2a19d418e47864a94758e7793f, type: 2}
     - target: {fileID: 919132149155446097, guid: 2f5304a9094e71545a966af759955458, type: 3}
       propertyPath: m_Name
       value: BigPlatform1
