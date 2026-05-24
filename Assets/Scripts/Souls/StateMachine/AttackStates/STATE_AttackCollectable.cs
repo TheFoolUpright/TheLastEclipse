@@ -15,7 +15,6 @@ public class STATE_AttackCollectable : BaseState
         _owner = owner;
     }
 
-    // Runs every frame
     public override Type Tick()
     {
         bool playerClose = false;
@@ -56,7 +55,6 @@ public class STATE_AttackCollectable : BaseState
         return null;
     }
 
-    // Runs when we enter this state
     public override void OnEnter(BaseState oldState)
     {
         Debug.Log("Entered Attack Collectable State");
@@ -65,7 +63,6 @@ public class STATE_AttackCollectable : BaseState
         {
             _owner.NavMeshAgent.isStopped = true;
             _owner.NavMeshAgent.ResetPath();
-            _owner.SetStateColor(Color.rebeccaPurple);
         }
 
         _owner.SetStateColor(Color.rebeccaPurple);
@@ -88,7 +85,6 @@ public class STATE_AttackCollectable : BaseState
             _popup.Hide();
     }
 
-    // Runs when we exit this state
     public override void OnExit(BaseState newState)
     {
         if (_popup != null)

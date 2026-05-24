@@ -23,9 +23,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject moonVisual;
     [SerializeField] private GameObject sunVisual;
 
-    [Header("UI")]
-    [SerializeField] private GameObject sunUISymbol;
-    [SerializeField] private GameObject moonUISymbol;
 
     [Header("References")]
     [SerializeField] private CharacterController characterController;
@@ -169,8 +166,6 @@ public class PlayerController : MonoBehaviour
         sunVisual.SetActive(isSun);
         moonVisual.SetActive(!isSun);
 
-        sunUISymbol.SetActive(isSun);
-        moonUISymbol.SetActive(!isSun);
 
         ResetActiveCharacterColor();
 
@@ -324,8 +319,6 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
 
-        sunUISymbol.SetActive(isSun);
-        moonUISymbol.SetActive(!isSun);
 
         ResetActiveCharacterColor();
 

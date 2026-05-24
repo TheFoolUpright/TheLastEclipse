@@ -29,26 +29,36 @@ public class SoulSceneManager : MonoBehaviour
 
         mainSoulCollected = true;
 
-        SoulUI soulUI = FindAnyObjectByType<SoulUI>();
-
         if (mainSoulType == MainSoulType.Flee)
         {
             GameProgress.fleeSoulCollected = true;
-
-            if (soulUI != null)
-                soulUI.SetFleeCollected();
         }
         else if (mainSoulType == MainSoulType.Attack)
         {
             GameProgress.attackSoulCollected = true;
-
-            if (soulUI != null)
-                soulUI.SetAttackCollected();
         }
 
         if (returnPortal != null)
             returnPortal.SetActive(true);
 
         Debug.Log("Main soul collected. Return portal opened.");
+    }
+
+    public void CollectSoul(GameObject soulObject)
+    {
+        SoulCollectibleData soulData = soulObject.GetComponent<SoulCollectibleData>();
+
+        if (soulData == null)
+            return;
+
+        if (SoulCollectionManager.Instance != null)
+        {
+            SoulCollectionManager.Instance.CollectSoul(soulData.soulID);
+        }
+
+        if (soulData.soulType == SoulType.Flee || soulData.soulType == SoulType.Attack)
+        {
+            CollectMainSoul();
+        }
     }
 }
