@@ -42,7 +42,7 @@ public class STATE_AttackPreperation : BaseState
     public override void OnEnter(BaseState oldState){
         Debug.Log("Wandering");
         //SetTarget();
-        searchRadius = _owner.AttackAreas[_owner.attackCount].transform.localScale.y * 1.5f;
+        searchRadius = _owner.AttackAreas[_owner.attackCount].GetAttackDistance() * 0.75f;
         _owner.SetStateColor(Color.darkRed);
     }
     
@@ -53,7 +53,7 @@ public class STATE_AttackPreperation : BaseState
     private void SetTarget(int round = 0)
     {
         Vector3 playerPos = _owner.player.transform.position;
-        searchRadius = _owner.AttackAreas[_owner.attackCount].transform.localScale.y * 1.5f;
+        searchRadius = _owner.AttackAreas[_owner.attackCount].GetAttackDistance() * 0.75f;
         for(int i = 0; i < maxSearchAttempts; i++)
         {
             Vector2 randomCircle = UnityEngine.Random.insideUnitCircle.normalized;

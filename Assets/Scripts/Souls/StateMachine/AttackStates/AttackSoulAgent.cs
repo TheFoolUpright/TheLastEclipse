@@ -143,31 +143,7 @@ public class AttackSoulAgent : MonoBehaviour
 
     private float GetActiveAreaLength()
     {
-        Collider areaCollider = activeArea.GetComponent<Collider>();
-
-        if (areaCollider == null)
-        {
-            return 8f;
-        }
-
-        float extraDistance = 1.5f;
-
-        if (areaCollider is BoxCollider box)
-        {
-            return box.size.z * activeArea.transform.lossyScale.z + extraDistance;
-        }
-
-        if (areaCollider is CapsuleCollider capsule)
-        {
-            return capsule.height * activeArea.transform.lossyScale.z + extraDistance;
-        }
-
-        if (areaCollider is SphereCollider sphere)
-        {
-            return sphere.radius * 2f * activeArea.transform.lossyScale.z + extraDistance;
-        }
-
-        return 8f;
+        return AttackAreas[attackCount].GetAttackDistance();
     }
 
     public void CheckDashFinished()

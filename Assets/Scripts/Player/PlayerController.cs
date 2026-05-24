@@ -17,18 +17,20 @@ public class PlayerController : MonoBehaviour
     public Character CurrentCharacter => currentCharacter;
     public bool IsMoonActive => currentCharacter == Character.Moon;
 
-    private Material activeMaterial => IsMoonActive ? moonMaterial : sunMaterial; 
+    private List<Material> activeMaterials => IsMoonActive ? moonMaterials : sunMaterials;
 
     [Header("Character Visuals")]
     [SerializeField] private GameObject moonVisual;
     [SerializeField] private GameObject sunVisual;
 
-
     [Header("References")]
     [SerializeField] private CharacterController characterController;
-    [SerializeField] private Material sunMaterial;
-    [SerializeField] private Material moonMaterial;
+    [SerializeField] private List<Material> sunMaterials;
+    [SerializeField] private List<Material> moonMaterials;
     [SerializeField] private Transform defaultSpawnPoint;
+    [SerializeField] private GameObject sunDecor;
+    [SerializeField] private GameObject moonDecor;
+    [SerializeField] private GameObject hurtDecor;
 
     [Header("Animation")]
     [SerializeField] private Animator animator;
@@ -41,6 +43,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int maxHealth = 3;
     [SerializeField] private float fallDeathY = -15f;
     [SerializeField] private float damageFlashDuration = 1f;
+    private float dissolveDuration => delayBetweenChanges / 2;
 
     [SerializeField] private Color damageColor = Color.red;
     [SerializeField] private Color moonColor = Color.blue;
@@ -49,11 +52,14 @@ public class PlayerController : MonoBehaviour
     private StarterAssetsInputs inputs;
 
     private float switchTimer;
+    private float fallingTimer;
+    public float fallingThreshold = 5f;
     private bool isDamaged;
     private int currentHealth;
     private Coroutine damageRoutine;
     private float dissolveTimer;
-    private float dissolveDuration = 0.25f;
+
+    private bool dissolveEnabled = false;
 
     [SerializeField] private Vector3 respawnPosition;
     [SerializeField] private Quaternion respawnRotation;
@@ -67,6 +73,9 @@ public class PlayerController : MonoBehaviour
         animIDDead = Animator.StringToHash("IsDead");
 
         SetRespawnPoint(defaultSpawnPoint);
+
+        sunDecor.SetActive(false);
+        moonDecor.SetActive(false);
 
         switchTimer = 0f;
         currentHealth = maxHealth;
@@ -137,6 +146,24 @@ public class PlayerController : MonoBehaviour
     {
         UpdateSwitchTimer();
         HandleCharacterSwitchInput();
+        CheckPlayerFalling();
+    }
+
+    private void CheckPlayerFalling()
+    {
+        if (!characterController.isGrounded && characterController.velocity.y < 0)
+        {
+            fallingTimer += Time.deltaTime;
+            if (fallingTimer >= fallingThreshold)
+            {
+                PlayerDie();
+                fallingTimer = 0;
+            }
+        }
+        else
+        {
+            fallingTimer = 0;
+        }
     }
 
     private void UpdateSwitchTimer()
@@ -280,8 +307,10 @@ public class PlayerController : MonoBehaviour
     {
         isDamaged = true;
 
-        SetActiveCharacterColor(damageColor);
+        //SetActiveCharacterColor(damageColor);
+        hurtDecor.SetActive(true);
         yield return new WaitForSeconds(damageFlashDuration);
+        hurtDecor.SetActive(false);
         ResetActiveCharacterColor();
 
         isDamaged = false;
@@ -296,27 +325,39 @@ public class PlayerController : MonoBehaviour
 
         dissolveTimer = 0;
 
-        while (dissolveTimer < dissolveDuration)
+        if (dissolveEnabled)
         {
-            dissolveTimer += Time.deltaTime;
-            activeMaterial.SetFloat("_DissolveForce", dissolveTimer / dissolveDuration);
-            yield return null;
+            while (dissolveTimer < dissolveDuration)
+            {
+                dissolveTimer += Time.deltaTime;
+                SetDissolveEffect(dissolveTimer / dissolveDuration);
+                yield return null;
+            }
+
+            currentCharacter = character;
+
+            Debug.Log($"PLAYER Character SET | Current is now: {currentCharacter}");
+
+
+            dissolveTimer = 0;
+
+            while (dissolveTimer < dissolveDuration)
+            {
+                dissolveTimer += Time.deltaTime;
+                SetDissolveEffect(1 - (dissolveTimer / dissolveDuration));
+                yield return null;
+            }
         }
-
-        currentCharacter = character;
-
-        Debug.Log($"PLAYER Character SET | Current is now: {currentCharacter}");
-
-        sunVisual.SetActive(isSun);
-        moonVisual.SetActive(!isSun);
-
-        dissolveTimer = 0;
-
-        while (dissolveTimer < dissolveDuration)
+        else
         {
-            dissolveTimer += Time.deltaTime;
-            activeMaterial.SetFloat("_DissolveForce", 1 - (dissolveTimer / dissolveDuration));
-            yield return null;
+            sunDecor.SetActive(isSun);
+            moonDecor.SetActive(!isSun);
+            yield return new WaitForSeconds(delayBetweenChanges);
+            sunVisual.SetActive(isSun);
+            moonVisual.SetActive(!isSun);
+            sunDecor.SetActive(false);
+            moonDecor.SetActive(false);
+            currentCharacter = character;
         }
 
 
@@ -328,16 +369,27 @@ public class PlayerController : MonoBehaviour
             OnCharacterChanged?.Invoke(currentCharacter);
         }
     }
+
     private void SetActiveCharacterColor(Color color)
     {
-        activeMaterial.SetColor("_Base_Color", color);
+        //activeMaterials.SetColor("_Base_Color", color);
     }
 
     private void ResetActiveCharacterColor()
     {
-        activeMaterial.SetColor("_Base_Color", IsMoonActive ? moonColor : sunColor);
-        activeMaterial.SetFloat("_DissolveForce", 0);
+        //activeMaterials.SetColor("_Base_Color", IsMoonActive ? moonColor : sunColor);
+        SetDissolveEffect(0);
     }
+
+    private void SetDissolveEffect(float percentage)
+    {
+        foreach (Material mat in activeMaterials)
+        {
+            mat.SetFloat("_DissolveForce", percentage);
+        }
+
+    }
+
 }
 
 public enum Character

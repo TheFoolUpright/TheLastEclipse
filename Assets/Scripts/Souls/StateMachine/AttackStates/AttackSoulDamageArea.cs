@@ -7,32 +7,23 @@ public class AttackSoulDamageArea : MonoBehaviour
     public Transform endTarget;
 
     AttackSoulAgent owner;
-    private BoxCollider boxCollider;
+    private MeshCollider collider;
     private bool initialized;
     internal void Initialize(AttackSoulAgent attackSoulAgent)
     {
         owner = attackSoulAgent;
         gameObject.SetActive(false);
-        boxCollider = GetComponent<BoxCollider>();
+        collider = GetComponentInChildren<MeshCollider>();
         initialized = true;
-        boxCollider.enabled = false;
+        collider.enabled = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnPlayerTrigger(PlayerController controller)
     {
-        if (other.CompareTag("Player"))
-        {
-            PlayerController controller = other.gameObject.GetComponent<PlayerController>();
-
-            if (controller)
-            {
-                Debug.Log("Damaged");
-                owner.attackHit = true;
-                controller.Damage(owner.transform.position);
-                boxCollider.enabled = false;
-                
-            }
-        }
+        Debug.Log("Damaged");
+        owner.attackHit = true;
+        controller.Damage(owner.transform.position);
+        collider.enabled = false;
     }
 
     private void OnEnable()
@@ -46,6 +37,11 @@ public class AttackSoulDamageArea : MonoBehaviour
     private IEnumerator ActivateCollider()
     {
         yield return new WaitForSeconds(2);
-        boxCollider.enabled = true;
+        collider.enabled = true;
+    }
+
+    internal float GetAttackDistance()
+    {
+        return Vector3.Distance(transform.position, endTarget.position);
     }
 }
