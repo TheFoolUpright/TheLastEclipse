@@ -4,42 +4,42 @@ using UnityEngine.UI;
 
 public class HealthSystem : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> hearts;
+    [Header("Health Blocks")]
+    [SerializeField] private List<Image> healthBlocks;
+    [SerializeField] private Sprite fullBlockSprite;
+    [SerializeField] private Sprite emptyBlockSprite;
+
+    [Header("References")]
     [SerializeField] private PlayerController playerController;
 
     private void OnEnable()
     {
         if (playerController != null)
-        {
-            playerController.OnHpChanged += SetHearts;
-        }
+            playerController.OnHpChanged += SetHealthBlocks;
     }
 
     private void OnDisable()
     {
         if (playerController != null)
-        {
-            playerController.OnHpChanged -= SetHearts;
-        }
+            playerController.OnHpChanged -= SetHealthBlocks;
     }
 
     private void Start()
     {
         if (playerController != null)
-        {
-            SetHearts(playerController.CurrentHealth);
-        }
-        LayoutRebuilder.ForceRebuildLayoutImmediate(this.transform as RectTransform);
+            SetHealthBlocks(playerController.CurrentHealth);
+
+        LayoutRebuilder.ForceRebuildLayoutImmediate(transform as RectTransform);
     }
 
-    public void SetHearts(int hp)
+    public void SetHealthBlocks(int hp)
     {
-        for (int i = 0; i < hearts.Count; i++)
+        for (int i = 0; i < healthBlocks.Count; i++)
         {
-            if (hearts[i] != null)
-            {
-                hearts[i].SetActive(i < hp);
-            }
+            if (healthBlocks[i] == null)
+                continue;
+
+            healthBlocks[i].sprite = i < hp ? fullBlockSprite : emptyBlockSprite;
         }
     }
 }

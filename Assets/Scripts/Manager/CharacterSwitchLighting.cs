@@ -18,6 +18,11 @@ public class CharacterSwitchLighting : MonoBehaviour
     [SerializeField] private Color sunAmbientColor = new Color(0.79216f, 0.47843f, 0.43137f, 1f);
     [SerializeField] private Color moonAmbientColor = new Color(0.44706f, 0.43137f, 0.79216f, 1f);
 
+    [Header("Fog Colors")]
+    [SerializeField] private Color sunFogColor = new Color(0.79216f, 0.47843f, 0.43137f, 1f);
+    [SerializeField] private Color moonFogColor = new Color(0.44706f, 0.43137f, 0.79216f, 1f);
+
+
     [Header("Optional Extra Lights")]
     [SerializeField] private GameObject[] sunOnlyLights;
     [SerializeField] private GameObject[] moonOnlyLights;
@@ -68,7 +73,7 @@ public class CharacterSwitchLighting : MonoBehaviour
         if (volumetricFogMaterial != null)
         {
             volumetricFogMaterial.SetColor("_Color",
-                isSun ? sunAmbientColor : moonAmbientColor);
+                isSun ? sunFogColor : moonFogColor);
         }
 
         if (isSun && sunSkybox != null)

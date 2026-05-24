@@ -9,6 +9,7 @@ public class STATE_FleeCollectable : BaseState
     private InputAction _collectAction;
 
     private SoulSceneManager _sceneManager;
+    private SoulCollectPopup _popup;
 
     public STATE_FleeCollectable(FleeSoulAgent owner) : base(owner.gameObject)
     {
@@ -18,27 +19,39 @@ public class STATE_FleeCollectable : BaseState
     // Runs every frame
     public override Type Tick()
     {
-        
+        bool playerClose = false;
+
         Collider[] hits = Physics.OverlapSphere(_owner.transform.position, 1.5f);
 
         foreach (var hit in hits)
         {
             if (hit.CompareTag("Player"))
             {
+                playerClose = true;
 
                 if (_collectAction != null && _collectAction.WasPressedThisFrame())
                 {
                     AudioManager.Instance.PlaySFX("FLeeCollected");
+                    Debug.Log("Soul Collected");
+
+                    if (_popup != null)
+                        _popup.Hide();
 
                     if (_sceneManager != null)
-                    {
-                        _sceneManager.CollectMainSoul();
-                    }
+                        _sceneManager.CollectSoul(_owner.gameObject);
 
                     _owner.gameObject.SetActive(false);
                     return null;
                 }
             }
+        }
+
+        if (_popup != null)
+        {
+            if (playerClose)
+                _popup.Show();
+            else
+                _popup.Hide();
         }
 
         return null;
@@ -69,11 +82,16 @@ public class STATE_FleeCollectable : BaseState
         _owner.SetStateColor(Color.rebeccaPurple);
 
         _sceneManager = GameObject.FindAnyObjectByType<SoulSceneManager>();
+        _popup = _owner.GetComponent<SoulCollectPopup>();
+
+        if (_popup != null)
+            _popup.Hide();
     }
 
     // Runs when we exit this state
     public override void OnExit(BaseState newState)
     {
-
+        if (_popup != null)
+            _popup.Hide();
     }
 }
