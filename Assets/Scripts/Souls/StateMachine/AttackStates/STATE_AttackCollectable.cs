@@ -26,7 +26,7 @@ public class STATE_AttackCollectable : BaseState
 
                 if (_collectAction != null && _collectAction.WasPressedThisFrame())
                 {
-                    Debug.Log("Attack Soul Collected");
+                    AudioManager.Instance.PlaySFX("AttackCollected");
 
                     if (_sceneManager != null)
                     {

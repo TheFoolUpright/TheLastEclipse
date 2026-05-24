@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7939313013541185337}
   - component: {fileID: 351358018531717003}
   m_Layer: 0
-  m_Name: SoulRiver
+  m_Name: Soul River
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

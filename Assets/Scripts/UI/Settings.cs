@@ -11,6 +11,9 @@ public class Settings : MonoBehaviour
     [SerializeField] GameObject Keyboard;
     [SerializeField] GameObject Controller;
 
+    [SerializeField] GameObject Setting;
+    [SerializeField] GameObject Graphics;
+
     void Start()
     {
         CloseAll();
@@ -37,6 +40,7 @@ public class Settings : MonoBehaviour
         Audio.SetActive(false);
         Controls.SetActive(false);
         Credits.SetActive(false);
+        Graphics.SetActive(false);
     }
 
     public void OpenAudio()
@@ -58,6 +62,7 @@ public class Settings : MonoBehaviour
     {
         CloseAll();
         Credits.SetActive(true);
+        Setting.SetActive(false);
     }
 
     public void ControllerControls()

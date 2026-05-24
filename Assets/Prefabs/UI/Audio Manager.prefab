@@ -181,6 +181,10 @@ MonoBehaviour:
   sfxSounds:
   - name: Death
     clip: {fileID: 8300000, guid: 4e26267479124c84ea5a5f63be0d5f31, type: 3}
+  - name: FleeCollection
+    clip: {fileID: 8300000, guid: 89dccf23550846246ab472f85c3c01b5, type: 3}
+  - name: AttackCollection
+    clip: {fileID: 8300000, guid: 0dbbb510dcc014b4998603046cd725cb, type: 3}
   musicSource: {fileID: 4151682550081440586}
   sfxSource: {fileID: 5323262709494924688}
 --- !u!1 &7380541402122545166

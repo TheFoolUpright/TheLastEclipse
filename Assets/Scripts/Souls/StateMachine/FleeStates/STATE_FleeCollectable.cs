@@ -28,7 +28,7 @@ public class STATE_FleeCollectable : BaseState
 
                 if (_collectAction != null && _collectAction.WasPressedThisFrame())
                 {
-                    Debug.Log("Soul Collected");
+                    AudioManager.Instance.PlaySFX("FLeeCollected");
 
                     if (_sceneManager != null)
                     {

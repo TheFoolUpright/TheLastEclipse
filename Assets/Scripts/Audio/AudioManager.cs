@@ -22,11 +22,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        PlayMusic("Background");
-    }
-
     public void PlayMusic(string name)
     {
         Sound s = Array.Find(musicSounds, x => x.name == name);
@@ -55,16 +50,6 @@ public class AudioManager : MonoBehaviour
 
         sfxSource.PlayOneShot(s.clip);
     }
-
-    //    public void ToggleMusic()
-    //    {
-    //        musicSource.mute = !musicSource.mute;
-    //    }
-
-    //    public void ToggleSFX()
-    //    {
-
-    //    }
 
     public void MusicVolume(float volume)
     {
