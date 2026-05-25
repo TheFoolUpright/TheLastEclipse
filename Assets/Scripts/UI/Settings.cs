@@ -12,7 +12,6 @@ public class Settings : MonoBehaviour
     [SerializeField] GameObject Controller;
 
     [SerializeField] GameObject Setting;
-    [SerializeField] GameObject Graphics;
 
     void Start()
     {
@@ -21,7 +20,6 @@ public class Settings : MonoBehaviour
 
     void Update()
     {
-        // terug naar vorige scene
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!string.IsNullOrEmpty(SceneHistory.previousScene))
@@ -40,7 +38,6 @@ public class Settings : MonoBehaviour
         Audio.SetActive(false);
         Controls.SetActive(false);
         Credits.SetActive(false);
-        Graphics.SetActive(false);
     }
 
     public void OpenAudio()
