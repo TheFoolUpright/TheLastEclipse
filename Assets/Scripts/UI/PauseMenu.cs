@@ -1,94 +1,159 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using StarterAssets;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject settingsMenu; 
     [SerializeField] GameObject Controls;
-    [SerializeField] GameObject Keyboard;
+    [SerializeField] GameObject keyboardUI;
     [SerializeField] GameObject Controller;
+
+
+    MenuFogToggle fogToggle;
+
+    private StarterAssetsInputs inputs;
+
+
 
     bool isPaused = false;
 
+    private void Awake()
+    {
+        Controls.SetActive (false);
+
+        inputs = FindFirstObjectByType<StarterAssetsInputs>();
+
+        if (inputs == null)
+            Debug.LogError("StarterAssetsInputs NOT FOUND!");
+    }
+
     void Start()
     {
-        //pauseMenu.SetActive(false);
-        CloseControl();
+        fogToggle = GetComponent<MenuFogToggle>(); 
 
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        if (fogToggle == null)
+            
+        pauseMenu.SetActive(false);
+        CloseControl();
+    }
+    void Update()
+    {
+        if (inputs.PauseMenu)
+        {
+            inputs.PauseMenu = false;
+
+            if (settingsMenu.activeSelf)
+            {
+                CloseSettings(); 
+            }
+            else if (isPaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
+        }
     }
 
-    //void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Escape))
-    //    {
-    //        Debug.Log("It was Pressed");
+    void PauseGame()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
+        fogToggle.SetFogEnabled(false);
 
-    //        if (isPaused)
-    //        {
-    //            ResumeGame();
-    //        }
-    //        else
-    //        {
-    //            PauseGame();
-    //        }
-    //    }
-    //}
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
-    //void PauseGame()
-    //{
-    //    pauseMenu.SetActive(true);
+        ThirdPersonController tpc = inputs.GetComponent<ThirdPersonController>();
+        if (tpc != null) tpc.enabled = false;
+        PlayerCamera pCam = inputs.GetComponent<PlayerCamera>();
+        if (pCam != null) pCam.enabled = false;
+        PlayerController pCon = inputs.GetComponent<PlayerController>();
+        if (pCon != null) pCon.enabled = false;
+    }
 
-    //    Time.timeScale = 0f;
-    //    isPaused = true;
+    public void ResumeGame()
+    {
+        pauseMenu.SetActive(false);
+        settingsMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+        fogToggle.SetFogEnabled(true);
 
-    //    Cursor.visible = true;
-    //    Cursor.lockState = CursorLockMode.None;
-    //}
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
-    //public void ResumeGame()
-    //{
-    //    pauseMenu.SetActive(false);
-
-    //    Time.timeScale = 1f;
-    //    isPaused = false;
-
-    //    Cursor.visible = false;
-    //    Cursor.lockState = CursorLockMode.Locked;
-    //}
-
+        ThirdPersonController tpc = inputs.GetComponent<ThirdPersonController>();
+        if (tpc != null) tpc.enabled = true;
+        PlayerCamera pCam = inputs.GetComponent<PlayerCamera>();
+        if (pCam != null) pCam.enabled = true;
+        PlayerController pCon = inputs.GetComponent<PlayerController>();
+        if (pCon != null) pCon.enabled = true;
+    }
     public void GoToSettings()
     {
-        SceneHistory.previousScene = SceneManager.GetActiveScene().name;
-
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Settings");
+        pauseMenu.SetActive(false);
+        settingsMenu.SetActive(true);
     }
 
+    public void CloseSettings()
+    {
+        settingsMenu.SetActive(false);
+        pauseMenu.SetActive(true);
+    }
     public void GoToMainMenu()
     {
-        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 
+
+    //public void OpenControls()
+    //{
+    //    Controls.SetActive(true);
+
+    //    CloseControl();
+    //}
     void CloseControl()
     {
-        Controls.SetActive(false);
-        Keyboard.SetActive(false);
+        keyboardUI.SetActive(false);
+        Controller.SetActive(false);
+    }
+
+    //public void ControllerControls()
+    //{
+    //    CloseControl();
+    //    Controller.SetActive(true);
+    //}
+
+    //public void KeyboardControls()
+    //{
+    //    CloseControl();
+    //    keyboardUI.SetActive(true);
+    //}
+
+    public void OpenControls()
+    {
+        Controls.SetActive(true);
+
+        keyboardUI.SetActive(false);
         Controller.SetActive(false);
     }
 
     public void ControllerControls()
     {
-        CloseControl();
+        keyboardUI.SetActive(false);
         Controller.SetActive(true);
     }
 
     public void KeyboardControls()
     {
-        CloseControl();
-        Keyboard.SetActive(true);
+        Controller.SetActive(false);
+        keyboardUI.SetActive(true);
     }
 }

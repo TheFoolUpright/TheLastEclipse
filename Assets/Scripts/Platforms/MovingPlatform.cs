@@ -7,7 +7,7 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField]
     private float _speed;
     [SerializeField]
-    private float _waitTime = 1.5f; // Wachttijd bij elk waypoint
+    private float _waitTime = 1.5f;
 
     private int _targetWaypointIndex;
     private Transform _previousWaypoint;
@@ -22,8 +22,8 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField]
     private Character _platformType;
 
-    private bool _isWaiting = false; // Pauzeert het platform?
-    private float _waitTimer = 0f;   // Huidige wachttijd
+    private bool _isWaiting = false; 
+    private float _waitTimer = 0f;   
 
     private void Awake()
     {
@@ -51,7 +51,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (!isMoving) return;
 
-        // Wacht bij waypoint
+  
         if (_isWaiting)
         {
             _waitTimer += Time.deltaTime;
@@ -63,7 +63,7 @@ public class MovingPlatform : MonoBehaviour
             return;
         }
 
-        // Beweeg naar volgend waypoint
+     
         _elapsedTime += Time.deltaTime;
         float elapsedPercentage = _elapsedTime / _timeToWaypoint;
         elapsedPercentage = Mathf.SmoothStep(0, 1, elapsedPercentage);
@@ -76,7 +76,7 @@ public class MovingPlatform : MonoBehaviour
 
         if (elapsedPercentage >= 1)
         {
-            _isWaiting = true; // Start pauze bij waypoint
+            _isWaiting = true; 
             TargetNextWaypoint();
         }
     }
