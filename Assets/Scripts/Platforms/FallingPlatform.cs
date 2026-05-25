@@ -19,6 +19,9 @@ public class FallingPlatform : MonoBehaviour
     private float animationDuration;
     private Transform player;
 
+    [Header("Audio")]
+    [SerializeField] private string fallingSoundName = "FallingPlatform";
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -107,6 +110,15 @@ public class FallingPlatform : MonoBehaviour
         animationStatus = 1;
         animationDuration = shakeDuration;
         animationTimer = 0;
+        PlayShakeFeedback();
+    }
+
+    public void PlayShakeFeedback()
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(fallingSoundName);
+        }
     }
     private void OnTriggerEnter(Collider other)
     {

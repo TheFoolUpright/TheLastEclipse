@@ -38,6 +38,11 @@ public class PlayerController : MonoBehaviour
     private int animIDHurt;
     private int animIDDead;
 
+    [Header("Audio")]
+    [SerializeField] private string hurtSoundName = "Hurt";
+    [SerializeField] private string switchSoundName = "CharacterSwitch";
+    [SerializeField] private string jumpSoundName = "Jump";
+
     [Header("Settings")]
     [SerializeField, Range(0.1f, 2f)] private float delayBetweenChanges = 0.5f;
     [SerializeField] private int maxHealth = 3;
@@ -181,7 +186,16 @@ public class PlayerController : MonoBehaviour
 
         inputs.changeVisual = false;
         ToggleCharacter();
+        PlaySwitchFeedback();
         switchTimer = delayBetweenChanges;
+    }
+
+    public void PlaySwitchFeedback()
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(switchSoundName);
+        }
     }
 
     private void SetCharacterImmediate(Character character, bool notify)
@@ -226,6 +240,7 @@ public class PlayerController : MonoBehaviour
             return;
 
         currentHealth--;
+        PlayHurtFeedback();
         OnHpChanged?.Invoke(currentHealth);
 
         if (currentHealth <= 0)
@@ -247,6 +262,14 @@ public class PlayerController : MonoBehaviour
         }
 
         damageRoutine = StartCoroutine(DamagedEffect());
+    }
+
+    public void PlayHurtFeedback()
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(hurtSoundName);
+        }
     }
 
     private void Knockback(Vector3 damageSourcePosition)

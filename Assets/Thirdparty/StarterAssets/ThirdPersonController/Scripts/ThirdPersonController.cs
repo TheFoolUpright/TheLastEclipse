@@ -135,6 +135,9 @@ namespace StarterAssets
         [SerializeField] private float apexGravityMultiplier = 0.5f;
         [SerializeField] private float apexVelocityThreshold = 1.0f;
 
+        [Header("Audio")]
+        [SerializeField] private string jumpSoundName = "Jump";
+
         // player
         private float _speed;
         private float _animationBlend;
@@ -403,7 +406,10 @@ namespace StarterAssets
                 coyoteCounter -= Time.deltaTime;
 
             if (_input.jumpPressedThisFrame)
+            {
                 jumpBufferCounter = jumpBufferMax;
+                PlayJumpFeedback();
+            }
             else
                 jumpBufferCounter -= Time.deltaTime;
 
@@ -511,6 +517,7 @@ namespace StarterAssets
             if (_verticalVelocity > -_terminalVelocity)
                 _verticalVelocity += currentGravity * Time.deltaTime;
         }
+
         //private void JumpAndGravity()
         //{
         //    // ========================
@@ -618,7 +625,7 @@ namespace StarterAssets
         //    // ========================
         //    if (Grounded)
         //    {
-                
+
 
         //        // reset the fall timeout timer (used for animations)
         //        _fallTimeoutDelta = FallTimeout;
@@ -695,6 +702,13 @@ namespace StarterAssets
         //        _verticalVelocity += currentGravity * Time.deltaTime;
         //    }
         //}
+        public void PlayJumpFeedback()
+        {
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlaySFX(jumpSoundName);
+            }
+        }
 
         private void HandleBounceLanding()
         {

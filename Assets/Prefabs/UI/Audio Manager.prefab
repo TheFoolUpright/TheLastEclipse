@@ -188,12 +188,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 0dbbb510dcc014b4998603046cd725cb, type: 3}
   - name: Bounce
     clip: {fileID: 8300000, guid: d060ed0edbe341348b75b54238418d4f, type: 3}
-  - name: Hurt
-    clip: {fileID: 8300000, guid: e71f82cfd650aa44dbe257819c90cff2, type: 3}
-  - name: FallingPlatform
-    clip: {fileID: 8300000, guid: a49ad03a810898d46b8f43fdf6cd93ca, type: 3}
   - name: SoulAttack
     clip: {fileID: 8300000, guid: 03631e376a8c73946ae22661110b9fb6, type: 3}
+  - name: FallingPlatform
+    clip: {fileID: 8300000, guid: a49ad03a810898d46b8f43fdf6cd93ca, type: 3}
+  - name: Hurt
+    clip: {fileID: 8300000, guid: e71f82cfd650aa44dbe257819c90cff2, type: 3}
   - name: CharacterSwitch
     clip: {fileID: 8300000, guid: 173b1edd27d734d44ba9a4d2499c48dc, type: 3}
   - name: Jump

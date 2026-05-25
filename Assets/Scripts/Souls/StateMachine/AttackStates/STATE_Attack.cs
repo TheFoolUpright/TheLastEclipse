@@ -11,6 +11,15 @@ public class STATE_Attack : BaseState
 
     private float timer;
 
+    private string attackSound = "SoulAttack";
+    public void PlayAttackFeedback()
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(attackSound);
+        }
+    }
+
     public STATE_Attack(AttackSoulAgent owner) : base(owner.gameObject)
     {
         _owner = owner;
@@ -45,6 +54,7 @@ public class STATE_Attack : BaseState
                 attacking = true;
 
                 _owner.StartDashAttack();
+                PlayAttackFeedback();
             }
         }
 
@@ -56,7 +66,6 @@ public class STATE_Attack : BaseState
 
             if (timer >= 3f)
             {
-                _owner.PlayAttackFeedback();
                 timer = 0f;
                 attacking = false;
 
