@@ -3364,10 +3364,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flipping Platform
       objectReference: {fileID: 0}
-    - target: {fileID: 5243791956692712716, guid: 0d44689f835704d4db1c74789bd984aa, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.49
-      objectReference: {fileID: 0}
     - target: {fileID: 5789738534769142655, guid: 0d44689f835704d4db1c74789bd984aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 97.35
