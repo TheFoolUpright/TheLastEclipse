@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5789738534769142655}
   - component: {fileID: 8234576300943537370}
   - component: {fileID: 9147782847327903569}
-  - component: {fileID: 7591840667253035885}
   m_Layer: 3
   m_Name: Flipping Platform
   m_TagString: Untagged
@@ -63,38 +62,6 @@ MonoBehaviour:
   _shakeDuration: 0.5
   _shakeAmount: 2
   Player: {fileID: 0}
---- !u!114 &7591840667253035885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070696048447863557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
-  m_SerializedVersion: 0
-  m_AgentTypeID: 0
-  m_CollectObjects: 2
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_GenerateLinks: 0
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
-  m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 379ba9f3d1f1e47438c41c4f3a022f52, type: 2}
-  m_BuildHeightMesh: 0
 --- !u!1 &2682492249873863730
 GameObject:
   m_ObjectHideFlags: 0
