@@ -39,8 +39,16 @@ public class SoulSceneManager : MonoBehaviour
         }
 
         if (returnPortal != null)
+        {
             returnPortal.SetActive(true);
 
+            Portal portal = returnPortal.GetComponent<Portal>();
+            if (portal != null)
+            {
+                portal.ActivatePortal();
+            }
+        }
+    
         Debug.Log("Main soul collected. Return portal opened.");
     }
 

@@ -18,6 +18,8 @@ public class STATE_Flee : BaseState
     // Runs when we enter this state
     public override void OnEnter(BaseState oldState)
     {
+        _owner.PlayDetectedPlayerSound();
+
         _wasCaught = false;
         _disengageTimer = _owner.FleeDisengageDelay;
 

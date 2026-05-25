@@ -139,6 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1579622695604600428}
   - component: {fileID: 1796141505906430177}
+  - component: {fileID: 5794546992329063348}
   m_Layer: 0
   m_Name: Audio Manager
   m_TagString: Untagged
@@ -197,8 +198,27 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 173b1edd27d734d44ba9a4d2499c48dc, type: 3}
   - name: Jump
     clip: {fileID: 8300000, guid: 2e16331a9f5496042899a97dbebaee4a, type: 3}
+  - name: Flee
+    clip: {fileID: 8300000, guid: a19c7b681a17b28489d9d520e234af56, type: 3}
+  - name: StaticPortal
+    clip: {fileID: 8300000, guid: a4180a7288052e243ba512d87004194e, type: 3}
+  - name: WarpPortal
+    clip: {fileID: 8300000, guid: 691b738e25973d843a1a588b350a1c12, type: 3}
   musicSource: {fileID: 4151682550081440586}
   sfxSource: {fileID: 5323262709494924688}
+--- !u!114 &5794546992329063348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4249720972379494739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d81cc722b4100c45a65d44e9506d1fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PortalWarpSoundPlayer
+  warpSFXName: WarpPortal
 --- !u!1 &7380541402122545166
 GameObject:
   m_ObjectHideFlags: 0

@@ -72,6 +72,10 @@ public class FleeSoulAgent : MonoBehaviour
 
     public MeshRenderer fleeRenderer;
 
+    [Header("Audio")]
+    [SerializeField] private string detectedPlayerSFX = "Flee";
+
+
     private void Awake()
     {
         InitializeStateMachine();
@@ -80,6 +84,14 @@ public class FleeSoulAgent : MonoBehaviour
     private void Start()
     {
         _stateMachine.SwitchToNewState(typeof(STATE_FleeWander));
+    }
+
+    public void PlayDetectedPlayerSound()
+    {
+        if (AudioManager.Instance == null)
+            return;
+
+        AudioManager.Instance.PlaySFX(detectedPlayerSFX);
     }
 
     void InitializeStateMachine()

@@ -14,6 +14,9 @@ Shader "Tutorial/VolumetricFog"
         
         [HDR]_LightContribution("Light contribution", Color) = (1, 1, 1, 1)
         _LightScattering("Light scattering", Range(0, 1)) = 0.2
+        _PlayerFogClearRadius("Player Fog Clear Radius", Float) = 5
+        _PlayerFogFadeDistance("Player Fog Fade Distance", Float) = 10
+
     }
 
     SubShader
@@ -42,6 +45,9 @@ Shader "Tutorial/VolumetricFog"
             float _NoiseTiling;
             float4 _LightContribution;
             float _LightScattering;
+
+            float _PlayerFogClearRadius;
+            float _PlayerFogFadeDistance;
 
             float henyey_greenstein(float angle, float scattering)
             {
@@ -80,7 +86,19 @@ Shader "Tutorial/VolumetricFog"
                 while(distTravelled < distLimit)
                 {
                     float3 rayPos = entryPoint + rayDir * distTravelled;
+
                     float density = get_density(rayPos);
+
+                    // Fade fog out near the camera/player
+                    float distanceFromCamera = distance(rayPos, _WorldSpaceCameraPos);
+                    float playerFade = smoothstep(
+                        _PlayerFogClearRadius,
+                        _PlayerFogClearRadius + _PlayerFogFadeDistance,
+                        distanceFromCamera
+                    );
+
+                    density *= playerFade;
+
                     if (density > 0)
                     {
                         Light mainLight = GetMainLight(TransformWorldToShadowCoord(rayPos));

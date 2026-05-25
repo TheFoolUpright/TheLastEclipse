@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d06cde461d156e447a94c327202f4e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoulSceneManager
+  mainSoulType: 0
+  returnPortal: {fileID: 0}
