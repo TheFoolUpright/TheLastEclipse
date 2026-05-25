@@ -10,6 +10,8 @@ public class FleeSoulAgent : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private NavMeshAgent agent;
+    public GameObject fleeSoulModel;
+    public GameObject calmSoulModel;
     public NavMeshAgent NavMeshAgent => agent;
 
     [Header("Progression")]
@@ -392,6 +394,11 @@ public class FleeSoulAgent : MonoBehaviour
         fleeRenderer.material.color = color;
     }
 
+    public void ActiveSoul(bool isActive)
+    {
+        fleeSoulModel.SetActive(isActive);
+        calmSoulModel.SetActive(!isActive);
+    }
 }
 
 //public enum AIState

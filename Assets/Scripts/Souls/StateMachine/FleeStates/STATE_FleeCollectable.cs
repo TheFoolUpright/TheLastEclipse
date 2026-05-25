@@ -63,6 +63,8 @@ public class STATE_FleeCollectable : BaseState
         _owner.ClearMovement();
         Debug.Log("Entered Collectable State");
 
+        _owner.ActiveSoul(false);
+
         Rigidbody rb = _owner.GetComponent<Rigidbody>();
         if (rb != null)
         {

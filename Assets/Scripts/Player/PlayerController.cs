@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 {
     public event Action<Character> OnCharacterChanged;
     public event Action<int> OnHpChanged;
+    public event Action onPlayerDie;
 
     [SerializeField] private Character currentCharacter = Character.Sun;
 
@@ -218,6 +219,7 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth = 0;
         OnHpChanged?.Invoke(currentHealth);
+        onPlayerDie?.Invoke();
 
         if (animator != null)
         {

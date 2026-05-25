@@ -25,6 +25,7 @@ public class STATE_AttackIdle : BaseState
     public override void OnEnter(BaseState oldState){
         SetTarget();
         _owner.SetStateColor(Color.softRed);
+        _owner.ActiveSoul(true);
     }
     
     // Runs when we exit this state

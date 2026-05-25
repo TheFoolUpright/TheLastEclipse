@@ -19,6 +19,8 @@ public class STATE_FleeWander : BaseState
         _isWaiting = false;
         _waitTimer = 0f;
 
+        _owner.ActiveSoul(true);
+
         _owner.SetWanderMovement();
         _owner.SetStateColor(Color.lightGreen);
 

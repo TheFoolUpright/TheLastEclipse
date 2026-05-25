@@ -65,7 +65,7 @@ public class STATE_AttackCollectable : BaseState
             _owner.NavMeshAgent.ResetPath();
         }
 
-        _owner.SetStateColor(Color.rebeccaPurple);
+        _owner.ActiveSoul(false);
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 

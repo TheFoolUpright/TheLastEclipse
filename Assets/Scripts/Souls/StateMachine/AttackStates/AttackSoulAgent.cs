@@ -36,9 +36,23 @@ public class AttackSoulAgent : MonoBehaviour
 
     public MeshRenderer attackRenderer;
 
+    public GameObject angrySoulModel;
+    public GameObject calmSoulModel;
+
     private void Awake()
     {
         InitializeStateMachine();
+        foreach (var item in AttackAreas)
+        {
+            item.Initialize(this);
+        }
+        player.onPlayerDie += OnPlayerDie;
+    }
+
+    private void OnPlayerDie()
+    {
+        attackCount = 0;
+        _stateMachine.SwitchToNewState(typeof(STATE_AttackIdle));
         foreach (var item in AttackAreas)
         {
             item.Initialize(this);
@@ -60,8 +74,6 @@ public class AttackSoulAgent : MonoBehaviour
             _stateMachine = gameObject.AddComponent<StateMachine>();
         _stateMachine.SetStates(states);
     }
-
-    
 
     public void OnAttackStateEnter()
     {
@@ -117,8 +129,6 @@ public class AttackSoulAgent : MonoBehaviour
         agent.speed *= 10f;
 
         DashThroughAttackArea();
-
-        ballAnimator.SetBool("Attack", true);
     }
 
     public void DashThroughAttackArea()
@@ -126,6 +136,7 @@ public class AttackSoulAgent : MonoBehaviour
         if (activeArea == null)
             return;
 
+        ballAnimator.SetBool("Attack", true);
         Vector3 direction = activeArea.transform.forward;
         direction.y = 0f;
 
@@ -186,6 +197,12 @@ public class AttackSoulAgent : MonoBehaviour
     public void SetStateColor(Color color)
     {
         attackRenderer.material.color = color;
+    }
+
+    public void ActiveSoul(bool isActive)
+    {
+        angrySoulModel.SetActive(isActive);
+        calmSoulModel.SetActive(!isActive);
     }
 
 }
