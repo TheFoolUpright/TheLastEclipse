@@ -185,6 +185,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 89dccf23550846246ab472f85c3c01b5, type: 3}
   - name: AttackCollection
     clip: {fileID: 8300000, guid: 0dbbb510dcc014b4998603046cd725cb, type: 3}
+  - name: Bounce
+    clip: {fileID: 8300000, guid: d060ed0edbe341348b75b54238418d4f, type: 3}
   musicSource: {fileID: 4151682550081440586}
   sfxSource: {fileID: 5323262709494924688}
 --- !u!1 &7380541402122545166
