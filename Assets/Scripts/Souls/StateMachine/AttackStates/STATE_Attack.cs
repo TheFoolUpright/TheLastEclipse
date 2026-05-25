@@ -56,6 +56,7 @@ public class STATE_Attack : BaseState
 
             if (timer >= 3f)
             {
+                _owner.PlayAttackFeedback();
                 timer = 0f;
                 attacking = false;
 

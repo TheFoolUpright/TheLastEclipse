@@ -8207,6 +8207,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1796141505906430177, guid: 44675334858a5884794b79100a94133b, type: 3}
+      propertyPath: sfxSounds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796141505906430177, guid: 44675334858a5884794b79100a94133b, type: 3}
+      propertyPath: sfxSounds.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 03631e376a8c73946ae22661110b9fb6, type: 3}
+    - target: {fileID: 1796141505906430177, guid: 44675334858a5884794b79100a94133b, type: 3}
+      propertyPath: sfxSounds.Array.data[4].name
+      value: SoulAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796141505906430177, guid: 44675334858a5884794b79100a94133b, type: 3}
       propertyPath: musicSounds.Array.data[0].name
       value: Background
       objectReference: {fileID: 0}
@@ -18063,7 +18075,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1044511245920918202, guid: 5c2e1eb0083b3af4ab81360f50ac4800, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 1.17
       objectReference: {fileID: 0}
     - target: {fileID: 1044511245920918202, guid: 5c2e1eb0083b3af4ab81360f50ac4800, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19524,7 +19536,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 8832db11b687e8d4094b062e4282d785, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 387ef86bdc559024db6d712e3d153fa5, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &1566072539
 Transform:

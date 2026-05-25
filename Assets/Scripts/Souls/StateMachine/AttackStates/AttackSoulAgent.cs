@@ -36,6 +36,9 @@ public class AttackSoulAgent : MonoBehaviour
 
     public MeshRenderer attackRenderer;
 
+    [Header("Audio")]
+    [SerializeField] private string attackSound = "SoulAttack";
+
     private void Awake()
     {
         InitializeStateMachine();
@@ -183,6 +186,14 @@ public class AttackSoulAgent : MonoBehaviour
     public void SetStateColor(Color color)
     {
         attackRenderer.material.color = color;
+    }
+
+    public void PlayAttackFeedback()
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(attackSound);
+        }
     }
 }
 
