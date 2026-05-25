@@ -94,8 +94,6 @@ public class FallingPlatform : MonoBehaviour
 
     private void Fall()
     {
-        if (player.parent == transform)
-            player.parent = null;
         animationTimer = 0;
         animationStatus = 2;
         animationDuration = fallDuration;
@@ -109,7 +107,6 @@ public class FallingPlatform : MonoBehaviour
         animationStatus = 1;
         animationDuration = shakeDuration;
         animationTimer = 0;
-        player.parent = this.transform;
     }
     private void OnTriggerEnter(Collider other)
     {
