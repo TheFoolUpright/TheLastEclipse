@@ -27,7 +27,9 @@ namespace StarterAssets
 		[Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
-        
+
+        public bool PauseMenu { get; set; } // add this with the other public bools
+
 
 #if ENABLE_INPUT_SYSTEM
         public void OnMove(InputValue value)
@@ -60,8 +62,16 @@ namespace StarterAssets
 		}
 #endif
 
+        public void OnPauseMenu(InputValue value)
+        {
+            PauseMenuInput(value.isPressed);
+        }
 
-		public void MoveInput(Vector2 newMoveDirection)
+        public void PauseMenuInput(bool newPauseMenuState)
+        {
+            PauseMenu = newPauseMenuState;
+        }
+        public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
 		} 

@@ -132,7 +132,7 @@ MonoBehaviour:
   _opaqueMaterial: {fileID: 2100000, guid: b82b3f297d836e24db9ef6be11705599, type: 2}
   _transparentMaterial: {fileID: 2100000, guid: 599cea2ebbd8dfe4ab3a0bd65c52f5f1, type: 2}
   _platformType: 0
-  _solidDuration: 4
+  _solidDuration: 8
   _offDuration: 2
   _startOffset: 0
   _useBlinkWarning: 1

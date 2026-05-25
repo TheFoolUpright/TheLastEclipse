@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PortalWarpSoundPlayer : MonoBehaviour
 {
-    [SerializeField] private string warpSFXName = "PortalEnter";
+    [SerializeField] private string warpSFXName = "WarpPortal";
 
     private void Start()
     {
