@@ -31,7 +31,7 @@ public class AttackSoulAgent : MonoBehaviour
     public float requiredTimeToAttack = 2f;
 
     public GameObject activeArea;
-
+    public Animator ballAnimator;
     private float startSpeed;
 
     public MeshRenderer attackRenderer;
@@ -117,6 +117,8 @@ public class AttackSoulAgent : MonoBehaviour
         agent.speed *= 10f;
 
         DashThroughAttackArea();
+
+        ballAnimator.SetBool("Attack", true);
     }
 
     public void DashThroughAttackArea()
@@ -158,6 +160,7 @@ public class AttackSoulAgent : MonoBehaviour
     {
         ResetAttackArea();
 
+        ballAnimator.SetBool("Attack", false);
         if (attackHit)
         {
             attackHit = false;

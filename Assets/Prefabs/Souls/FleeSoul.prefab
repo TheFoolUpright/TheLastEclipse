@@ -39,6 +39,7 @@ Transform:
   m_Children:
   - {fileID: 5521676993403360307}
   - {fileID: 6821845376915083343}
+  - {fileID: 7292639674854871120}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4286825138514257845
@@ -56,7 +57,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098450414062180992}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -178,6 +179,8 @@ MonoBehaviour:
   wanderingPoints:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   fleeSpeedLevel0: 9
   fleeSpeedLevel1: 10.75
   fleeSpeedLevel2: 11.5
@@ -189,6 +192,7 @@ MonoBehaviour:
   playerInDetectionRange: 0
   player: {fileID: 0}
   fleeRenderer: {fileID: 8962566104694857811}
+  detectedPlayerSFX: Flee
 --- !u!114 &1199940086706000112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,3 +469,65 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1001 &7115142431705167803
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8910243560797386184}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 87c9e29e306f40740ac96f22b210b4ba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.123
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 87c9e29e306f40740ac96f22b210b4ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 87c9e29e306f40740ac96f22b210b4ba, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 87c9e29e306f40740ac96f22b210b4ba, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 87c9e29e306f40740ac96f22b210b4ba, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 87c9e29e306f40740ac96f22b210b4ba, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 87c9e29e306f40740ac96f22b210b4ba, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 87c9e29e306f40740ac96f22b210b4ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 87c9e29e306f40740ac96f22b210b4ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 87c9e29e306f40740ac96f22b210b4ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 87c9e29e306f40740ac96f22b210b4ba, type: 3}
+      propertyPath: m_Name
+      value: CHECKFleeingSoul@Idle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 87c9e29e306f40740ac96f22b210b4ba, type: 3}
+--- !u!4 &7292639674854871120 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 87c9e29e306f40740ac96f22b210b4ba, type: 3}
+  m_PrefabInstance: {fileID: 7115142431705167803}
+  m_PrefabAsset: {fileID: 0}
