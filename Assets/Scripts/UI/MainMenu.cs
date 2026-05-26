@@ -3,6 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    void Start()
+    {
+        AudioManager.Instance.PlayMusic("MainMenu");
+    }
     public void PlayGame()
     {
         SceneManager.LoadScene("Hub");

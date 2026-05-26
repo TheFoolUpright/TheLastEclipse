@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7733935396278331444}
   - component: {fileID: 9143956503384673289}
   m_Layer: 3
-  m_Name: Moving Platform Moon
+  m_Name: MovingPlatformMoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MovingPlatform
   _waypointPath: {fileID: 0}
   _speed: 8
+  _waitTime: 1.5
   Player: {fileID: 0}
   _platformType: 1
 --- !u!1 &8863866226574784767

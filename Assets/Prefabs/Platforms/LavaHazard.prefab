@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4879380356300440391}
   - component: {fileID: 7252875611543117620}
   m_Layer: 3
-  m_Name: Lava Hazard
+  m_Name: LavaHazard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

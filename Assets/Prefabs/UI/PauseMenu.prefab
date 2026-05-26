@@ -590,7 +590,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8267389747834277566}
-  - {fileID: 4275642569320564294}
   m_Father: {fileID: 7419248878804279750}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1616,6 +1615,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8654080227288121103}
+  - {fileID: 4275642569320564294}
   - {fileID: 478127841742077222}
   - {fileID: 2739003843306725337}
   - {fileID: 2074861808040538594}
@@ -1704,8 +1704,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
   pauseMenu: {fileID: 7247830718127432043}
+  settingsMenu: {fileID: 0}
   Controls: {fileID: 2093241578073761183}
-  Keyboard: {fileID: 1690778938303906231}
+  keyboardUI: {fileID: 0}
   Controller: {fileID: 4190669871332445129}
 --- !u!1 &7476333986979920420
 GameObject:
@@ -2102,10 +2103,10 @@ RectTransform:
   - {fileID: 8177897860692001945}
   - {fileID: 323955121880888800}
   - {fileID: 4650022845114292660}
-  m_Father: {fileID: 2419983018590830916}
+  m_Father: {fileID: 7419248878804279750}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.7000122, y: 4.806244}
+  m_AnchoredPosition: {x: -450.69998, y: -160.19376}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
