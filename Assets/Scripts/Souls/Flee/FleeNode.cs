@@ -9,6 +9,7 @@ public class FleeNode : MonoBehaviour
     public bool isRestPoint;
     public bool usableForWander = true;
     public bool usableForFlee = true;
+    public int islandID;
 
     private void OnDrawGizmos()
     {

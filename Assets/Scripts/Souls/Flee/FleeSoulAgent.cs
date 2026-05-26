@@ -96,6 +96,7 @@ public class FleeSoulAgent : MonoBehaviour
     [SerializeField] private float maxDistanceFromFleeNode = 12f;
 
     private float _currentSpeed;
+    private int _currentIslandID = -1;
 
     private void Awake()
     {
@@ -380,25 +381,57 @@ public class FleeSoulAgent : MonoBehaviour
 
     public FleeNode ChooseRandomWanderPoint()
     {
-        if (islandWanderNodes == null || islandWanderNodes.Count == 0)
-            return null;
+        List<FleeNode> validNodes = new List<FleeNode>();
 
-        if (islandWanderNodes.Count == 1)
+        foreach (FleeNode node in islandWanderNodes)
         {
-            _currentNode = islandWanderNodes[0];
-            return _currentNode;
+            if (node == null)
+                continue;
+
+            if (_currentIslandID != -1 && node.islandID != _currentIslandID)
+                continue;
+
+            validNodes.Add(node);
         }
+
+        if (validNodes.Count == 0)
+            return null;
 
         FleeNode nextNode = _currentNode;
 
-        while (nextNode == _currentNode)
+        while (nextNode == _currentNode && validNodes.Count > 1)
         {
-            int randomIndex = UnityEngine.Random.Range(0, islandWanderNodes.Count);
-            nextNode = islandWanderNodes[randomIndex];
+            int randomIndex = UnityEngine.Random.Range(0, validNodes.Count);
+            nextNode = validNodes[randomIndex];
         }
 
         _currentNode = nextNode;
+        _currentIslandID = nextNode.islandID;
+
         return _currentNode;
+    }
+
+    public void SetCurrentIslandToNearestWanderNode()
+    {
+        FleeNode nearestNode = null;
+        float nearestDistance = float.MaxValue;
+
+        foreach (FleeNode node in islandWanderNodes)
+        {
+            if (node == null)
+                continue;
+
+            float distance = Vector3.Distance(transform.position, node.transform.position);
+
+            if (distance < nearestDistance)
+            {
+                nearestDistance = distance;
+                nearestNode = node;
+            }
+        }
+
+        if (nearestNode != null)
+            _currentIslandID = nearestNode.islandID;
     }
     public FleeNode ChooseRandomConnectedNode()
     {

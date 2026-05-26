@@ -20,6 +20,7 @@ public class STATE_FleeWander : BaseState
         _waitTimer = 0f;
 
         _owner.SetWanderMovement();
+        _owner.SetCurrentIslandToNearestWanderNode();
         _owner.SetStateColor(Color.lightGreen);
 
         if (!_owner.TrySnapToNearestNavMesh(15f))
