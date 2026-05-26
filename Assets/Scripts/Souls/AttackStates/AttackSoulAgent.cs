@@ -7,10 +7,9 @@ using UnityEngine.AI;
 
 public class AttackSoulAgent : MonoBehaviour
 {
-
+    [Header("Statemachine")]
     private StateMachine _stateMachine;
     public StateMachine StateMachine => _stateMachine;
-
     [SerializeField] private NavMeshAgent agent;
     public NavMeshAgent NavMeshAgent => agent;
     public bool AgentReachedDestination =>
@@ -21,24 +20,50 @@ public class AttackSoulAgent : MonoBehaviour
      //Vector3.Distance(transform.position, agent.destination) <= agent.stoppingDistance &&
      agent.velocity.sqrMagnitude == 0f;
 
+    [Header("Attacks")]
     public List<AttackSoulDamageArea> AttackAreas = new List<AttackSoulDamageArea>();
     public List<Transform> WanderingPoints = new List<Transform>();
     public List<Transform> IdlePoints = new List<Transform>();
     public PlayerController player;
-    
+
+    [Header("Information")]
     public int attackCount = 0;
     public bool attackHit;
-    public float requiredTimeToAttack = 2f;
 
+    [Header("GameObjects")]
     public GameObject activeArea;
     public Animator ballAnimator;
     private float startSpeed;
-
     public MeshRenderer attackRenderer;
+    public GameObject angrySoulModel;
+    public GameObject calmSoulModel;
+
+    [Header("Testing")]
+    public bool onCooldown;
+    public bool toAttack;
+    public bool attacking;
+
+    public float cooldownTimer;
+    public float attackCooldown = 2f;
+    public float waitToChargeTimer;
+    public float requiredTimeToAttack = 2f;
+    public float attackTimer;
+    public float TimeToAttack = 2f;
 
     private void Awake()
     {
         InitializeStateMachine();
+        foreach (var item in AttackAreas)
+        {
+            item.Initialize(this);
+        }
+        player.onPlayerDie += OnPlayerDie;
+    }
+
+    private void OnPlayerDie()
+    {
+        attackCount = 0;
+        _stateMachine.SwitchToNewState(typeof(STATE_AttackIdle));
         foreach (var item in AttackAreas)
         {
             item.Initialize(this);
@@ -60,8 +85,6 @@ public class AttackSoulAgent : MonoBehaviour
             _stateMachine = gameObject.AddComponent<StateMachine>();
         _stateMachine.SetStates(states);
     }
-
-    
 
     public void OnAttackStateEnter()
     {
@@ -117,8 +140,6 @@ public class AttackSoulAgent : MonoBehaviour
         agent.speed *= 10f;
 
         DashThroughAttackArea();
-
-        ballAnimator.SetBool("Attack", true);
     }
 
     public void DashThroughAttackArea()
@@ -126,6 +147,7 @@ public class AttackSoulAgent : MonoBehaviour
         if (activeArea == null)
             return;
 
+        ballAnimator.SetBool("Attack", true);
         Vector3 direction = activeArea.transform.forward;
         direction.y = 0f;
 
@@ -186,6 +208,12 @@ public class AttackSoulAgent : MonoBehaviour
     public void SetStateColor(Color color)
     {
         attackRenderer.material.color = color;
+    }
+
+    public void ActiveSoul(bool isActive)
+    {
+        angrySoulModel.SetActive(isActive);
+        calmSoulModel.SetActive(!isActive);
     }
 
 }
