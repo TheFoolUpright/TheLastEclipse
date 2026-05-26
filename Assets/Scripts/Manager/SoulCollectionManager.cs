@@ -25,7 +25,10 @@ public class SoulCollectionManager : MonoBehaviour
     public void CollectSoul(string soulID)
     {
         if (string.IsNullOrEmpty(soulID))
+        {
+            Debug.LogWarning("Tried to collect a soul with no ID.");
             return;
+        }
 
         if (collectedSoulIDs.Add(soulID))
         {
@@ -34,17 +37,12 @@ public class SoulCollectionManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Soul was already collected: " + soulID);
+            Debug.Log("Soul already collected: " + soulID);
         }
     }
 
     public bool IsSoulCollected(string soulID)
     {
         return collectedSoulIDs.Contains(soulID);
-    }
-
-    public int GetCollectedCount()
-    {
-        return collectedSoulIDs.Count;
     }
 }
