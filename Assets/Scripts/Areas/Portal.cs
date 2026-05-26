@@ -13,8 +13,17 @@ public class Portal : MonoBehaviour
     [SerializeField] private string portalEnterSFX = "PortalEnter";
     [SerializeField] private float sceneLoadDelay = 0.5f;
 
-    private bool isActivated = false;
+    [SerializeField] private bool isActivated = true;
     private bool hasTriggered = false;
+
+    private void Start()
+    {
+        if (isActivated && portalLoopSource != null)
+        {
+            portalLoopSource.loop = true;
+            portalLoopSource.Play();
+        }
+    }
 
     public void ActivatePortal()
     {
@@ -39,9 +48,6 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isActivated)
-            return;
-
         if (hasTriggered)
             return;
 

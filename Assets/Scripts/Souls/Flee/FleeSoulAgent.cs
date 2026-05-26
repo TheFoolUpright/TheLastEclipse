@@ -106,8 +106,35 @@ public class FleeSoulAgent : MonoBehaviour
     {
         ActiveSoul(true);
         _stateMachine.SwitchToNewState(typeof(STATE_FleeWander));
+
+        if (player != null)
+        {
+            PlayerController playerController = player.GetComponent<PlayerController>();
+
+            if (playerController != null)
+            {
+                playerController.onPlayerRespawn += HandlePlayerRespawn;
+            }
+        }
     }
 
+    private void HandlePlayerRespawn()
+    {
+        ResetCatchCount();
+    }
+
+    private void OnDestroy()
+    {
+        if (player != null)
+        {
+            PlayerController playerController = player.GetComponent<PlayerController>();
+
+            if (playerController != null)
+            {
+                playerController.onPlayerRespawn -= HandlePlayerRespawn;
+            }
+        }
+    }
     public void ActiveSoul(bool isActive)
     {
         if (fleeSoulModel != null)

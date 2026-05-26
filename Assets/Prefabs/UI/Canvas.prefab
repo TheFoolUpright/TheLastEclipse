@@ -157,6 +157,15 @@ MonoBehaviour:
   - soulID: FleeArena_HiddenSoul
     soulType: 0
     collectedSprite: {fileID: 21300000, guid: 18b8a72785933a24c9d0a3c3562afce6, type: 3}
+  - soulID: Hub_HiddenSoul
+    soulType: 2
+    collectedSprite: {fileID: 21300000, guid: 18b8a72785933a24c9d0a3c3562afce6, type: 3}
+  - soulID: AttackArena_HiddenSoul
+    soulType: 2
+    collectedSprite: {fileID: 21300000, guid: 18b8a72785933a24c9d0a3c3562afce6, type: 3}
+  - soulID: AttackArena_AttackSoul
+    soulType: 1
+    collectedSprite: {fileID: 21300000, guid: 824564888b76d9642bc9c3b6af5accf2, type: 3}
   slotContainer: {fileID: 7821131933782464115}
   slotPrefab: {fileID: 4461345503117622830, guid: cc9c363b9069c0f48a629d3d58682d2f, type: 3}
   uncollectedSprite: {fileID: 21300000, guid: 5e3a9f17bad7b3a4abc555168277efe2, type: 3}

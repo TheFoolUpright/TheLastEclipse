@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Quaternion respawnRotation;
 
     public int CurrentHealth => currentHealth;
+    public event Action onPlayerRespawn;
 
     private void Awake()
     {
@@ -312,6 +313,8 @@ public class PlayerController : MonoBehaviour
 
         currentHealth = maxHealth;
         OnHpChanged?.Invoke(currentHealth);
+        
+        onPlayerRespawn?.Invoke();
     }
 
     private void ToggleCharacter()

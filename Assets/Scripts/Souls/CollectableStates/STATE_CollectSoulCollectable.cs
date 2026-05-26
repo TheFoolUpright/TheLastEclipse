@@ -37,7 +37,18 @@ public class STATE_CollectSoulCollectable : BaseState
                         _popup.Hide();
 
                     if (_sceneManager != null)
+                    {
                         _sceneManager.CollectSoul(_owner.gameObject);
+                    }
+                    else
+                    {
+                        SoulCollectibleData soulData = _owner.GetComponent<SoulCollectibleData>();
+
+                        if (soulData != null && SoulCollectionManager.Instance != null)
+                        {
+                            SoulCollectionManager.Instance.CollectSoul(soulData.soulID);
+                        }
+                    }
 
                     _owner.gameObject.SetActive(false);
                     return null;
