@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6629510403444692735}
   - component: {fileID: 2067964093627660296}
   - component: {fileID: 8008960524922384920}
+  - component: {fileID: 6456561651834780642}
   m_Layer: 0
   m_Name: Attack Soul
   m_TagString: Untagged
@@ -238,6 +239,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoulCollectibleData
   soulID: AttackArena_AttackSoul
   soulType: 1
+--- !u!114 &6456561651834780642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375731453520697339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b432d22c6618f014481218e5b7c3479b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HideIfSoulCollected
+  soulData: {fileID: 8008960524922384920}
 --- !u!1 &688822340433366344
 GameObject:
   m_ObjectHideFlags: 0

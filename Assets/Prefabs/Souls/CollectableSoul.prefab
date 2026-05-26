@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 6706368388346257448}
   - component: {fileID: 3486791468309521103}
   - component: {fileID: 5276907638397653829}
+  - component: {fileID: 7901612654691577906}
   m_Layer: 0
   m_Name: CollectableSoul
   m_TagString: Untagged
@@ -279,6 +280,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoulCollectibleData
   soulID: FleeArena_HiddenSoul
   soulType: 2
+--- !u!114 &7901612654691577906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617636874938103868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b432d22c6618f014481218e5b7c3479b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HideIfSoulCollected
+  soulData: {fileID: 5276907638397653829}
 --- !u!1 &4518570453334858892
 GameObject:
   m_ObjectHideFlags: 0

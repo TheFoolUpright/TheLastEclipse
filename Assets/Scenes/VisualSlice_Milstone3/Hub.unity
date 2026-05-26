@@ -2662,15 +2662,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1467135826963096764, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 202
+      value: 119.19
       objectReference: {fileID: 0}
     - target: {fileID: 1467135826963096764, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 82
+      value: 39.1
       objectReference: {fileID: 0}
     - target: {fileID: 1467135826963096764, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -36.3
+      value: -287.3
       objectReference: {fileID: 0}
     - target: {fileID: 1467135826963096764, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2988,15 +2988,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7085709587800296204, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 202
+      value: 119.19
       objectReference: {fileID: 0}
     - target: {fileID: 7085709587800296204, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 92.47028
+      value: 49.570282
       objectReference: {fileID: 0}
     - target: {fileID: 7085709587800296204, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -53.67924
+      value: -304.67923
       objectReference: {fileID: 0}
     - target: {fileID: 7085709587800296204, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5297,8 +5297,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: a32e0de1b725a334c9cef4f377972b97, type: 2}
     - target: {fileID: 1400918319423871105, guid: 9315b04897944914d889dc0e64b6ffd7, type: 3}
+      propertyPath: isActivated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400918319423871105, guid: 9315b04897944914d889dc0e64b6ffd7, type: 3}
       propertyPath: sceneToLoad
-      value: 
+      value: ToBeContinued
       objectReference: {fileID: 0}
     - target: {fileID: 1400918319423871105, guid: 9315b04897944914d889dc0e64b6ffd7, type: 3}
       propertyPath: spawnPointName
@@ -5314,7 +5318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4239556919076152959, guid: 9315b04897944914d889dc0e64b6ffd7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8792869340637977358, guid: 9315b04897944914d889dc0e64b6ffd7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5579,6 +5583,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HubProgressManager
   finalPortal: {fileID: 1686094340}
+  fleeSoulID: FleeArena_FleeSoul
+  attackSoulID: AttackArena_AttackSoul
 --- !u!4 &1804097551
 Transform:
   m_ObjectHideFlags: 0
@@ -5859,7 +5865,7 @@ Transform:
   m_GameObject: {fileID: 1902374707}
   serializedVersion: 2
   m_LocalRotation: {x: 0.21473312, y: 0, z: 0, w: 0.97667277}
-  m_LocalPosition: {x: 202, y: 92.47028, z: -53.67924}
+  m_LocalPosition: {x: 119.19, y: 49.570282, z: -304.67923}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

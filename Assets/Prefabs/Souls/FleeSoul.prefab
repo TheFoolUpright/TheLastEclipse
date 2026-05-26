@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5466118084691121004}
   - component: {fileID: 1199940086706000112}
   - component: {fileID: 3269116692040513444}
+  - component: {fileID: 644405144583412610}
   m_Layer: 0
   m_Name: FleeSoul
   m_TagString: Untagged
@@ -276,6 +277,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoulCollectibleData
   soulID: FleeArena_FleeSoul
   soulType: 0
+--- !u!114 &644405144583412610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098450414062180992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b432d22c6618f014481218e5b7c3479b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HideIfSoulCollected
+  soulData: {fileID: 3269116692040513444}
 --- !u!1 &5450355073295560978
 GameObject:
   m_ObjectHideFlags: 0
