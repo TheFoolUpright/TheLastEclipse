@@ -16,6 +16,23 @@ public class SoulSceneManager : MonoBehaviour
 
     private bool mainSoulCollected;
 
+    [Header("Main Soul Object")]
+    [SerializeField] private GameObject mainSoulObject;
+
+    public void CheatCollectSceneMainSoul()
+    {
+        if (mainSoulObject != null)
+        {
+            CollectSoul(mainSoulObject);
+            mainSoulObject.SetActive(false);
+
+            Debug.Log("CHEAT: Scene main soul collected.");
+        }
+        else
+        {
+            Debug.LogWarning("CHEAT FAILED: No main soul object assigned.");
+        }
+    }
     private void Start()
     {
         if (returnPortal != null)

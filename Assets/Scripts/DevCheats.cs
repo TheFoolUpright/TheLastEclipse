@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class DevCheats : MonoBehaviour
 {
@@ -8,10 +9,19 @@ public class DevCheats : MonoBehaviour
     [SerializeField] private HubProgressManager hubProgressManager;
     [SerializeField] private PlayerController playerController;
 
+    [Header("Scene Cheats")]
+    [SerializeField] private string attackArenaSceneName;
+    [SerializeField] private string fleeArenaSceneName;
+
+    [SerializeField] private string attackArenaSpawnPointName;
+    [SerializeField] private string fleeArenaSpawnPointName;
+
     private InputAction openPortalAction;
     private InputAction collectSoulAction;
     private InputAction respawnAction;
     private InputAction refillHealthAction;
+    private InputAction goToAttackArenaAction;
+    private InputAction goToFleeArenaAction;
 
     private void Awake()
     {
@@ -27,6 +37,8 @@ public class DevCheats : MonoBehaviour
         collectSoulAction = playerInput.actions["CollectSoulCheat"];
         respawnAction = playerInput.actions["RespawnCheat"];
         refillHealthAction = playerInput.actions["RefillHealthCheat"];
+        goToAttackArenaAction = playerInput.actions["GoToAttackArenaCheat"];
+        goToFleeArenaAction = playerInput.actions["GoToFleeArenaCheat"];
     }
 
     private void Start()
@@ -54,14 +66,39 @@ public class DevCheats : MonoBehaviour
 
         if (refillHealthAction != null && refillHealthAction.WasPressedThisFrame())
             RefillHealthCheat();
+
+        if (goToAttackArenaAction != null && goToAttackArenaAction.WasPressedThisFrame())
+        {
+            GoToAttackArenaCheat();
+        }
+
+        if (goToFleeArenaAction != null && goToFleeArenaAction.WasPressedThisFrame())
+        {
+            GoToFleeArenaCheat();
+        }
+    }
+
+    private void GoToAttackArenaCheat()
+    {
+        PortalSpawnData.spawnPointName = attackArenaSpawnPointName;
+        SceneManager.LoadScene(attackArenaSceneName);
+
+        Debug.Log("CHEAT: Loading Attack Arena");
+    }
+
+    private void GoToFleeArenaCheat()
+    {
+        PortalSpawnData.spawnPointName = fleeArenaSpawnPointName;
+        SceneManager.LoadScene(fleeArenaSceneName);
+
+        Debug.Log("CHEAT: Loading Flee Arena");
     }
 
     private void OpenPortalCheat()
     {
         if (soulSceneManager != null)
         {
-            soulSceneManager.CollectMainSoul();
-            Debug.Log("CHEAT: Arena return portal opened.");
+            soulSceneManager.CheatCollectSceneMainSoul();
         }
         else if (hubProgressManager != null)
         {
@@ -78,14 +115,16 @@ public class DevCheats : MonoBehaviour
     {
         if (soulSceneManager != null)
         {
-            soulSceneManager.CollectMainSoul();
+            soulSceneManager.CheatCollectSceneMainSoul();
             Debug.Log("CHEAT: Current arena main soul collected.");
+
         }
         else if (hubProgressManager != null)
         {
             hubProgressManager.CheatCollectAllMainSouls();
         }
     }
+
 
     private void RespawnCheat()
     {

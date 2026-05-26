@@ -45,4 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DevCheats
   soulSceneManager: {fileID: 0}
+  hubProgressManager: {fileID: 0}
   playerController: {fileID: 0}
+  attackArenaSceneName: AttackArena
+  fleeArenaSceneName: FleeArena
+  attackArenaSpawnPointName: SceneStartSpawn
+  fleeArenaSpawnPointName: SceneStartSpawn

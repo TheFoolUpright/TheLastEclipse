@@ -104,6 +104,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "GoToAttackArenaCheat",
+                    "type": "Button",
+                    "id": "f4ebe41f-0db1-486b-bc5a-d268e864f129",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GoToFleeArenaCheat",
+                    "type": "Button",
+                    "id": "1e862bd9-5705-43dc-8fc4-ef10b3b763e6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -401,6 +419,28 @@
                     "processors": "",
                     "groups": ";Gamepad",
                     "action": "PauseMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0818c884-d7bd-4c47-9000-74fa915d5c56",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GoToAttackArenaCheat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "92515e22-4e10-4eac-a6b6-304ed737c821",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GoToFleeArenaCheat",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

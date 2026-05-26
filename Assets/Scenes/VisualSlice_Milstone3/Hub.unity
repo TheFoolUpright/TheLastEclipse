@@ -3247,6 +3247,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5107746569781105019, guid: 4bda71eb613ded84490305edce3e3541, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 1023917765}
     - target: {fileID: 5990152302361559157, guid: 4bda71eb613ded84490305edce3e3541, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -6697,6 +6701,10 @@ PrefabInstance:
       propertyPath: soulSceneManager
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4432232793759777641, guid: 74de37239299b2845bc4e9cd9a1128bb, type: 3}
+      propertyPath: hubProgressManager
+      value: 
+      objectReference: {fileID: 1804097550}
     - target: {fileID: 5059231880978993434, guid: 74de37239299b2845bc4e9cd9a1128bb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.3
