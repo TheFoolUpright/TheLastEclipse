@@ -350,6 +350,19 @@ public class FleeSoulAgent : MonoBehaviour
         if (!_hasDestination)
             return;
 
+        Vector3 direction = _currentDestination - transform.position;
+        direction.y = 0f;
+
+        if (direction.sqrMagnitude > 0.001f)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(direction.normalized);
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                targetRotation,
+                8f * Time.deltaTime
+            );
+        }
+
         float speed = GetActiveSpeed();
 
         transform.position = Vector3.MoveTowards(

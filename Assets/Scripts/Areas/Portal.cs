@@ -48,6 +48,9 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!isActivated)
+            return;
+
         if (hasTriggered)
             return;
 
@@ -56,20 +59,12 @@ public class Portal : MonoBehaviour
 
         hasTriggered = true;
 
-        PortalAudioData.playWarpSoundOnSceneLoad = true;
-        PortalSpawnData.spawnPointName = spawnPointName;
-
-        SceneManager.LoadScene(sceneToLoad);
+        StartCoroutine(EnterPortalRoutine());
     }
 
     private IEnumerator EnterPortalRoutine()
     {
-        if (AudioManager.Instance != null)
-        {
-            PortalAudioData.playWarpSoundOnSceneLoad = true;
-            SceneManager.LoadScene(sceneToLoad);
-        }
-
+        PortalAudioData.playWarpSoundOnSceneLoad = true;
         PortalSpawnData.spawnPointName = spawnPointName;
 
         yield return new WaitForSeconds(sceneLoadDelay);
