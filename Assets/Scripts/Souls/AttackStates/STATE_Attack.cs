@@ -5,12 +5,6 @@ public class STATE_Attack : BaseState
 {
     private readonly AttackSoulAgent _owner;
 
-    private bool onCooldown;
-    private bool toAttack;
-    private bool attacking;
-
-    private float timer;
-
     private string attackSound = "SoulAttack";
     public void PlayAttackFeedback()
     {
@@ -27,47 +21,47 @@ public class STATE_Attack : BaseState
 
     public override Type Tick()
     {
-        if (onCooldown)
+        if (_owner.onCooldown) //Time to stop and ready to attack player (Stop and face player without attack drawn)
         {
             _owner.FacePlayer();
 
-            timer += Time.deltaTime;
+            _owner.cooldownTimer += Time.deltaTime;
 
-            if (timer >= _owner.requiredTimeToAttack)
+            if (_owner.cooldownTimer >= 2f)
             {
-                timer = 0f;
-                onCooldown = false;
-                toAttack = true;
+                _owner.cooldownTimer = 0f;
+                _owner.onCooldown = false;
+                _owner.toAttack = true;
 
                 _owner.PrepareAttackArea();
             }
         }
 
-        if (toAttack)
+        if (_owner.toAttack) //Draw area while facing the player before moving inside said area (Preparation)
         {
-            timer += Time.deltaTime;
+            _owner.waitToChargeTimer += Time.deltaTime;
 
-            if (timer >= 2f)
+            if (_owner.waitToChargeTimer >= _owner.requiredTimeToAttack)
             {
-                timer = 0f;
-                toAttack = false;
-                attacking = true;
+                _owner.waitToChargeTimer = 0f;
+                _owner.toAttack = false;
+                _owner.attacking = true;
 
                 _owner.StartDashAttack();
                 PlayAttackFeedback();
             }
         }
 
-        if (attacking)
+        if (_owner.attacking) // Attack
         {
             _owner.CheckDashFinished();
 
-            timer += Time.deltaTime;
+            _owner.attackTimer += Time.deltaTime;
 
-            if (timer >= 3f)
+            if (_owner.attackTimer >= 2f)
             {
-                timer = 0f;
-                attacking = false;
+                _owner.attackTimer = 0f;
+                _owner.attacking = false;
 
                 bool shouldCollect = _owner.FinishAttack();
 
@@ -87,11 +81,13 @@ public class STATE_Attack : BaseState
     {
         Debug.Log("Attack");
 
-        onCooldown = true;
-        toAttack = false;
-        attacking = false;
+        _owner.onCooldown = true;
+        _owner.toAttack = false;
+        _owner.attacking = false;
 
-        timer = 0f;
+        _owner.cooldownTimer = 0f;
+        _owner.waitToChargeTimer = 0f;
+        _owner.attackTimer = 0f;
 
         _owner.OnAttackStateEnter();
     }

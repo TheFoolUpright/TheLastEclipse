@@ -9,6 +9,7 @@ public class AttackSoulDamageArea : MonoBehaviour
     AttackSoulAgent owner;
     private MeshCollider collider;
     private bool initialized;
+    AttackSoulAgent agent;
     internal void Initialize(AttackSoulAgent attackSoulAgent)
     {
         owner = attackSoulAgent;
@@ -36,7 +37,7 @@ public class AttackSoulDamageArea : MonoBehaviour
     }
     private IEnumerator ActivateCollider()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(agent.requiredTimeToAttack);
         collider.enabled = true;
     }
 

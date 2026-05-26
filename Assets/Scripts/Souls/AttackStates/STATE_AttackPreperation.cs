@@ -26,7 +26,7 @@ public class STATE_AttackPreperation : BaseState
             Debug.Log(_owner.player);
             float playerDistance = Vector3.Distance(_owner.transform.position , _owner.player.transform.position);
             
-            if (playerDistance < searchRadius * 0.75f || playerDistance > searchRadius){
+            if (playerDistance < searchRadius * 0.5f || playerDistance > searchRadius){
                 SetTarget();
             } 
             else
@@ -43,6 +43,11 @@ public class STATE_AttackPreperation : BaseState
         Debug.Log("Wandering");
         //SetTarget();
         searchRadius = _owner.AttackAreas[_owner.attackCount].GetAttackDistance() * 0.75f;
+
+        if (_owner.attackCount > 0)
+        {
+            SetTarget();
+        }
         _owner.SetStateColor(Color.darkRed);
     }
     
