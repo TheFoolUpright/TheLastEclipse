@@ -19,6 +19,7 @@ public class STATE_Flee : BaseState
     public override void OnEnter(BaseState oldState)
     {
         _owner.PlayDetectedPlayerSound();
+        _owner.ActiveSoul(true);
 
         _wasCaught = false;
         _disengageTimer = _owner.FleeDisengageDelay;
@@ -31,13 +32,13 @@ public class STATE_Flee : BaseState
         _owner.SetFleeMovement();
         _owner.SetStateColor(Color.green);
 
-        Transform fleePoint = _owner.ChooseFleePoint();
+        FleeNode fleePoint = _owner.ChooseFleePoint();
         if (fleePoint != null)
         {
-            _owner.MoveTo(fleePoint.position);
+            _owner.MoveTo(fleePoint.transform.position);
         }
 
-        Debug.Log($"Entered Flee State at speed {_owner.NavMeshAgent.speed}");
+        Debug.Log($"Entered Flee State at speed {_owner.GetCurrentBaseFleeSpeed()}");
     }
 
     // Runs every frame
@@ -56,12 +57,25 @@ public class STATE_Flee : BaseState
 
         UpdateBurst();
 
+        //if (_owner.IsTooFarFromFleeGraph())
+        //{
+        //    FleeNode nearestNode = _owner.ChooseNearestFleeNode();
+
+        //    if (nearestNode != null)
+        //    {
+        //        _owner.MoveTo(nearestNode.transform.position);
+        //    }
+
+        //    return null;
+        //}
+
         if (_owner.IsCurrentDestinationUnsafe())
         {
-            Transform saferPoint = _owner.ChooseFleePoint();
+            FleeNode saferPoint = _owner.ChooseFleePoint();
+
             if (saferPoint != null)
             {
-                _owner.MoveTo(saferPoint.position);
+                _owner.MoveTo(saferPoint.transform.position);
             }
 
             return null;
@@ -69,10 +83,11 @@ public class STATE_Flee : BaseState
 
         if (_owner.HasReachedCurrentDestination())
         {
-            Transform nextFleePoint = _owner.ChooseFleePoint();
+            FleeNode nextFleePoint = _owner.ChooseFleePoint();
+
             if (nextFleePoint != null)
             {
-                _owner.MoveTo(nextFleePoint.position);
+                _owner.MoveTo(nextFleePoint.transform.position);
             }
         }
 
@@ -128,7 +143,7 @@ public class STATE_Flee : BaseState
 
         _owner.SetBurstMovement();
         _owner.SetStateColor(Color.limeGreen);
-        Debug.Log($"Burst started. Speed is now {_owner.NavMeshAgent.speed}");
+        Debug.Log($"Burst started. Speed is now {_owner.GetCurrentBaseFleeSpeed()}");
     }
 
     private void EndBurst()
@@ -138,6 +153,6 @@ public class STATE_Flee : BaseState
 
         _owner.SetFleeMovement();
         _owner.SetStateColor(Color.green);
-        Debug.Log($"Burst ended. Speed reset to {_owner.NavMeshAgent.speed}");
+        Debug.Log($"Burst ended. Speed reset to {_owner.GetCurrentBaseFleeSpeed()}");
     }
 }

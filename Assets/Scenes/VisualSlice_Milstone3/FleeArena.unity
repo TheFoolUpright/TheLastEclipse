@@ -119,6 +119,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &17965739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 17965741}
+  - component: {fileID: 17965740}
+  m_Layer: 0
+  m_Name: FleePoint_06 (27)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &17965740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17965739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 230399751}
+  - {fileID: 630252099}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &17965741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17965739}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 80.3, y: 41.5, z: 72}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &60454105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -246,6 +296,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78b5230383b3c6c4caba0e8f3d17e822, type: 3}
+--- !u!1 &99244789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 99244791}
+  - component: {fileID: 99244790}
+  m_Layer: 0
+  m_Name: FleePoint_06 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &99244790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99244789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 962860222}
+  - {fileID: 1090990500}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &99244791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99244789}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 125.2, y: 27.8, z: -4.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &124767950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -307,6 +407,248 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d44689f835704d4db1c74789bd984aa, type: 3}
+--- !u!1 &131538864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 131538866}
+  - component: {fileID: 131538865}
+  m_Layer: 0
+  m_Name: FleePoint_06 (22)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &131538865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131538864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 975343294}
+  - {fileID: 1076461956}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &131538866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131538864}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 107.6, y: 52.07, z: 115.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &189700031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 189700033}
+  - component: {fileID: 189700032}
+  m_Layer: 0
+  m_Name: FleePoint_06 (16)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &189700032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189700031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 1919662042}
+  - {fileID: 2074736293}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &189700033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189700031}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 142.4, y: 53.5, z: 116}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &194031981
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3707453238002674129, guid: dd96beaa49c88ee46bd12de65ad96c79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 31.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707453238002674129, guid: dd96beaa49c88ee46bd12de65ad96c79, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 26.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707453238002674129, guid: dd96beaa49c88ee46bd12de65ad96c79, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707453238002674129, guid: dd96beaa49c88ee46bd12de65ad96c79, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707453238002674129, guid: dd96beaa49c88ee46bd12de65ad96c79, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707453238002674129, guid: dd96beaa49c88ee46bd12de65ad96c79, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707453238002674129, guid: dd96beaa49c88ee46bd12de65ad96c79, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707453238002674129, guid: dd96beaa49c88ee46bd12de65ad96c79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707453238002674129, guid: dd96beaa49c88ee46bd12de65ad96c79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707453238002674129, guid: dd96beaa49c88ee46bd12de65ad96c79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367855638662652346, guid: dd96beaa49c88ee46bd12de65ad96c79, type: 3}
+      propertyPath: m_Name
+      value: Rotating Platform (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5097542448154761572, guid: dd96beaa49c88ee46bd12de65ad96c79, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1023917765}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dd96beaa49c88ee46bd12de65ad96c79, type: 3}
+--- !u!1 &206716466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 206716467}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &206716467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206716466}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.89, y: 12.56, z: 8.74}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1173380014}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &230399750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 230399752}
+  - component: {fileID: 230399751}
+  m_Layer: 0
+  m_Name: FleePoint_06 (26)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &230399751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230399750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 850275453}
+  - {fileID: 17965740}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &230399752
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230399750}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 85.3, y: 47.1, z: 79.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &233132806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -364,6 +706,206 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feb9fb71386f6ab478d82661ab4db47b, type: 3}
+--- !u!1 &243946782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 243946784}
+  - component: {fileID: 243946783}
+  m_Layer: 0
+  m_Name: FleePoint_06 (20)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &243946783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243946782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 1904658431}
+  - {fileID: 975343294}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &243946784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243946782}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 103, y: 57.07, z: 134.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &271506892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 271506894}
+  - component: {fileID: 271506893}
+  m_Layer: 0
+  m_Name: FleePoint_06 (11)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &271506893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271506892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 1241084751}
+  - {fileID: 605241721}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &271506894
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271506892}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 164.3, y: 12.2, z: 64.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &288667574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 288667576}
+  - component: {fileID: 288667575}
+  m_Layer: 0
+  m_Name: FleePoint_06 (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &288667575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288667574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 1766197525}
+  - {fileID: 293839562}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &288667576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288667574}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 167.4, y: 21.23, z: 34.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &293839561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 293839563}
+  - component: {fileID: 293839562}
+  m_Layer: 0
+  m_Name: FleePoint_06 (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &293839562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293839561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 288667575}
+  - {fileID: 1241084751}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &293839563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293839561}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 168.2, y: 21.23, z: 48.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &334101354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -482,6 +1024,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1983bb67da5f4cb4684391cf8283becc, type: 3}
+--- !u!1001 &365290315
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 455427608}
+    m_Modifications:
+    - target: {fileID: 1542289769021804921, guid: cfa67d87f5ae300459140082126165af, type: 3}
+      propertyPath: bounceHeight
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2999277076770753882, guid: cfa67d87f5ae300459140082126165af, type: 3}
+      propertyPath: m_Name
+      value: BouncyPlatform (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365648611865336076, guid: cfa67d87f5ae300459140082126165af, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365648611865336076, guid: cfa67d87f5ae300459140082126165af, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365648611865336076, guid: cfa67d87f5ae300459140082126165af, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 37.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365648611865336076, guid: cfa67d87f5ae300459140082126165af, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.94063604
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365648611865336076, guid: cfa67d87f5ae300459140082126165af, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365648611865336076, guid: cfa67d87f5ae300459140082126165af, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.339417
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365648611865336076, guid: cfa67d87f5ae300459140082126165af, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365648611865336076, guid: cfa67d87f5ae300459140082126165af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365648611865336076, guid: cfa67d87f5ae300459140082126165af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 39.683
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365648611865336076, guid: cfa67d87f5ae300459140082126165af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cfa67d87f5ae300459140082126165af, type: 3}
 --- !u!1 &372790004
 GameObject:
   m_ObjectHideFlags: 0
@@ -5318,6 +5921,137 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &375900651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 375900652}
+  - component: {fileID: 375900653}
+  m_Layer: 0
+  m_Name: FleePoint_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &375900652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375900651}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 42.7, y: 27.8, z: -20.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &375900653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375900651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 1496467915}
+  - {fileID: 1472784600}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!1 &402501852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 402501853}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &402501853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402501852}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.89, y: 12.56, z: 8.74}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1801359526}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &412611402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 412611404}
+  - component: {fileID: 412611403}
+  m_Layer: 0
+  m_Name: FleePoint_06 (38)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &412611403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412611402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 1232218926}
+  - {fileID: 1893296073}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &412611404
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412611402}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 21.02, y: 22.89, z: -4.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &414918534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5420,6 +6154,7 @@ Transform:
   - {fileID: 414918535}
   - {fileID: 1009354642}
   - {fileID: 660355068}
+  - {fileID: 1654561808}
   - {fileID: 1824856685}
   - {fileID: 1962543492}
   - {fileID: 791242008}
@@ -5436,6 +6171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 465111623}
+  - component: {fileID: 465111624}
   m_Layer: 0
   m_Name: WanderPoint_04
   m_TagString: Untagged
@@ -5452,11 +6188,77 @@ Transform:
   m_GameObject: {fileID: 465111622}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -33.1, y: 36.2, z: -47.6}
+  m_LocalPosition: {x: 16.6, y: 23.4, z: -10.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1678988269}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &465111624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465111622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes: []
+  isRestPoint: 1
+  usableForWander: 1
+  usableForFlee: 0
+--- !u!1 &483860029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 483860031}
+  - component: {fileID: 483860030}
+  m_Layer: 0
+  m_Name: FleePoint_06 (24)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &483860030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483860029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 1076461956}
+  - {fileID: 850275453}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &483860031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483860029}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 96, y: 48.5, z: 97.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &487686594
 GameObject:
@@ -5606,6 +6408,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 522edecd2f111aa4782b446b47d955c7, type: 3}
+--- !u!1 &493481261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 493481263}
+  - component: {fileID: 493481262}
+  m_Layer: 0
+  m_Name: FleePoint_06 (33)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &493481262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493481261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 589281922}
+  - {fileID: 1159372257}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &493481263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493481261}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 56.6, y: 20.62, z: 26.64}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &543525371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5905,11 +6757,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2978935818422111964, guid: f77fe15027e5c0c4ca45a636fc791474, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -100.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2978935818422111964, guid: f77fe15027e5c0c4ca45a636fc791474, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -167
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2996641470660542850, guid: f77fe15027e5c0c4ca45a636fc791474, type: 3}
       propertyPath: m_Name
@@ -5917,7 +6769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8960552620143879278, guid: f77fe15027e5c0c4ca45a636fc791474, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 8960552620143879278, guid: f77fe15027e5c0c4ca45a636fc791474, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5925,11 +6777,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8960552620143879278, guid: f77fe15027e5c0c4ca45a636fc791474, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 231
+      value: 35.9
       objectReference: {fileID: 0}
     - target: {fileID: 8960552620143879278, guid: f77fe15027e5c0c4ca45a636fc791474, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.96486616
+      value: 0.83730406
       objectReference: {fileID: 0}
     - target: {fileID: 8960552620143879278, guid: f77fe15027e5c0c4ca45a636fc791474, type: 3}
       propertyPath: m_LocalRotation.x
@@ -5937,7 +6789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8960552620143879278, guid: f77fe15027e5c0c4ca45a636fc791474, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.26274186
+      value: -0.54673755
       objectReference: {fileID: 0}
     - target: {fileID: 8960552620143879278, guid: f77fe15027e5c0c4ca45a636fc791474, type: 3}
       propertyPath: m_LocalRotation.z
@@ -5949,7 +6801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8960552620143879278, guid: f77fe15027e5c0c4ca45a636fc791474, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -30.466
+      value: -66.287
       objectReference: {fileID: 0}
     - target: {fileID: 8960552620143879278, guid: f77fe15027e5c0c4ca45a636fc791474, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -5960,11 +6812,311 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f77fe15027e5c0c4ca45a636fc791474, type: 3}
+--- !u!1 &589281921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 589281923}
+  - component: {fileID: 589281922}
+  m_Layer: 0
+  m_Name: FleePoint_06 (32)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &589281922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589281921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 1978060079}
+  - {fileID: 493481262}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &589281923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589281921}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 58.79, y: 25.8, z: 35.18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &605241720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 605241722}
+  - component: {fileID: 605241721}
+  m_Layer: 0
+  m_Name: FleePoint_06 (31)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &605241721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605241720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 271506893}
+  - {fileID: 671759066}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &605241722
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605241720}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 159.06, y: 12.2, z: 66.72}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &612108969
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 612108971}
+  - component: {fileID: 612108970}
+  m_Layer: 0
+  m_Name: FleePoint_06
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &612108970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612108969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 1823085328}
+  - {fileID: 1739596975}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &612108971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612108969}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 83.8, y: 29.74, z: -5.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &630252098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 630252100}
+  - component: {fileID: 630252099}
+  m_Layer: 0
+  m_Name: FleePoint_06 (28)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &630252099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630252098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 17965740}
+  - {fileID: 998026965}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &630252100
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630252098}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 74.7, y: 33.1, z: 63.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &660355068 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3365648611865336076, guid: cfa67d87f5ae300459140082126165af, type: 3}
   m_PrefabInstance: {fileID: 543525371}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &661973113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 661973115}
+  - component: {fileID: 661973114}
+  m_Layer: 0
+  m_Name: FleePoint_06 (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &661973114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661973113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 1090990500}
+  - {fileID: 1043124695}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &661973115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661973113}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 155.2, y: 20.8, z: 6.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &671759065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 671759067}
+  - component: {fileID: 671759066}
+  m_Layer: 0
+  m_Name: FleePoint_06 (12)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &671759066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671759065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 605241721}
+  - {fileID: 720064406}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &671759067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671759065}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 160.6, y: 9.5, z: 71.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &672180713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6030,6 +7182,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74de37239299b2845bc4e9cd9a1128bb, type: 3}
+--- !u!1 &720064405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 720064407}
+  - component: {fileID: 720064406}
+  m_Layer: 0
+  m_Name: FleePoint_06 (13)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &720064406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720064405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 671759066}
+  - {fileID: 1288517562}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &720064407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720064405}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 157.3, y: 7.6, z: 82.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &726878828
 GameObject:
   m_ObjectHideFlags: 0
@@ -6163,6 +7365,54 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7821131933782464115, guid: 4bda71eb613ded84490305edce3e3541, type: 3}
   m_PrefabInstance: {fileID: 1204045526}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &816511012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 816511013}
+  - component: {fileID: 816511014}
+  m_Layer: 0
+  m_Name: WanderPoint_05
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &816511013
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816511012}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 94.3, y: 31.1, z: -12.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1678988269}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &816511014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816511012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes: []
+  isRestPoint: 1
+  usableForWander: 1
+  usableForFlee: 0
 --- !u!1 &817587840
 GameObject:
   m_ObjectHideFlags: 0
@@ -6282,6 +7532,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &850275452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 850275454}
+  - component: {fileID: 850275453}
+  m_Layer: 0
+  m_Name: FleePoint_06 (25)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &850275453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850275452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 483860030}
+  - {fileID: 230399751}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &850275454
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850275452}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 91.9, y: 47.1, z: 88.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &855940905
 GameObject:
   m_ObjectHideFlags: 0
@@ -6315,6 +7615,56 @@ Transform:
   - {fileID: 1943838566}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &858429962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 858429963}
+  - component: {fileID: 858429964}
+  m_Layer: 0
+  m_Name: FleePoint_04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &858429963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858429962}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 68.1, y: 26.1, z: -9.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &858429964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858429962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 1796869899}
+  - {fileID: 1823085328}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
 --- !u!1001 &935513207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6446,6 +7796,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4074701979488782075, guid: 4f3d76889171248409abe03235123bbd, type: 3}
   m_PrefabInstance: {fileID: 956890647}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &962860221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 962860223}
+  - component: {fileID: 962860222}
+  m_Layer: 0
+  m_Name: FleePoint_06 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &962860222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962860221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 99244790}
+  - {fileID: 1739596975}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &962860223
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962860221}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 110.3, y: 27.8, z: -7.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &973018212
 GameObject:
   m_ObjectHideFlags: 0
@@ -6525,6 +7925,137 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &974200879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 974200880}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &974200880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974200879}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.5, y: 14.4, z: 12.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1801359526}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &975343293
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 975343295}
+  - component: {fileID: 975343294}
+  m_Layer: 0
+  m_Name: FleePoint_06 (21)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &975343294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975343293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 243946783}
+  - {fileID: 131538865}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &975343295
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975343293}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 97.51, y: 56.79, z: 125.66}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &998026963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 998026964}
+  - component: {fileID: 998026965}
+  m_Layer: 0
+  m_Name: FleePoint_06 (29)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &998026964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998026963}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 67.9, y: 32.6, z: 58.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &998026965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998026963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 630252099}
+  - {fileID: 1978060079}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
 --- !u!1001 &1009354641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6601,7 +8132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1467135826963096764, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.460265
+      value: -18.1
       objectReference: {fileID: 0}
     - target: {fileID: 1467135826963096764, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6609,7 +8140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1467135826963096764, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -27.706327
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 1467135826963096764, guid: 7f0db71b9e1e6be449ba61ad9cde1213, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6706,6 +8237,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1043124694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1043124696}
+  - component: {fileID: 1043124695}
+  m_Layer: 0
+  m_Name: FleePoint_06 (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1043124695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043124694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 661973114}
+  - {fileID: 1766197525}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &1043124696
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043124694}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 161.63, y: 20.8, z: 13.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1049553277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6763,6 +8344,85 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fd50af0677bb6d4e96c39d4164999b6, type: 3}
+--- !u!1 &1051885175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1051885176}
+  - component: {fileID: 1051885177}
+  m_Layer: 0
+  m_Name: WanderPoint_07
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1051885176
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051885175}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 76.1, y: 25.2, z: -3.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1678988269}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1051885177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051885175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes: []
+  isRestPoint: 1
+  usableForWander: 1
+  usableForFlee: 0
+--- !u!1 &1064396751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1064396752}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1064396752
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064396751}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.7, y: 10.13, z: 3.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1173380014}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1073957412
 GameObject:
   m_ObjectHideFlags: 0
@@ -6793,6 +8453,156 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1076461955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1076461957}
+  - component: {fileID: 1076461956}
+  m_Layer: 0
+  m_Name: FleePoint_06 (23)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1076461956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076461955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 131538865}
+  - {fileID: 483860030}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &1076461957
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076461955}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 101.89, y: 52.07, z: 107.59}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1085682554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1085682556}
+  - component: {fileID: 1085682555}
+  m_Layer: 0
+  m_Name: FleePoint_06 (40)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1085682555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085682554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 1893296073}
+  - {fileID: 1472784600}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &1085682556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085682554}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 32, y: 27.72, z: -17.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1090990499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1090990501}
+  - component: {fileID: 1090990500}
+  m_Layer: 0
+  m_Name: FleePoint_06 (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1090990500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090990499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 99244790}
+  - {fileID: 661973114}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &1090990501
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090990499}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 141.11, y: 22.47, z: -0.27}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1115530626
 PrefabInstance:
@@ -6856,7 +8666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7085709587800296204, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.34402
+      value: -3.2162437
       objectReference: {fileID: 0}
     - target: {fileID: 7085709587800296204, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6864,7 +8674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7085709587800296204, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.733477
+      value: 21.47285
       objectReference: {fileID: 0}
     - target: {fileID: 7085709587800296204, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6899,6 +8709,115 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71de44979d2c73546885fda26ef5999e, type: 3}
+--- !u!1 &1159372256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1159372258}
+  - component: {fileID: 1159372257}
+  m_Layer: 0
+  m_Name: FleePoint_06 (34)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1159372257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159372256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 493481262}
+  - {fileID: 1655717728}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &1159372258
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159372256}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 56, y: 20.31, z: 14.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1173380013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1173380014}
+  - component: {fileID: 1173380015}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1173380014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173380013}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1064396752}
+  - {fileID: 206716467}
+  m_Father: {fileID: 1790168360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1173380015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173380013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshLink
+  m_SerializedVersion: 1
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: -2.5}
+  m_EndPoint: {x: 0, y: 0, z: 2.5}
+  m_StartTransform: {fileID: 1064396752}
+  m_EndTransform: {fileID: 206716467}
+  m_Activated: 1
+  m_Width: 3.2395313
+  m_CostModifier: 1
+  m_IsOverridingCost: 0
+  m_Bidirectional: 1
+  m_AutoUpdatePosition: 0
+  m_Area: 0
 --- !u!1001 &1204045526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7130,6 +9049,106 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bda71eb613ded84490305edce3e3541, type: 3}
+--- !u!1 &1232218925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1232218927}
+  - component: {fileID: 1232218926}
+  m_Layer: 0
+  m_Name: FleePoint_06 (37)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1232218926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232218925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 1508697230}
+  - {fileID: 412611403}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &1232218927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232218925}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 24.5, y: 18.6, z: 5.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1241084750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1241084752}
+  - component: {fileID: 1241084751}
+  m_Layer: 0
+  m_Name: FleePoint_06 (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1241084751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241084750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 293839562}
+  - {fileID: 271506893}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &1241084752
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241084750}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 173.6, y: 15, z: 60}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1277912546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7191,6 +9210,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d44689f835704d4db1c74789bd984aa, type: 3}
+--- !u!1 &1288517561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1288517563}
+  - component: {fileID: 1288517562}
+  m_Layer: 0
+  m_Name: FleePoint_06 (14)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1288517562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288517561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 720064406}
+  - {fileID: 1919662042}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &1288517563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288517561}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 151.7, y: 7.8, z: 96.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1289853439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7257,6 +9326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1311710105}
+  - component: {fileID: 1311710106}
   m_Layer: 0
   m_Name: WanderPoint_02
   m_TagString: Untagged
@@ -7273,12 +9343,28 @@ Transform:
   m_GameObject: {fileID: 1311710104}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.7, y: 44.6, z: -18.4}
+  m_LocalPosition: {x: 37.22, y: 27.79, z: -15.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1678988269}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1311710106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311710104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes: []
+  isRestPoint: 0
+  usableForWander: 1
+  usableForFlee: 1
 --- !u!1001 &1315101914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7299,33 +9385,233 @@ PrefabInstance:
       propertyPath: m_Name
       value: FleeSoul
       objectReference: {fileID: 0}
-    - target: {fileID: 3269116692040513444, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
-      propertyPath: soulID
-      value: FleeArena_FleeSoul
-      objectReference: {fileID: 0}
     - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1023917767}
     - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
-      propertyPath: 'wanderingPoints.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1864458364}
+      propertyPath: fleeSpeedLevel1
+      value: 5.75
+      objectReference: {fileID: 0}
     - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
-      propertyPath: 'wanderingPoints.Array.data[1]'
+      propertyPath: fleeSpeedLevel2
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[0]'
       value: 
-      objectReference: {fileID: 1311710105}
+      objectReference: {fileID: 375900653}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1496467915}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1796869899}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[3]'
+      value: 
+      objectReference: {fileID: 858429964}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1823085328}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[5]'
+      value: 
+      objectReference: {fileID: 612108970}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1739596975}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[7]'
+      value: 
+      objectReference: {fileID: 962860222}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[8]'
+      value: 
+      objectReference: {fileID: 99244790}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[9]'
+      value: 
+      objectReference: {fileID: 1090990500}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[10]'
+      value: 
+      objectReference: {fileID: 661973114}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[11]'
+      value: 
+      objectReference: {fileID: 1043124695}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[12]'
+      value: 
+      objectReference: {fileID: 1766197525}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[13]'
+      value: 
+      objectReference: {fileID: 288667575}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[14]'
+      value: 
+      objectReference: {fileID: 293839562}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[15]'
+      value: 
+      objectReference: {fileID: 1241084751}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[16]'
+      value: 
+      objectReference: {fileID: 271506893}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[17]'
+      value: 
+      objectReference: {fileID: 605241721}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[18]'
+      value: 
+      objectReference: {fileID: 671759066}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[19]'
+      value: 
+      objectReference: {fileID: 720064406}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[20]'
+      value: 
+      objectReference: {fileID: 1288517562}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[21]'
+      value: 
+      objectReference: {fileID: 1919662042}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[22]'
+      value: 
+      objectReference: {fileID: 189700032}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[23]'
+      value: 
+      objectReference: {fileID: 2074736293}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[24]'
+      value: 
+      objectReference: {fileID: 1585211032}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[25]'
+      value: 
+      objectReference: {fileID: 1904658431}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[26]'
+      value: 
+      objectReference: {fileID: 243946783}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[27]'
+      value: 
+      objectReference: {fileID: 975343294}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[28]'
+      value: 
+      objectReference: {fileID: 131538865}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[29]'
+      value: 
+      objectReference: {fileID: 1076461956}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[30]'
+      value: 
+      objectReference: {fileID: 483860030}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[31]'
+      value: 
+      objectReference: {fileID: 850275453}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[32]'
+      value: 
+      objectReference: {fileID: 230399751}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[33]'
+      value: 
+      objectReference: {fileID: 17965740}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[34]'
+      value: 
+      objectReference: {fileID: 630252099}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[35]'
+      value: 
+      objectReference: {fileID: 998026965}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[36]'
+      value: 
+      objectReference: {fileID: 1978060079}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[37]'
+      value: 
+      objectReference: {fileID: 589281922}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[38]'
+      value: 
+      objectReference: {fileID: 493481262}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[39]'
+      value: 
+      objectReference: {fileID: 1159372257}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[40]'
+      value: 
+      objectReference: {fileID: 1655717728}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[41]'
+      value: 
+      objectReference: {fileID: 1508697230}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[42]'
+      value: 
+      objectReference: {fileID: 1232218926}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[43]'
+      value: 
+      objectReference: {fileID: 412611403}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[44]'
+      value: 
+      objectReference: {fileID: 1893296073}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[45]'
+      value: 
+      objectReference: {fileID: 1085682555}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'fleeNodes.Array.data[46]'
+      value: 
+      objectReference: {fileID: 1472784600}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'islandWanderNodes.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1864458365}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'islandWanderNodes.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1311710106}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'islandWanderNodes.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1611078312}
+    - target: {fileID: 5466118084691121004, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
+      propertyPath: 'islandWanderNodes.Array.data[3]'
+      value: 
+      objectReference: {fileID: 465111624}
     - target: {fileID: 8910243560797386184, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.9
+      value: 4.69
       objectReference: {fileID: 0}
     - target: {fileID: 8910243560797386184, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 25.8
+      value: 36.95
       objectReference: {fileID: 0}
     - target: {fileID: 8910243560797386184, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.2
+      value: -21.01
       objectReference: {fileID: 0}
     - target: {fileID: 8910243560797386184, guid: 9f2b540e59c75684e889137badd5124a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7421,6 +9707,106 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -462981019419857548, guid: 4a3de465b572586419d5312bd8ca39ed, type: 3}
+--- !u!1 &1472784598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1472784599}
+  - component: {fileID: 1472784600}
+  m_Layer: 0
+  m_Name: FleePoint_06 (41)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1472784599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472784598}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 35.6, y: 28.4, z: -23.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1472784600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472784598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 1085682555}
+  - {fileID: 375900653}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!1 &1496467913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1496467914}
+  - component: {fileID: 1496467915}
+  m_Layer: 0
+  m_Name: FleePoint_02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1496467914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496467913}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 50.9, y: 28.8, z: -14}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1496467915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496467913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 375900653}
+  - {fileID: 1796869899}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
 --- !u!4 &1496917583 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4074701979488782075, guid: 4f3d76889171248409abe03235123bbd, type: 3}
@@ -7538,6 +9924,134 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1330419452}
   m_SourcePrefab: {fileID: 100100000, guid: 4a3de465b572586419d5312bd8ca39ed, type: 3}
+--- !u!1 &1508697229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1508697231}
+  - component: {fileID: 1508697230}
+  m_Layer: 0
+  m_Name: FleePoint_06 (36)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1508697230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508697229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 1655717728}
+  - {fileID: 1232218926}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &1508697231
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508697229}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 30.25, y: 14.58, z: 12.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1515370773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1515370774}
+  m_Layer: 0
+  m_Name: 'FleeFleeingPoints '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1515370774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515370773}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -25.04986, y: 9.6, z: -6.33887}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 375900652}
+  - {fileID: 1496467914}
+  - {fileID: 1796869898}
+  - {fileID: 858429963}
+  - {fileID: 1823085329}
+  - {fileID: 612108971}
+  - {fileID: 1739596976}
+  - {fileID: 962860223}
+  - {fileID: 99244791}
+  - {fileID: 1090990501}
+  - {fileID: 661973115}
+  - {fileID: 1043124696}
+  - {fileID: 1766197526}
+  - {fileID: 288667576}
+  - {fileID: 293839563}
+  - {fileID: 1241084752}
+  - {fileID: 271506894}
+  - {fileID: 605241722}
+  - {fileID: 671759067}
+  - {fileID: 720064407}
+  - {fileID: 1288517563}
+  - {fileID: 1919662043}
+  - {fileID: 189700033}
+  - {fileID: 2074736294}
+  - {fileID: 1585211033}
+  - {fileID: 1904658432}
+  - {fileID: 243946784}
+  - {fileID: 975343295}
+  - {fileID: 131538866}
+  - {fileID: 1076461957}
+  - {fileID: 483860031}
+  - {fileID: 850275454}
+  - {fileID: 230399752}
+  - {fileID: 17965741}
+  - {fileID: 630252100}
+  - {fileID: 998026964}
+  - {fileID: 1978060078}
+  - {fileID: 589281923}
+  - {fileID: 493481263}
+  - {fileID: 1159372258}
+  - {fileID: 1655717729}
+  - {fileID: 1508697231}
+  - {fileID: 1232218927}
+  - {fileID: 412611404}
+  - {fileID: 1893296074}
+  - {fileID: 1085682556}
+  - {fileID: 1472784599}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1566072537
 GameObject:
   m_ObjectHideFlags: 0
@@ -7602,6 +10116,93 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1585211031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1585211033}
+  - component: {fileID: 1585211032}
+  m_Layer: 0
+  m_Name: FleePoint_06 (18)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1585211032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585211031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 2074736293}
+  - {fileID: 1904658431}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &1585211033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585211031}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 124.9, y: 64.9, z: 133.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1601269948 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9052439877061623611, guid: eeb864c5a126338409df7a72f34face8, type: 3}
+  m_PrefabInstance: {fileID: 1790168359}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1601269953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601269948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 1
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: b03b51790cc5d3e43939f1aaca35aedb, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &1611078310
 GameObject:
   m_ObjectHideFlags: 0
@@ -7611,6 +10212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1611078311}
+  - component: {fileID: 1611078312}
   m_Layer: 0
   m_Name: WanderPoint_03
   m_TagString: Untagged
@@ -7627,12 +10229,28 @@ Transform:
   m_GameObject: {fileID: 1611078310}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -33.9, y: 46.1, z: -81.4}
+  m_LocalPosition: {x: 2.68, y: 15.7, z: -4.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1678988269}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1611078312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611078310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes: []
+  isRestPoint: 1
+  usableForWander: 1
+  usableForFlee: 0
 --- !u!1001 &1611389540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7694,6 +10312,61 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cf9b3db2467b0949a1af41020fe5a77, type: 3}
+--- !u!4 &1654561808 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3365648611865336076, guid: cfa67d87f5ae300459140082126165af, type: 3}
+  m_PrefabInstance: {fileID: 365290315}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1655717727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1655717729}
+  - component: {fileID: 1655717728}
+  m_Layer: 0
+  m_Name: FleePoint_06 (35)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1655717728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655717727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 1159372257}
+  - {fileID: 1508697230}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &1655717729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655717727}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 39.2, y: 13.67, z: 12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1678988268
 GameObject:
   m_ObjectHideFlags: 0
@@ -7727,6 +10400,9 @@ Transform:
   - {fileID: 1311710105}
   - {fileID: 1611078311}
   - {fileID: 465111623}
+  - {fileID: 816511013}
+  - {fileID: 2037425660}
+  - {fileID: 1051885176}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1689041053 stripped
@@ -7739,6 +10415,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4074701979488782075, guid: 4f3d76889171248409abe03235123bbd, type: 3}
   m_PrefabInstance: {fileID: 771955678}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1739596974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1739596976}
+  - component: {fileID: 1739596975}
+  m_Layer: 0
+  m_Name: FleePoint_06 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1739596975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739596974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 612108970}
+  - {fileID: 962860222}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &1739596976
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739596974}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 95.4, y: 33.61, z: -3.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1743467946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7857,6 +10583,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f3d76889171248409abe03235123bbd, type: 3}
+--- !u!1 &1766197524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1766197526}
+  - component: {fileID: 1766197525}
+  m_Layer: 0
+  m_Name: FleePoint_06 (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1766197525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766197524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 1043124695}
+  - {fileID: 288667575}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &1766197526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766197524}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 161.79, y: 21.23, z: 22.21}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1785367753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7984,14 +10760,182 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5798454281433630252, guid: eeb864c5a126338409df7a72f34face8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1173380014}
+    - targetCorrespondingSourceObject: {fileID: 5798454281433630252, guid: eeb864c5a126338409df7a72f34face8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1801359526}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9052439877061623611, guid: eeb864c5a126338409df7a72f34face8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1601269953}
   m_SourcePrefab: {fileID: 100100000, guid: eeb864c5a126338409df7a72f34face8, type: 3}
 --- !u!4 &1790168360 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5798454281433630252, guid: eeb864c5a126338409df7a72f34face8, type: 3}
   m_PrefabInstance: {fileID: 1790168359}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1796869897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1796869898}
+  - component: {fileID: 1796869899}
+  m_Layer: 0
+  m_Name: FleePoint_03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1796869898
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796869897}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 62.1, y: 30.4, z: -12.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1796869899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796869897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 1496467915}
+  - {fileID: 858429964}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!1 &1801359525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1801359526}
+  - component: {fileID: 1801359527}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1801359526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801359525}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 402501853}
+  - {fileID: 974200880}
+  m_Father: {fileID: 1790168360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1801359527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801359525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshLink
+  m_SerializedVersion: 1
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0, y: 0, z: -2.5}
+  m_EndPoint: {x: 0, y: 0, z: 2.5}
+  m_StartTransform: {fileID: 402501853}
+  m_EndTransform: {fileID: 974200880}
+  m_Activated: 1
+  m_Width: 3.2395313
+  m_CostModifier: 1
+  m_IsOverridingCost: 0
+  m_Bidirectional: 1
+  m_AutoUpdatePosition: 0
+  m_Area: 0
+--- !u!1 &1823085327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1823085329}
+  - component: {fileID: 1823085328}
+  m_Layer: 0
+  m_Name: FleePoint_05
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1823085328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823085327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 858429964}
+  - {fileID: 612108970}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &1823085329
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823085327}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 73.1, y: 26.1, z: -3.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1824856684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8174,6 +11118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1864458364}
+  - component: {fileID: 1864458365}
   m_Layer: 0
   m_Name: WanderPoint_01
   m_TagString: Untagged
@@ -8190,11 +11135,77 @@ Transform:
   m_GameObject: {fileID: 1864458363}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 39.2, y: 30.7, z: 10.5}
+  m_LocalPosition: {x: 6.8, y: 10.55, z: 18.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1678988269}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1864458365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864458363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes: []
+  isRestPoint: 1
+  usableForWander: 1
+  usableForFlee: 0
+--- !u!1 &1893296072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1893296074}
+  - component: {fileID: 1893296073}
+  m_Layer: 0
+  m_Name: FleePoint_06 (39)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1893296073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893296072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 412611403}
+  - {fileID: 1085682555}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &1893296074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893296072}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 24.45, y: 26.01, z: -9.47}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1902374707
 GameObject:
@@ -8283,8 +11294,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902374707}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.105602294, y: 0.8504058, z: -0.18697174, w: -0.48031208}
-  m_LocalPosition: {x: 23.34402, y: 47.46866, z: -18.733477}
+  m_LocalRotation: {x: -0.10560229, y: 0.8504058, z: -0.18697175, w: -0.48031208}
+  m_LocalPosition: {x: -3.2162437, y: 47.46866, z: 21.47285}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8366,6 +11377,56 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!1 &1904658430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1904658432}
+  - component: {fileID: 1904658431}
+  m_Layer: 0
+  m_Name: FleePoint_06 (19)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1904658431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904658430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 1585211032}
+  - {fileID: 243946783}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &1904658432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904658430}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 113.9, y: 58.7, z: 142.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1912579324
 GameObject:
   m_ObjectHideFlags: 0
@@ -8454,6 +11515,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe757c7abbd579e40954daa75192fcf5, type: 3}
+--- !u!1 &1919662041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1919662043}
+  - component: {fileID: 1919662042}
+  m_Layer: 0
+  m_Name: FleePoint_06 (15)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1919662042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919662041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 1288517562}
+  - {fileID: 189700032}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &1919662043
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919662041}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 146.1, y: 17.4, z: 108}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1943838566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3588732809110139444, guid: e37167da25b8f2f4b8c1ad2f1a192961, type: 3}
@@ -8597,6 +11708,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7063411080168014747, guid: 3cf9b3db2467b0949a1af41020fe5a77, type: 3}
   m_PrefabInstance: {fileID: 1962543491}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1978060077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1978060078}
+  - component: {fileID: 1978060079}
+  m_Layer: 0
+  m_Name: FleePoint_06 (30)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1978060078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978060077}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 65.5, y: 27.41, z: 48.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1978060079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978060077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 998026965}
+  - {fileID: 589281922}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
 --- !u!1001 &1980890839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8747,6 +11908,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c091d0da98312d499bbc98d3e5b07b1, type: 3}
+--- !u!1 &2037425659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2037425660}
+  - component: {fileID: 2037425661}
+  m_Layer: 0
+  m_Name: WanderPoint_06
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2037425660
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037425659}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 74, y: 24.6, z: -16.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1678988269}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2037425661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037425659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes: []
+  isRestPoint: 1
+  usableForWander: 1
+  usableForFlee: 0
 --- !u!1001 &2042069709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8841,6 +12050,56 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4239556919076152959, guid: 9315b04897944914d889dc0e64b6ffd7, type: 3}
   m_PrefabInstance: {fileID: 2042069709}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2074736292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2074736294}
+  - component: {fileID: 2074736293}
+  m_Layer: 0
+  m_Name: FleePoint_06 (17)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2074736293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074736292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db217875ccf2aaf4e9e366ecd72c4e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeNode
+  connectedNodes:
+  - {fileID: 189700032}
+  - {fileID: 1585211032}
+  isRestPoint: 0
+  usableForWander: 0
+  usableForFlee: 1
+--- !u!4 &2074736294
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074736292}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 139.9, y: 56.5, z: 120.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515370774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &2100126370 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 3111163858600451441, guid: 6124c8856528fdd4690ba6e30186b8d7, type: 3}
@@ -9082,6 +12341,7 @@ SceneRoots:
   - {fileID: 1315101914}
   - {fileID: 5355207881152676815}
   - {fileID: 1678988269}
+  - {fileID: 1515370774}
   - {fileID: 584077083}
   - {fileID: 233132806}
   - {fileID: 2139153038}
@@ -9092,6 +12352,7 @@ SceneRoots:
   - {fileID: 1914287020}
   - {fileID: 1289853439}
   - {fileID: 334101354}
+  - {fileID: 194031981}
   - {fileID: 1785367753}
   - {fileID: 357338879}
   - {fileID: 1743467946}

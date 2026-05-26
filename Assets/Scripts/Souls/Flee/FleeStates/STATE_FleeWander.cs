@@ -19,15 +19,14 @@ public class STATE_FleeWander : BaseState
         _isWaiting = false;
         _waitTimer = 0f;
 
-        _owner.ActiveSoul(true);
-
         _owner.SetWanderMovement();
         _owner.SetStateColor(Color.lightGreen);
 
-        Transform wanderPoint = _owner.ChooseRandomWanderPoint();
+        FleeNode wanderPoint = _owner.ChooseRandomWanderPoint();
+
         if (wanderPoint != null)
         {
-            _owner.MoveTo(wanderPoint.position);
+            _owner.MoveTo(wanderPoint.transform.position);
         }
     }
 
@@ -41,7 +40,7 @@ public class STATE_FleeWander : BaseState
         }
 
         // If there are no wander points, do nothing
-        if (_owner.WanderingPoints == null || _owner.WanderingPoints.Count == 0)
+        if (_owner.IslandWanderNodes == null || _owner.IslandWanderNodes.Count == 0)
         {
             return null;
         }
@@ -55,10 +54,11 @@ public class STATE_FleeWander : BaseState
             {
                 _isWaiting = false;
 
-                Transform nextPoint = _owner.ChooseRandomWanderPoint();
+                FleeNode nextPoint = _owner.ChooseRandomWanderPoint();
+
                 if (nextPoint != null)
                 {
-                    _owner.MoveTo(nextPoint.position);
+                    _owner.MoveTo(nextPoint.transform.position);
                 }
             }
 

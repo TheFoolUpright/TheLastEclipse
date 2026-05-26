@@ -380,8 +380,8 @@ namespace StarterAssets
                 _speed = Mathf.MoveTowards(_speed, 0.0f, decelRate * Time.deltaTime);
             }
 
-            //_animationBlend = Mathf.Lerp(_animationBlend, _speed, Time.deltaTime * 10f);
-            _animationBlend = _speed;
+            _animationBlend = Mathf.Lerp(_animationBlend, _speed, Time.deltaTime * 10f);
+            //_animationBlend = _speed;
 
             if (_animationBlend < 0.01f)
                 _animationBlend = 0f;
