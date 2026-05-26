@@ -22,6 +22,18 @@ public class STATE_FleeWander : BaseState
         _owner.SetWanderMovement();
         _owner.SetStateColor(Color.lightGreen);
 
+        if (!_owner.TrySnapToNearestNavMesh(15f))
+        {
+            FleeNode nearestNode = _owner.ChooseNearestFleeNode();
+
+            if (nearestNode != null)
+            {
+                _owner.SetFleeMovement();
+                _owner.MoveTo(nearestNode.transform.position);
+                return;
+            }
+        }
+
         FleeNode wanderPoint = _owner.ChooseRandomWanderPoint();
 
         if (wanderPoint != null)

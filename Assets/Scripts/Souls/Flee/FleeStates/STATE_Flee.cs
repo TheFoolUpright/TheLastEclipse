@@ -57,17 +57,17 @@ public class STATE_Flee : BaseState
 
         UpdateBurst();
 
-        //if (_owner.IsTooFarFromFleeGraph())
-        //{
-        //    FleeNode nearestNode = _owner.ChooseNearestFleeNode();
+        if (!_owner.HasActiveFlyingDestination() && _owner.IsTooFarFromFleeGraph())
+        {
+            FleeNode nearestNode = _owner.ChooseNearestFleeNode();
 
-        //    if (nearestNode != null)
-        //    {
-        //        _owner.MoveTo(nearestNode.transform.position);
-        //    }
+            if (nearestNode != null)
+            {
+                _owner.MoveTo(nearestNode.transform.position);
+            }
 
-        //    return null;
-        //}
+            return null;
+        }
 
         if (_owner.IsCurrentDestinationUnsafe())
         {

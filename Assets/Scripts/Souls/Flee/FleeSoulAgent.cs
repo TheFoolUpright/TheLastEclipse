@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -92,7 +93,7 @@ public class FleeSoulAgent : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private string detectedPlayerSFX = "Flee";
 
-    [SerializeField] private float maxDistanceFromFleeNode = 5f;
+    [SerializeField] private float maxDistanceFromFleeNode = 12f;
 
     private float _currentSpeed;
 
@@ -265,9 +266,14 @@ public class FleeSoulAgent : MonoBehaviour
         return distanceToPlayer <= burstTriggerDistance;
     }
 
+    public bool HasActiveFlyingDestination()
+    {
+        return _movementMode == MovementMode.Flying && _hasDestination;
+    }
+
     public void MoveTo(Vector3 targetPosition)
     {
-        //Debug.Log($"Moving to {targetPosition} in mode {_movementMode}");
+        Debug.Log($"Moving to {targetPosition} in mode {_movementMode}");
         if (_movementMode == MovementMode.NavMesh)
         {
             if (agent == null || !agent.isOnNavMesh)
@@ -407,6 +413,7 @@ public class FleeSoulAgent : MonoBehaviour
 
     public FleeNode ChooseFleePoint()
     {
+        
         if (_currentNode == null || !_currentNode.usableForFlee || _currentNode.connectedNodes == null || _currentNode.connectedNodes.Count == 0)
             return ChooseBestStartingFleeNode();
 
@@ -418,7 +425,7 @@ public class FleeSoulAgent : MonoBehaviour
 
         foreach (FleeNode node in _currentNode.connectedNodes)
         {
-            if (node == null || !node.usableForFlee)
+            if (node == null || !node.usableForFlee || node == _currentNode)
                 continue;
 
             Vector3 awayFromPlayer = transform.position - player.position;

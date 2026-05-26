@@ -204,6 +204,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a4180a7288052e243ba512d87004194e, type: 3}
   - name: WarpPortal
     clip: {fileID: 8300000, guid: 691b738e25973d843a1a588b350a1c12, type: 3}
+  - name: FleeCaught
+    clip: {fileID: 8300000, guid: e47a651fdcae7304fb8f99098c544dd8, type: 3}
   musicSource: {fileID: 4151682550081440586}
   sfxSource: {fileID: 5323262709494924688}
 --- !u!114 &5794546992329063348

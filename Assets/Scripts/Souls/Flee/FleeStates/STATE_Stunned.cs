@@ -18,6 +18,7 @@ public class STATE_Stunned : BaseState
         _catchCountApplied = false;
 
         _owner.ClearMovement();
+        AudioManager.Instance.PlaySFX("FleeCaught");
         _owner.SetStateColor(Color.paleGreen);
 
         ApplyCatchCount();
